@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "DCCA1Tdz/UqBSzpSy9Y0BmFl2bua+zG3UMnpkc94jpo=",
+  "Source": "marketplace-api",
+  "BasePath": "_content/marketplace-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "marketplace-api\\wwwroot",
+      "Source": "marketplace-api",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
+      "BasePath": "_content/marketplace-api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\index.html",
+      "SourceId": "marketplace-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
+      "BasePath": "_content/marketplace-api",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}
