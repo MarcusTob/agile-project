@@ -1,11 +1,11 @@
 import React from 'react'
-import Starterpacks from './Starterpacks'
+import Starterpack from './Starterpack'
 
 const Home = () => {
   return (
     <div className='home-conatiner'>
-        <div className='starterpacks'>
-            <Starterpacks/>
+        <div className='starterpack'>
+            <Starterpack/>
         </div>
         </div>
   )
