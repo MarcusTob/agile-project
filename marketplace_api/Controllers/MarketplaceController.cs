@@ -33,4 +33,13 @@ public class MarketplaceController : ControllerBase
     //UPDATE
 
     //DELETE
+    [HttpDelete("products/{id}")]
+    public async Task<ActionResult<Product>> DeleteProduct(int id) {
+        Product? product = await context.Product.FindAsync(id);
+        if (product != null) {
+            context.Product.Remove(product);
+            await context.SaveChangesAsync();
+        }
+        return NoContent();
+    }
 }
