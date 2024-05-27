@@ -23,6 +23,12 @@ public class MarketplaceController : ControllerBase
     }
 
     //POST
+    [HttpPost("products")]
+    public async Task<ActionResult<Product>> Post(Product newProduct) {
+        context.Product.Add(newProduct);
+        await context.SaveChangesAsync();
+        return CreatedAtAction(nameof(GetProducts), new { id = newProduct.ID }, newProduct);
+    }
 
     //UPDATE
 
