@@ -144,3 +144,5 @@ marketplace_api/obj/Debug/net8.0/marketplace-api.pdb
 marketplace_api/obj/Debug/net8.0/marketplace-api.sourcelink.json
 marketplace_api/obj/Debug/net8.0/ref/marketplace-api.dll
 marketplace_api/obj/Debug/net8.0/refint/marketplace-api.dll
+marketplace_api/bin/Debug/net8.0/marketplace-api.dll
+marketplace_api/bin/Debug/net8.0/marketplace-api.exe
