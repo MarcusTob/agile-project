@@ -1,10 +1,12 @@
 import React from 'react'
 import Starterpack from '../components/Starterpack'
+import "../index.css";
+import "tailwindcss/tailwind.css"
 
 const Home = () => {
   return (
-    <div className='home-conatiner'>
-        <div className='starterpack'>
+    <div>
+        <div>
             <Starterpack/>
         </div>
     </div>

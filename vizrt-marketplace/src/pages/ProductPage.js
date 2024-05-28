@@ -6,10 +6,9 @@ import 'tailwindcss/tailwind.css'
 export const ProductPage = () => {
   
 
-
   return (
-  <div className="bg-[#1e3541] flex flex-row justify-center w-full">
-    <div className="bg-collection-1-brandbglighter w-[1512px] h-[982px] relative">
+  <div className="bg-brandBackground flex flex-row justify-center w-full">
+    <div className= "w-[1512px] h-[982px] relative">
       <div className="absolute top-[712px] left-[414px] font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] underline whitespace-nowrap" style={{fontFamily: 'Play, Helvetica'}}>
         About
       </div>
