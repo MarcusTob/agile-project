@@ -1,1 +1,1 @@
-{"ContentRoots":["E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\"],"Root":{"Children":{"index.html":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"index.html"},"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
+{"ContentRoots":["/Users/andreaslangedal/local-github/agile-project/marketplace_api/wwwroot/"],"Root":{"Children":{"index.html":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"index.html"},"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}

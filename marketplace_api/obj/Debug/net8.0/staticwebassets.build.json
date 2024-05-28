@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DCCA1Tdz/UqBSzpSy9Y0BmFl2bua+zG3UMnpkc94jpo=",
+  "Hash": "pTcImnuSgn15i7am3ipngiL5RLwSH5gfhyfVCJXmR1s=",
   "Source": "marketplace-api",
   "BasePath": "_content/marketplace-api",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "marketplace-api\\wwwroot",
+      "Name": "marketplace-api/wwwroot",
       "Source": "marketplace-api",
-      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "/Users/andreaslangedal/local-github/agile-project/marketplace_api/wwwroot/",
       "BasePath": "_content/marketplace-api",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\index.html",
+      "Identity": "/Users/andreaslangedal/local-github/agile-project/marketplace_api/wwwroot/index.html",
       "SourceId": "marketplace-api",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "/Users/andreaslangedal/local-github/agile-project/marketplace_api/wwwroot/",
       "BasePath": "_content/marketplace-api",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -33,7 +33,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\index.html"
+      "OriginalItemSpec": "wwwroot/index.html"
     }
   ]
 }
