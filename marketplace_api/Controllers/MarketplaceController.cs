@@ -42,6 +42,28 @@ public class MarketplaceController : ControllerBase
     }
 
     //UPDATE
+    [HttpPut("products/{id}")]
+    public async Task<ActionResult<Product>> PutProduct(int id, Product updatedProduct) {
+        Product? productToUpdate = await context.Product.FindAsync(id);
+        if (productToUpdate == null) {
+            return NotFound();
+        }
+        context.Entry(productToUpdate).CurrentValues.SetValues(updatedProduct);
+        context.Entry(productToUpdate).State = EntityState.Modified;
+        await context.SaveChangesAsync();
+        return NoContent();
+    }
+    [HttpPut("packages/{id}")]
+    public async Task<ActionResult<Package>> PutPackage(int id, Package updatedPackage) {
+        Package? packageToUpdate = await context.Package.FindAsync(id);
+        if (packageToUpdate == null) {
+            return NotFound();
+        }
+        context.Entry(packageToUpdate).CurrentValues.SetValues(updatedPackage);
+        context.Entry(packageToUpdate).State = EntityState.Modified;
+        await context.SaveChangesAsync();
+        return NoContent();
+    }
 
     //DELETE
     [HttpDelete("products/{id}")]
