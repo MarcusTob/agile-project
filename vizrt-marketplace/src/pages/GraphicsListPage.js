@@ -47,7 +47,7 @@ const GraphicsListPage = () => {
                         <li key={product.id} className="mb-2">{product.name} - ${product.price}</li>
                     ))}
                 </ul> */}
-                <div className="grid grid-cols-2">
+                <div>
                     <ProductList products={filteredProducts} setProducts={setProducts} />
                 </div>
             </div>
