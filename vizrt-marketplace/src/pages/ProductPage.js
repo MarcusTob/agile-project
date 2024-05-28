@@ -10,16 +10,16 @@ export const ProductPage = () => {
   return (
   <div className="bg-[#1e3541] flex flex-row justify-center w-full">
     <div className="bg-collection-1-brandbglighter w-[1512px] h-[982px] relative">
-      <div className="absolute top-[712px] left-[414px] font-normal text-collection-1-brandtextwhite text-[40px] text-center tracking-[0] leading-[60px] underline whitespace-nowrap" style={{fontFamily: 'Play, Helvetica'}}>
+      <div className="absolute top-[712px] left-[414px] font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] underline whitespace-nowrap" style={{fontFamily: 'Play, Helvetica'}}>
         About
       </div>
-      <div className="absolute top-[712px] left-[551px] font-normal text-collection-1-brandtextwhite text-[40px] text-center tracking-[0] leading-[60px] whitespace-nowrap" style={{fontFamily: 'Play, Helvetica'}}>
+      <div className="absolute top-[712px] left-[551px] font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] whitespace-nowrap" style={{fontFamily: 'Play, Helvetica'}}>
         Specifications
       </div>
-      <div className="absolute top-[712px] left-[847px] font-normal text-collection-1-brandtextwhite text-[40px] text-center tracking-[0] leading-[60px] whitespace-nowrap" style={{fontFamily: 'Play, Helvetica'}}>
+      <div className="absolute top-[712px] left-[847px] font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] whitespace-nowrap" style={{fontFamily: 'Play, Helvetica'}}>
         Reviews
       </div>
-      <p className="absolute w-[455px] top-[772px] left-[414px] font-normal text-collection-1-brandtextwhite text-[32px] tracking-[0] leading-[48px]" style={{fontFamily: 'Pontano_Sans, Helvetica'}}>
+      <p className="absolute w-[455px] top-[772px] left-[414px] font-normal text-white text-[32px] tracking-[0] leading-[48px]" style={{fontFamily: 'Pontano_Sans, Helvetica'}}>
         Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles
       </p>
       <div className="absolute w-[1092px] h-[471px] top-[199px] left-[339px]">
@@ -42,18 +42,18 @@ export const ProductPage = () => {
             alt="Star ratings"
             src="https://c.animaapp.com/2XehKRee/img/star-ratings@2x.png"
           />
-          <div className="absolute w-[142px] top-[300px] left-[806px] font-normal text-collection-1-brandtextwhite text-[20px] tracking-[0] leading-[30px]" style={{fontFamily: 'Inter, Helvetica'}}>
+          <div className="absolute w-[142px] top-[300px] left-[806px] font-normal text-white text-[20px] tracking-[0] leading-[30px]" style={{fontFamily: 'Inter, Helvetica'}}>
             864 Reviews
           </div>
           <div className="absolute w-[910px] h-[429px] top-[8px] left-0">
-            <p className="absolute w-[270px] top-[201px] left-[640px] text-shadow-[0px_4px_4px_#00000040] font-normal text-collection-1-brandtextwhite text-[64px] text-center tracking-[0] leading-[96px] whitespace-nowrap" style={{fontFamily: 'Inter, Helvetica'}}>
+            <p className="absolute w-[270px] top-[201px] left-[640px] text-shadow-[0px_4px_4px_#00000040] font-normal text-white text-[64px] text-center tracking-[0] leading-[96px] whitespace-nowrap" style={{fontFamily: 'Inter, Helvetica'}}>
               <span className="text-[#24df06]">$</span>
               <span className="text-white"> 19.99</span>
             </p>
-            <div className="absolute w-[243px] top-[193px] left-[667px] font-light text-collection-1-brandtextwhite text-[20px] tracking-[0] leading-[30px] whitespace-nowrap" style={{fontFamily: 'Roboto, Helvetica'}}>
+            <div className="absolute w-[243px] top-[193px] left-[667px] font-light text-white text-[20px] tracking-[0] leading-[30px] whitespace-nowrap" style={{fontFamily: 'Roboto, Helvetica'}}>
               Category: 3D-effects
             </div>
-            <div className="absolute top-[169px] left-[667px] font-extralight text-collection-1-brandtextwhite text-[20px] text-center tracking-[0] leading-[30px] whitespace-nowrap" style={{fontFamily: 'Inter, Helvetica'}}>
+            <div className="absolute top-[169px] left-[667px] font-extralight text-white text-[20px] text-center tracking-[0] leading-[30px] whitespace-nowrap" style={{fontFamily: 'Inter, Helvetica'}}>
               Creator: John Johnson
             </div>
             <img
@@ -69,11 +69,6 @@ export const ProductPage = () => {
             3D-effects of motion graphics
           </div>
         </div>
-        <img
-          className="absolute w-[91px] h-[72px] top-0 left-[1001px]"
-          alt="Like button"
-          src="https://c.animaapp.com/2XehKRee/img/like-button@2x.png"
-        />
       </div>
       <img
         className="absolute w-[197px] h-[126px] top-[391px] left-[125px] object-cover"
