@@ -1,13 +1,27 @@
 import react from 'react';
-import { Routes, Route, BrowserRouter } from "react-router-dom";
 import './App.css';
+import GraphicsListPage from './pages/GraphicsListPage';
 import Home from './pages/Home';
+import NavBar from './components/NavBar';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ProductPage } from './pages/ProductPage';
+
+
 
 function App() {
   return (
-    <div className='app'>
-      <Home/>
-        <h1>hei</h1>
+    <div>
+      <NavBar/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/product" element={<ProductPage />} />
+          <Route path="/graphics" element={<GraphicsListPage />} />
+          {/* <Home/>
+          <ProductPage /> */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
