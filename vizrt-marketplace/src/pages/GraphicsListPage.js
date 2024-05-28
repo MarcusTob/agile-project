@@ -14,25 +14,17 @@ const GraphicsListPage = () => {
         console.log(response);
     }
 
-    // Dummy product list for demonstration
-    // const products = [
-    //     { id: 1, name: 'Sci Fi Graphic', category: '3D Graphics', price: 25 },
-    //     { id: 2, name: 'Graphic Design 2', category: 'Category 2', price: 15 },
-    //     { id: 3, name: 'Graphic Design 3', category: '3D Graphics', price: 30 },
-    //     { id: 4, name: 'Graphic Design 4', category: 'Category 3', price: 20 },
-    // ];
+    // Apply filters
+    let filteredProducts = products.filter(product =>
+        product.category.includes(filter)
+    );
 
-    // // Apply filters
-    // let filteredProducts = products.filter(product =>
-    //     product.category.includes(filter)
-    // );
-
-    // // Apply sorting
-    // if (sortByPrice === 'lowToHigh') {
-    //     filteredProducts = filteredProducts.sort((a, b) => a.price - b.price);
-    // } else if (sortByPrice === 'highToLow') {
-    //     filteredProducts = filteredProducts.sort((a, b) => b.price - a.price);
-    // }
+    // Apply sorting
+    if (sortByPrice === 'lowToHigh') {
+        filteredProducts = filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (sortByPrice === 'highToLow') {
+        filteredProducts = filteredProducts.sort((a, b) => b.price - a.price);
+    }
 
     useEffect(() => {
         getAllProducts();
@@ -55,7 +47,9 @@ const GraphicsListPage = () => {
                         <li key={product.id} className="mb-2">{product.name} - ${product.price}</li>
                     ))}
                 </ul> */}
-                <ProductList products={products} setProducts={setProducts} />
+                <div className="grid grid-cols-2">
+                    <ProductList products={filteredProducts} setProducts={setProducts} />
+                </div>
             </div>
         </div>
     );
