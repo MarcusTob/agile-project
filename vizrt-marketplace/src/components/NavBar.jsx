@@ -27,7 +27,7 @@ export const Navbar = ({
                 </div>
               </div>
               <div className="w-[204px] left-0 text-center text-[25px] text-[#000000] h-[45px] font-medium absolute">
-                Graphics
+                <a href="/graphics">Graphics</a>
               </div>
             </div>
             <a href="/">

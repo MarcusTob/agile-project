@@ -12,7 +12,7 @@ const ProductService = (() => {
             console.error("error getting products", error);
         }
     }
-    
+
 
     return{
         getAllProducts,
@@ -20,3 +20,4 @@ const ProductService = (() => {
     }
 
     }) ();
+    export default ProductService;
