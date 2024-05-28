@@ -1,5 +1,5 @@
 import React from 'react'
-import Starterpack from './Starterpack'
+import Starterpack from '../components/Starterpack'
 
 const Home = () => {
   return (
