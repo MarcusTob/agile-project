@@ -5,7 +5,7 @@ import 'tailwindcss/tailwind.css';
 
 // Navbar Component
 export const Navbar = ({
-  property1,
+  property1 = "default",
   logoLogo = "https://c.animaapp.com/2XehKRee/img/logo-2@2x.png",
   search = "https://c.animaapp.com/2XehKRee/img/search-1.svg",
   user = "https://c.animaapp.com/2XehKRee/img/user-1.svg",
@@ -53,11 +53,8 @@ export const Navbar = ({
           }`}
         >
           {property1 === "variant-2" && (
-            <img className="absolute w-[55px] h-[59px] top-[6px] left-[97px]" alt="User" src={user} />
-          )}
-
-          {property1 === "variant-2" && (
             <>
+              <img className="absolute w-[55px] h-[59px] top-[6px] left-[97px]" alt="User" src={user} />
               <img className="absolute w-[53px] h-[47px] top-[12px] left-0" alt="Shopping cart" src={img} />
               <Badge
                 badgeLabelClassName="!left-[7px] !top-[7px]"
