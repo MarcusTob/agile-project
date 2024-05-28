@@ -2983,26 +2983,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marcu\\.nuget\\packages\\": {}
+    "C:\\Users\\thola\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\marketplace-api.csproj",
+      "projectUniqueName": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\marketplace-api.csproj",
       "projectName": "marketplace-api",
-      "projectPath": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\marketplace-api.csproj",
-      "packagesPath": "C:\\Users\\marcu\\.nuget\\packages\\",
-      "outputPath": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\obj\\",
+      "projectPath": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\marketplace-api.csproj",
+      "packagesPath": "C:\\Users\\thola\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\marcu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\thola\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3015,11 +3013,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3064,7 +3057,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

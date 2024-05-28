@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DCCA1Tdz/UqBSzpSy9Y0BmFl2bua+zG3UMnpkc94jpo=",
+  "Hash": "iTsyIisCHFYar5mYH4GCxr3ZiG/IDIuwg8pt1m/6ZhI=",
   "Source": "marketplace-api",
   "BasePath": "_content/marketplace-api",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "marketplace-api\\wwwroot",
       "Source": "marketplace-api",
-      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
       "BasePath": "_content/marketplace-api",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\index.html",
       "SourceId": "marketplace-api",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
       "BasePath": "_content/marketplace-api",
       "RelativePath": "index.html",
       "AssetKind": "All",

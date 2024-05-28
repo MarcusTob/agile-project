@@ -31,7 +31,7 @@ const GraphicsListPage = () => {
     }, []);
 
     return (
-        <div className="flex bg-white">
+        <div className="flex bg-brandBgLight">
             <div >
                 <FilterOptions
                     filter={filter}
@@ -40,13 +40,8 @@ const GraphicsListPage = () => {
                     setSortByPrice={setSortByPrice}
                 />
             </div>
-            <div className="w-3/4 p-4 bg-blue-100">
-                <h2 className="text-xl font-bold mb-4">Products</h2>
-                <div>
                     <ProductList products={filteredProducts} setProducts={setProducts} />
                 </div>
-            </div>
-        </div>
     );
 }
 
