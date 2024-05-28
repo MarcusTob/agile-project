@@ -7,7 +7,7 @@ export const ProductPage = () => {
   
 
   return (
-  <div className="bg-brandBackground flex flex-row justify-center w-full">
+  <div className="bg-brandBgLight flex flex-row justify-center w-full">
     <div className= "w-[1512px] h-[982px] relative">
       <div className="absolute top-[712px] left-[414px] font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] underline whitespace-nowrap" style={{fontFamily: 'Play, Helvetica'}}>
         About
@@ -62,8 +62,8 @@ export const ProductPage = () => {
             />
           </div>
           <div 
-        className="absolute w-[312px] top-0 left-[667px] font-bold text-collection-1-brandtextorange text-[40px] tracking-[0] leading-[60px]" 
-        style={{ color: '#F08D5A', fontFamily: 'Inter, Helvetica' }}
+        className="absolute w-[312px] top-0 left-[667px] font-bold text-brandTextOrange text-[40px] tracking-[0] leading-[60px]" 
+        style={{fontFamily: 'Inter, Helvetica' }}
       >
             3D-effects of motion graphics
           </div>

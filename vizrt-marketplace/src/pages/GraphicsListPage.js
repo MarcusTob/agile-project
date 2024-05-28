@@ -42,11 +42,6 @@ const GraphicsListPage = () => {
             </div>
             <div className="w-3/4 p-4 bg-blue-100">
                 <h2 className="text-xl font-bold mb-4">Products</h2>
-                {/* <ul>
-                    {filteredProducts.map(product => (
-                        <li key={product.id} className="mb-2">{product.name} - ${product.price}</li>
-                    ))}
-                </ul> */}
                 <div>
                     <ProductList products={filteredProducts} setProducts={setProducts} />
                 </div>
