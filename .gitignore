@@ -133,3 +133,14 @@ marketplace_api/obj/marketplace-api.csproj.nuget.g.props
 marketplace_api/obj/marketplace-api.csproj.nuget.g.targets
 marketplace_api/obj/project.assets.json
 marketplace_api/obj/project.nuget.cache
+marketplace_api/bin/Debug/net8.0/marketplace-api.dll
+marketplace_api/bin/Debug/net8.0/marketplace-api.exe
+marketplace_api/bin/Debug/net8.0/marketplace-api.pdb
+marketplace_api/obj/Debug/net8.0/apphost.exe
+marketplace_api/obj/Debug/net8.0/marketplace-api.AssemblyInfo.cs
+marketplace_api/obj/Debug/net8.0/marketplace-api.AssemblyInfoInputs.cache
+marketplace_api/obj/Debug/net8.0/marketplace-api.dll
+marketplace_api/obj/Debug/net8.0/marketplace-api.pdb
+marketplace_api/obj/Debug/net8.0/marketplace-api.sourcelink.json
+marketplace_api/obj/Debug/net8.0/ref/marketplace-api.dll
+marketplace_api/obj/Debug/net8.0/refint/marketplace-api.dll
