@@ -1,6 +1,7 @@
 import React from 'react'
 import Starterpack from '../components/Starterpack'
 import Welcomeoffer from '../components/Welcomeoffer';
+import Carousel from '../components/Carousel';
 import "../index.css";
 import "tailwindcss/tailwind.css"
 
@@ -10,6 +11,9 @@ const Home = () => {
         <div>
             <Starterpack/>
         </div>
+        <div>
+          <Carousel/>
+          </div>
         <div>
           <Welcomeoffer/>
         </div>
