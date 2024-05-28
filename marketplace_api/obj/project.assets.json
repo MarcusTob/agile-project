@@ -2983,24 +2983,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/andreaslangedal/.nuget/packages/": {}
+    "C:\\Users\\marcu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/andreaslangedal/local-github/agile-project/marketplace_api/marketplace-api.csproj",
+      "projectUniqueName": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\marketplace-api.csproj",
       "projectName": "marketplace-api",
-      "projectPath": "/Users/andreaslangedal/local-github/agile-project/marketplace_api/marketplace-api.csproj",
-      "packagesPath": "/Users/andreaslangedal/.nuget/packages/",
-      "outputPath": "/Users/andreaslangedal/local-github/agile-project/marketplace_api/obj/",
+      "projectPath": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\marketplace-api.csproj",
+      "packagesPath": "C:\\Users\\marcu\\.nuget\\packages\\",
+      "outputPath": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/andreaslangedal/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\marcu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3062,7 +3064,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
