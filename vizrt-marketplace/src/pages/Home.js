@@ -7,8 +7,7 @@ const Home = () => {
         <div className='starterpack'>
             <Starterpack/>
         </div>
-        </div>
+    </div>
   )
 }
-
-export default Home
+export default Home;
