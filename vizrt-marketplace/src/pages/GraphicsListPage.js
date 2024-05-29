@@ -4,46 +4,40 @@ import ProductList from '../components/ProductList';
 import ProductService from '../services/ProductService';
 
 const GraphicsListPage = () => {
-    const [filter, setFilter] = useState('');
-    const [sortByPrice, setSortByPrice] = useState(null);
+    // State to store the list of all products
     const [products, setProducts] = useState([]);
+    // State to store the list of filtered products
+    const [filteredProducts, setFilteredProducts] = useState([]);
 
+    // Function to fetch all products from the API
     const getAllProducts = async () => {
+        // Fetch products from ProductService
         const response = await ProductService.getAllProducts();
+        // Set the fetched products to the products state
         setProducts(response);
-        console.log(response);
-    }
+        // Initialize filteredProducts with all products initially
+        setFilteredProducts(response);
+    };
 
-    // Apply filters
-    let filteredProducts = products.filter(product =>
-        product.category.includes(filter)
-    );
-
-    // Apply sorting
-    if (sortByPrice === 'lowToHigh') {
-        filteredProducts = filteredProducts.sort((a, b) => a.price - b.price);
-    } else if (sortByPrice === 'highToLow') {
-        filteredProducts = filteredProducts.sort((a, b) => b.price - a.price);
-    }
-
+    // useEffect to fetch products when the component mounts
     useEffect(() => {
         getAllProducts();
     }, []);
 
     return (
-        <div className="flex bg-brandBgLight ">
-            <div className='pl-4' >
+        <div className="flex bg-brandBgLight">
+            <div className="pl-4">
+                {/* Pass products and setFilteredProducts function to FilterOptions */}
                 <FilterOptions
-                    filter={filter}
-                    setFilter={setFilter}
-                    sortByPrice={sortByPrice}
-                    setSortByPrice={setSortByPrice}
+                    products={products}
+                    setFilteredProducts={setFilteredProducts}
                 />
             </div>
-                    <ProductList products={filteredProducts} setProducts={setProducts} />
-                </div>
+            {/* Pass the filtered products to ProductList for display */}
+            <ProductList products={filteredProducts} />
+        </div>
     );
-}
+};
 
 export default GraphicsListPage;
 

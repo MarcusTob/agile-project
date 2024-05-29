@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const imageUrl = "http://localhost:5219/images";
 
+
 const ProductItem = ({ product }) => {
 
     const navigate = useNavigate();
