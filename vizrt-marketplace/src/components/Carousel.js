@@ -3,9 +3,11 @@ import {
     BsFillArrowRightCircleFill,
     BsFillArrowLeftCircleFill,    
   } from "react-icons/bs";
+
 export default function Carousel({ slides }) {
 
-    let [current, setCurrent] = useState();
+    {/* Carousel function */}
+    let [current, setCurrent] = useState(0);
 
     let previousSlide = () => {
         if(current === 0) setCurrent(slides.length - 1);
@@ -20,7 +22,7 @@ export default function Carousel({ slides }) {
     return (
         <div className="overflow-hidden relative">
          <div
-         className={`flex transition ease-out duration-400 translate-x-[${current * 100}%]`}
+         className={`flex transition ease-out duration-400`}
          style={{
             transform: `translateX(-${current * 100}%)`,
         }}
@@ -30,6 +32,7 @@ export default function Carousel({ slides }) {
             })}
         </div>
 
+        {/* Arrows and circles for navigating the carousel */}
         <div className="absolute top-0 h-full w-full justify-between item-center flex px-4 text-lg text-white">
             <button onClick={previousSlide}>
                 <BsFillArrowLeftCircleFill/>

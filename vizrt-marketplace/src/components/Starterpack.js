@@ -3,6 +3,7 @@ import 'tailwindcss/tailwind.css';
 import '../index.css';
 
 const Starterpack = () => {
+  {/* Starter packs heading and imgs. */}
   return (
     <div className='flex flex-col items-center'>
       <h1 className="text-white text-3xl font-bold mb-6">Starter packs</h1>

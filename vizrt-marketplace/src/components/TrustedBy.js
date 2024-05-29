@@ -1,6 +1,7 @@
 import React from 'react';
 
 const TrustedBy = () => {
+  {/* Trusted by logo and logos */}
   return (
     <div className="bg-white py-10 w-full flex flex-col items-center">
               <h2 className="text-xl font-semibold mb-6">Trusted By</h2>
