@@ -13,10 +13,20 @@ const ProductService = (() => {
         }
     }
 
+    const getProductById = async (id) => {
+        try{
+            const response = await axios.get(`${productUrl}/${id}`);
+            return response.data;
+        }
+        catch (error){
+            console.error("error getting product by id", error);
+        }
+    }
+
 
     return{
         getAllProducts,
-
+        getProductById
     }
 
     }) ();

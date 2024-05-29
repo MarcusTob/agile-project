@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\graphicImage1.avif",
-      "PackagePath": "staticwebassets\\images\\graphicImage1.avif"
-    },
-    {
       "Id": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\graphicImageTest.jpg",
       "PackagePath": "staticwebassets\\images\\graphicImageTest.jpg"
     },

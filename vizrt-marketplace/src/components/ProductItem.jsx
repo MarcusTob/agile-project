@@ -1,5 +1,16 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 const imageUrl = "http://localhost:5219/images";
 const ProductItem = ({ product }) => {
+
+    const navigate = useNavigate();
+
+    const handeViewItem = () => {
+        navigate(`/product/${product.ProductID}`);
+    }
+
+
     return (
         <div className="bg-brandOrange rounded-lg p-3 max-w-sm overflow-hidden shadow-lg mx-auto my-8 text-black text-base w-max">
             <h1>{product.name}</h1>
@@ -12,6 +23,7 @@ const ProductItem = ({ product }) => {
             <p>{product.rating}/5</p>    
             <img className="w-80 object-cover rounded mb-4"
              src={`${imageUrl}/${product.productImage}`} alt={`picture of ${product.name}`}/>
+            <button onClick={ handeViewItem }>View Item</button>
         </div>
     )
 }

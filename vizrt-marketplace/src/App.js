@@ -4,7 +4,7 @@ import GraphicsListPage from './pages/GraphicsListPage';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ProductPage } from './pages/ProductPage';
+import ProductDetail from './components/ProductDetail';
 
 
 
@@ -16,10 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/product" element={<ProductPage />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/graphics" element={<GraphicsListPage />} />
-          {/* <Home/>
-          <ProductPage /> */}
         </Routes>
       </BrowserRouter>
     </div>
