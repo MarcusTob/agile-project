@@ -4,7 +4,7 @@ import '../index.css';
 
 const Starterpack = () => {
   return (
-    <div className="bg-brandBgLight min-h-screen flex flex-col items-center">
+    <div className='flex flex-col items-center'>
       <h1 className="text-white text-3xl font-bold mb-6">Starter packs</h1>
       <div className='flex justify-center gap-5 flex-wrap'>
         <div className="relative w-32 sm:w-48 md:w-64 lg:w-80 xl:w-96 h-64 overflow-hidden">
