@@ -6,6 +6,7 @@ import TrustedBy from '../components/TrustedBy';
 import "../index.css";
 import "tailwindcss/tailwind.css"
 
+{/* Pictures for carousel */}
 const Home = () => {
   let slides = [
     "/images/Image1-carousel.webp",
@@ -13,6 +14,8 @@ const Home = () => {
     "/images/Image3-carousel.webp",
     "/images/Image4-carousel.png"
   ]
+
+  {/* All components on Landing page */}
   return (
     <div className="bg-brandBgLight min-h-screen flex flex-col items-center">
         <div className='mt-5'>

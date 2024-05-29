@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Welcomeoffer = () => {
+  {/* Picture and Heading over picture */}
   return (
     <div className="flex flex-col items-center justify-center bg-brandBgLight">
       <div className="max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden flex">
-        {/* Image and overlay text */}
         <div className="relative w-1/2">
           <img 
             src="/images/Welcomeoffer.webp" 
@@ -16,7 +16,7 @@ const Welcomeoffer = () => {
           </div>
         </div>
 
-        {/* Heading and text */}
+        {/* Heading and text for welcome offer */}
         <div className="w-1/2 p-8 flex flex-col justify-center">
           <h3 className="text-2xl font-semibold mb-4">Special Offer</h3>
           <p className="text-lg text-gray-700">
