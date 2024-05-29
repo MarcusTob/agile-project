@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DCCA1Tdz/UqBSzpSy9Y0BmFl2bua+zG3UMnpkc94jpo=",
+  "Hash": "97r0OP1hyQRk5w+HJvU886m3josAesV2sMB135jy/Y8=",
   "Source": "marketplace-api",
   "BasePath": "_content/marketplace-api",
   "Mode": "Default",
@@ -16,6 +16,44 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\graphicImage1.avif",
+      "SourceId": "marketplace-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
+      "BasePath": "_content/marketplace-api",
+      "RelativePath": "images/graphicImage1.avif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\graphicImage1.avif"
+    },
+    {
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\graphicImageTest.jpg",
+      "SourceId": "marketplace-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
+      "BasePath": "_content/marketplace-api",
+      "RelativePath": "images/graphicImageTest.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\graphicImageTest.jpg"
+    },
     {
       "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\index.html",
       "SourceId": "marketplace-api",

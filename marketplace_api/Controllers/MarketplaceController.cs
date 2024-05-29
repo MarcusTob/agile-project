@@ -21,7 +21,7 @@ public class MarketplaceController : ControllerBase
         List<Product> products = await context.Product.ToListAsync();
         return products;
     }
-        [HttpGet("packages")]
+    [HttpGet("packages")]
     public async Task<List<Package>> GetPackages() {
         List<Package> packages = await context.Package.ToListAsync();
         return packages;

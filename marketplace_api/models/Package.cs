@@ -10,6 +10,9 @@ namespace marketplace_api.Models{
     public int NrOfReviews { get; set; } = 0;
     public double Rating { get; set; } = 0.0;
     public List<string> Tags { get; set; } = new List<string>();
+    public string PackageImage { get; set; } = "";
+    public string PackageImage2 { get; set; } = "";
+    public string PackageImage3 { get; set; } = "";
 
     // public virtual ICollection<PackageProduct> PackageProducts { get; set; } 
     }
