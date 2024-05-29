@@ -3,10 +3,10 @@ import '../App.css';
 import '../index.css';
 
 const images = [
-  "https://c.animaapp.com/2XehKRee/img/unsplash-ttsebukwps8.png",
-  "https://c.animaapp.com/2XehKRee/img/unsplash-vtzujbsafsy@2x.png",
-  "https://c.animaapp.com/2XehKRee/img/unsplash-lnpxoooamnk@2x.png",
-  "https://c.animaapp.com/2XehKRee/img/unsplash-fkaanwckmfc@2x.png"
+    "../images/3deffect2.png",
+    "../images/3deffect3.png",
+    "../images/3deffect4.png",
+    "../images/3deffect1.png"
 ];
 
 export const ProductPage = () => {
@@ -83,7 +83,7 @@ export const ProductPage = () => {
 
         {/* Small images for switching */}
         <img
-          className="absolute w-[197px] h-[126px] top-[241px] left-[126px] object-cover cursor-pointer"
+          className="absolute w-[197px] h-[126px] top-[241px] left-[125px] object-cover cursor-pointer"
           alt="Thumbnail 1"
           src={images[1]}
           onClick={() => handleImageClick(1)}
@@ -114,7 +114,7 @@ export const ProductPage = () => {
       </div>
 
       {/* Tabs for About, Specifications, and Reviews */}
-      <div className="flex justify-center space-x-8 mt-[-300] "> {/* Adjusted margin */}
+      <div className="flex justify-center space-x-8 mt-[-200px] z-10 relative"> {/* Adjusted position and z-index */}
         <div
           className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${activeTab === "About" ? "underline" : ""}`}
           style={{ fontFamily: 'Play, Helvetica' }}
@@ -139,7 +139,7 @@ export const ProductPage = () => {
       </div>
 
       {/* Conditionally rendered content based on active tab */}
-      <div className="mt-4 text-white text-[32px]" style={{ fontFamily: 'Pontano_Sans, Helvetica' }}> {/* Adjusted margin */}
+      <div className="mt-4 text-white text-[32px]" style={{ fontFamily: 'Pontano_Sans, Helvetica' }}>
         {activeTab === "About" && (
           <p>
             Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles.
