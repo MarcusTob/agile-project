@@ -35,7 +35,7 @@ const ProductPage = () => {
 
   return (
     <div className="bg-brandBgLight min-h-screen flex flex-col justify-top items-center px-4 sm:px-0 ">
-      <div className="w-full sm:w-[1512px] h-[982px] relative mt-[-500px] sm:mt-[-200px]">
+      <div className="bg-brandBgLight min-h-screen flex flex-col items-center">
         <div className="absolute w-[1092px] h-[471px] top-[199px] left-[339px]">
           <div className="absolute w-[1036px] h-[437px] top-[34px] left-0">
             <div className="absolute w-[910px] h-[429px] top-[8px] left-0">

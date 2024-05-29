@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import ProductPage from './pages/ProductPage';
 import ProductDetail from './pages/ProductDetail';
 import ShoppingCart from './pages/ShoppingCart';
+import PackagesListPage from './pages/PackagesListPage';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/graphics" element={<GraphicsListPage />} />
           <Route path="/shoppingcart" element={<ShoppingCart />} />
+          <Route path="/packages" element={<PackagesListPage />} />
           {/* <Home/>
           <ProductPage /> */}
         </Routes>
