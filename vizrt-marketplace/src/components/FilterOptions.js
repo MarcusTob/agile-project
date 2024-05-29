@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const FilterOptions = ({ filter, setFilter, sortByPrice, setSortByPrice }) => {
+const FilterOptions = ({ products, setFilteredProducts }) => {
+    const [filter, setFilter] = useState('');
+    const [sortByPrice, setSortByPrice] = useState('');
+
+    useEffect(() => {
+        // Apply filters
+        let filteredProducts = products.filter(product =>
+            product.category.includes(filter)
+        );
+
+        // Apply sorting
+        if (sortByPrice === 'lowToHigh') {
+            filteredProducts.sort((a, b) => a.price - b.price);
+        } else if (sortByPrice === 'highToLow') {
+            filteredProducts.sort((a, b) => b.price - a.price);
+        }
+
+        // Update the filtered products state in parent component
+        setFilteredProducts(filteredProducts);
+    }, [filter, sortByPrice, products, setFilteredProducts]);
+
     return (
         <div className="mb-4">
-            <h2 className="text-xl font-bold mb-4">Filters</h2>
+            <h2 className="text-xl font-bold mb-4 text-white">Filters</h2>
             <div className="mb-4">
-                <label htmlFor="categoryFilter" className="block text-sm font-medium text-gray-700">Category:</label>
+                <label htmlFor="categoryFilter" className="block text-sm font-medium text-white">Category:</label>
                 <select
                     id="categoryFilter"
                     value={filter}
@@ -18,7 +38,7 @@ const FilterOptions = ({ filter, setFilter, sortByPrice, setSortByPrice }) => {
                 </select>
             </div>
             <div>
-                <label htmlFor="priceSort" className="block text-sm font-medium text-gray-700">Price:</label>
+                <label htmlFor="priceSort" className="block text-sm font-medium text-white">Price:</label>
                 <select
                     id="priceSort"
                     value={sortByPrice}
@@ -32,6 +52,6 @@ const FilterOptions = ({ filter, setFilter, sortByPrice, setSortByPrice }) => {
             </div>
         </div>
     );
-}
+};
 
 export default FilterOptions;
