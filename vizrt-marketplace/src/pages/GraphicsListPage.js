@@ -31,8 +31,8 @@ const GraphicsListPage = () => {
     }, []);
 
     return (
-        <div className="flex bg-brandBgLight">
-            <div >
+        <div className="flex bg-brandBgLight ">
+            <div className='pl-4' >
                 <FilterOptions
                     filter={filter}
                     setFilter={setFilter}

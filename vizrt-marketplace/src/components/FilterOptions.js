@@ -3,9 +3,9 @@ import React from 'react';
 const FilterOptions = ({ filter, setFilter, sortByPrice, setSortByPrice }) => {
     return (
         <div className="mb-4">
-            <h2 className="text-xl font-bold mb-4">Filters</h2>
+            <h2 className="text-xl font-bold mb-4 text-white">Filters</h2>
             <div className="mb-4">
-                <label htmlFor="categoryFilter" className="block text-sm font-medium text-gray-700">Category:</label>
+                <label htmlFor="categoryFilter" className="block text-sm font-medium text-gray-700 text-white">Category:</label>
                 <select
                     id="categoryFilter"
                     value={filter}
@@ -18,7 +18,7 @@ const FilterOptions = ({ filter, setFilter, sortByPrice, setSortByPrice }) => {
                 </select>
             </div>
             <div>
-                <label htmlFor="priceSort" className="block text-sm font-medium text-gray-700">Price:</label>
+                <label htmlFor="priceSort" className="block text-sm font-medium text-gray-700 text-white">Price:</label>
                 <select
                     id="priceSort"
                     value={sortByPrice}
