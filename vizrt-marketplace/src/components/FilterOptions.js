@@ -15,6 +15,14 @@ const FilterOptions = ({ filter, setFilter, sortByPrice, setSortByPrice }) => {
                     <option value="">All</option>
                     <option value="3D">3D Graphics</option>
                     <option value="Animation">Animation</option>
+                    <option value="News">News</option>
+                    <option value="Weather">Weather</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Election">Election</option>
+                    <option value="Corporate">Corporate</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Financial">Financial</option>
+                    <option value="Esports">Esports</option>
                 </select>
             </div>
             <div>
