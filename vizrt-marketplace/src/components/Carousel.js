@@ -3,9 +3,10 @@ import {
     BsFillArrowRightCircleFill,
     BsFillArrowLeftCircleFill,    
   } from "react-icons/bs";
+
 export default function Carousel({ slides }) {
 
-    let [current, setCurrent] = useState();
+    let [current, setCurrent] = useState(0);
 
     let previousSlide = () => {
         if(current === 0) setCurrent(slides.length - 1);
