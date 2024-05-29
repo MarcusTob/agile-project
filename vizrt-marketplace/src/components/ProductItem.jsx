@@ -7,7 +7,9 @@ const ProductItem = ({ product }) => {
     const navigate = useNavigate();
 
     const handeViewItem = () => {
-        navigate(`/product/${product.ProductID}`);
+        navigate(`/product/${product.productID}`);
+        console.log(product)
+        console.log(product.productID)
     }
 
 

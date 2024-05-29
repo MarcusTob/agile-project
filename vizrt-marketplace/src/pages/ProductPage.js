@@ -1,17 +1,17 @@
-import '../App.css'; 
-import React from "react";
-import '../index.css';
-import 'tailwindcss/tailwind.css'
-import ProductDetail from '../components/ProductDetail';
+// import '../App.css'; 
+// import React from "react";
+// import '../index.css';
+// import 'tailwindcss/tailwind.css'
+// import ProductDetail from '../components/ProductDetail';
 
-const ProductPage = () => {
-  return (
-    <div>
-      <ProductDetail />
-    </div>
-  )
-}
-export default ProductPage;
+// const ProductPage = () => {
+//   return (
+//     <div>
+//       <ProductDetail />
+//     </div>
+//   )
+// }
+// export default ProductPage;
 
 // export const ProductPage = () => {
   

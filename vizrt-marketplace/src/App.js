@@ -3,8 +3,8 @@ import './App.css';
 import GraphicsListPage from './pages/GraphicsListPage';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
+import ProductDetail from './pages/ProductDetail';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ProductDetail from './components/ProductDetail';
 
 
 
