@@ -18,7 +18,7 @@ const FilterOptions = ({ filter, setFilter, sortByPrice, setSortByPrice }) => {
                 </select>
             </div>
             <div>
-                <label htmlFor="priceSort" className="block text-sm font-medium text-gray-700 text-white">Price:</label>
+            <label htmlFor="priceSort" className="block text-sm font-medium text-gray-700 text-white">Price:</label>
                 <select
                     id="priceSort"
                     value={sortByPrice}
