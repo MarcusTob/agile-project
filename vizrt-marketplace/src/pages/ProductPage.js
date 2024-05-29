@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductService from '../services/ProductService'; // Adjust the import according to your project structure
-import '../App.css';
-import '../index.css';
 
 const imageUrl = "http://localhost:5219/images";
 
@@ -36,7 +34,7 @@ const ProductPage = () => {
   }
 
   return (
-    <div className="bg-brandBgLight min-h-screen flex flex-col justify-top items-center px-4 sm:px-0 relative">
+    <div className="bg-brandBgLight min-h-screen flex flex-col justify-top items-center px-4 sm:px-0 ">
       <div className="w-full sm:w-[1512px] h-[982px] relative mt-[-500px] sm:mt-[-200px]">
         <div className="absolute w-[1092px] h-[471px] top-[199px] left-[339px]">
           <div className="absolute w-[1036px] h-[437px] top-[34px] left-0">
@@ -69,7 +67,7 @@ const ProductPage = () => {
               src="https://c.animaapp.com/2XehKRee/img/star-ratings@2x.png"
             />
             <div className="absolute w-[142px] top-[300px] left-[806px] font-normal text-white text-[20px] tracking-[0] leading-[30px]" style={{ fontFamily: 'Inter, Helvetica' }}>
-              {product.nrofreviews ? product.nrofreviews.length : 0} Reviews
+              {product.nrOfReviews} Reviews
             </div>
             <div className="absolute w-[367px] h-[72px] top-[362px] left-[669px]">
               <div className="relative w-[365px] h-[72px] bg-collection-1-blue04 rounded-[17px]">
@@ -89,7 +87,7 @@ const ProductPage = () => {
       </div>
 
       {/* Tabs for About, Specifications, and Reviews */}
-      <div className="flex justify-center space-x-8 mt-[-200px] z-10 relative">
+      <div className="flex justify-center space-x-8 mt-[-200px] relative">
         <div
           className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${activeTab === "About" ? "underline" : ""}`}
           style={{ fontFamily: 'Play, Helvetica' }}

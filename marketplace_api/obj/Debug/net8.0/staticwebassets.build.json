@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wQsW3518u32fqXhULPJbWpoFryVkCNgvoHLjNasaB2w=",
+  "Hash": "S6Wg6J/3WxwPQJgRdpF/0QrUU8rg3wsfDKdZadCgvhM=",
   "Source": "marketplace-api",
   "BasePath": "_content/marketplace-api",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\Big-company.jpeg",
+      "SourceId": "marketplace-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
+      "BasePath": "_content/marketplace-api",
+      "RelativePath": "images/Big-company.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Big-company.jpeg"
+    },
     {
       "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\graphicImageTest.jpg",
       "SourceId": "marketplace-api",
@@ -34,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\graphicImageTest.jpg"
+    },
+    {
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\Individual.webp",
+      "SourceId": "marketplace-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
+      "BasePath": "_content/marketplace-api",
+      "RelativePath": "images/Individual.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Individual.webp"
     },
     {
       "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\index.html",

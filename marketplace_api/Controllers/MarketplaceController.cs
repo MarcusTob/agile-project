@@ -35,6 +35,15 @@ public class MarketplaceController : ControllerBase
         List<Package> packages = await context.Package.ToListAsync();
         return packages;
     }
+    [HttpGet("packages/{id}")]
+    public async Task<ActionResult<Product>> GetPackageByID(int id) {
+        Package? package = await context.Package.FindAsync(id);
+        if (package != null) {
+            return Ok(package);
+        } else{
+            return NotFound();
+        }
+    }
 
     //POST
     [HttpPost("products")]

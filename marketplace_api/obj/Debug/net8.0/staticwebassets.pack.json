@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\Big-company.jpeg",
+      "PackagePath": "staticwebassets\\images\\Big-company.jpeg"
+    },
+    {
+      "Id": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\Individual.webp",
+      "PackagePath": "staticwebassets\\images\\Individual.webp"
+    },
+    {
       "Id": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\graphicImageTest.jpg",
       "PackagePath": "staticwebassets\\images\\graphicImageTest.jpg"
     },

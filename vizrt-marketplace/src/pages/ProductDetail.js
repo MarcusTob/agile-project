@@ -24,6 +24,7 @@ const ProductDetail = () => {
         <div>
           <h1>{product.productID}</h1>
           <h1>{product.name}</h1>
+          <p>{product.description}</p>
           <p>${product.price}</p>
           <img className="w-80 object-cover rounded mb-4"
              src={`${imageUrl}/${product.productImage}`} alt={`picture of ${product.name}`}/>
