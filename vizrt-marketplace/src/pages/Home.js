@@ -15,19 +15,19 @@ const Home = () => {
   ]
   return (
     <div className="bg-brandBgLight min-h-screen flex flex-col items-center">
-        <div className='mt-10'>
+        <div className='mt-5'>
             <Starterpack/>
         </div>
       
-      <div className='w-[60%] m-auto pt-11'>
+      <div className='w-[60%] m-auto pt-8'>
         <Carousel slides={slides}/>
       </div>
 
-        <div className='my-20'>
+        <div className='pt-8'>
           <Welcomeoffer/>
         </div>
 
-        <div className='w-full bg-white'>
+        <div className='w-full bg-white mt-10'>
           <TrustedBy/>
         </div>
     </div>
