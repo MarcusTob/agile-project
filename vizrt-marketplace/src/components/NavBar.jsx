@@ -47,7 +47,7 @@ const Navbar = ({
       {/* Icons */}
       <div className="flex space-x-6 items-center">
       <a href="/shoppingcart"><FiShoppingCart className="text-5xl text-black" /></a>
-      <a href="/"><CgProfile className="text-5xl text-black" /></a>
+      <a href="/registeruser"><CgProfile className="text-5xl text-black" /></a>
       </div>
     </div>
   );
