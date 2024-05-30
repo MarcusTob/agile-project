@@ -4,16 +4,32 @@ import Carousel from '../components/Carousel';
 import Welcomeoffer from '../components/Welcomeoffer';
 import TrustedBy from '../components/TrustedBy';
 import "../index.css";
+import { useEffect, useState } from 'react';
+import PackageService from '../services/PackageService';
 import "tailwindcss/tailwind.css"
+import { useNavigate } from 'react-router-dom';
+
+const imageUrl = "http://localhost:5219/images";
 
 {/* Pictures for carousel */}
 const Home = () => {
-  let slides = [
-    "/images/Image1-carousel.webp",
-    "/images/Image2-carousel.jpeg",
-    "/images/Image3-carousel.webp",
-    "/images/Image4-carousel.png"
-  ]
+  const [slides, setSlides] = useState([]);
+  const navigate = useNavigate();
+
+  const handleViewItem = (packageID) => {
+    navigate(`/package/${packageID}`);
+  };
+
+  useEffect(() => {
+    const packageIDs = [4, 5, 6];
+    const packagePromises = packageIDs.map(id => PackageService.getPackageById(id));
+
+    Promise.all(packagePromises)
+      .then(packages => {
+        const slides = packages.map(graphicPackage => `${imageUrl}/${graphicPackage.packageImage}`);
+        setSlides(slides);
+      });
+  }, []);
 
   {/* All components on Landing page */}
   return (
@@ -23,7 +39,7 @@ const Home = () => {
         </div>
       
       <div className='w-[60%] m-auto pt-8'>
-        <Carousel slides={slides}/>
+        <Carousel slides={slides} onSlideClick={handleViewItem}/>
       </div>
 
         <div className='pt-8'>
