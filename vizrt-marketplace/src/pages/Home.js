@@ -7,18 +7,12 @@ import "../index.css";
 import { useEffect, useState } from 'react';
 import PackageService from '../services/PackageService';
 import "tailwindcss/tailwind.css"
-import { useNavigate } from 'react-router-dom';
 
 const imageUrl = "http://localhost:5219/images";
 
 {/* Pictures for carousel */}
 const Home = () => {
   const [slides, setSlides] = useState([]);
-  const navigate = useNavigate();
-
-  const handleViewItem = (packageID) => {
-    navigate(`/package/${packageID}`);
-  };
 
   useEffect(() => {
     const packageIDs = [4, 5, 6];
@@ -39,7 +33,7 @@ const Home = () => {
         </div>
       
       <div className='w-[60%] m-auto pt-8'>
-        <Carousel slides={slides} onSlideClick={handleViewItem}/>
+        <Carousel slides={slides}/>
       </div>
 
         <div className='pt-8'>

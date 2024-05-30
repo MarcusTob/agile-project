@@ -22,7 +22,7 @@ export default function Carousel({ slides }) {
     return (
         <div className="overflow-hidden relative flex flex-col items-center">
             <h1 className="text-white text-3xl font-bold mb-6">Featured Items</h1>
-         <div
+        <div
          className={`flex transition ease-out duration-400`}
          style={{
             transform: `translateX(-${current * 100}%)`,
@@ -31,13 +31,13 @@ export default function Carousel({ slides }) {
         >
             {slides.map((s) => {
                 return (
-                <img src={s} className="object-cover w-full h-full"/>
+                <img src={s} className="object-cover"/>
             );
             })}
         </div>
 
         {/* Arrows and circles for navigating the carousel */}
-        <div className="absolute top-0 h-full w-full justify-between item-center flex px-4 text-lg text-white">
+        <div className="absolute top-0 h-full w-full justify-between item-center flex px-4 text-lg text-gray-300">
             <button onClick={previousSlide} className="text-5xl">
                 <BsFillArrowLeftCircleFill/>
                 </button>
