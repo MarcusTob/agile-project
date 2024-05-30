@@ -8,7 +8,7 @@ const PackageItem = ({ graphicPackage }) => {
 
     const navigate = useNavigate();
 
-    const handeViewItem = () => {
+    const handleViewItem = () => {
         navigate(`/package/${graphicPackage.packageID}`);
         console.log(graphicPackage)
         console.log(graphicPackage.packageID)
@@ -28,7 +28,7 @@ const PackageItem = ({ graphicPackage }) => {
                 <p className="text-xl font-semibold text-black-700 mb-4">${graphicPackage.price}</p>
                 <p className="text-base text-black-600 mb-4">{graphicPackage.description}</p>
                 <div className="flex-grow"></div>
-                <button onClick={ handeViewItem } className="bg-black text-white py-2 px-4 rounded mt-auto">View Item</button>
+                <button onClick={ handleViewItem } className="bg-black text-white py-2 px-4 rounded mt-auto">View Item</button>
             </div>
         </div>
     );
