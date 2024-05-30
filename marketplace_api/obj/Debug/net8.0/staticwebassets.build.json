@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "npxiBDaHhpvlA2pSbwXLjHams/NypHxDrhJjWDdnx8I=",
+  "Hash": "T2CcwSt28gSE5nsmcdTgbMKPcB2/lcCQyigSKdkWeBc=",
   "Source": "marketplace-api",
   "BasePath": "_content/marketplace-api",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Big-company.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\gamingPackage.webp",
+      "SourceId": "marketplace-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
+      "BasePath": "_content/marketplace-api",
+      "RelativePath": "images/gamingPackage.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\gamingPackage.webp"
     },
     {
       "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\graphicImageTest.jpg",
@@ -74,6 +93,25 @@
       "OriginalItemSpec": "wwwroot\\images\\Individual.webp"
     },
     {
+      "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\newsPackage.jpg",
+      "SourceId": "marketplace-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
+      "BasePath": "_content/marketplace-api",
+      "RelativePath": "images/newsPackage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\newsPackage.jpg"
+    },
+    {
       "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\Small-company.jpg",
       "SourceId": "marketplace-api",
       "SourceType": "Discovered",
@@ -91,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Small-company.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\sportsPackage.jpg",
+      "SourceId": "marketplace-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
+      "BasePath": "_content/marketplace-api",
+      "RelativePath": "images/sportsPackage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\sportsPackage.jpg"
     },
     {
       "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\index.html",

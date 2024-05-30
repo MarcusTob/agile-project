@@ -13,8 +13,20 @@
       "PackagePath": "staticwebassets\\images\\Small-company.jpg"
     },
     {
+      "Id": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\gamingPackage.webp",
+      "PackagePath": "staticwebassets\\images\\gamingPackage.webp"
+    },
+    {
       "Id": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\graphicImageTest.jpg",
       "PackagePath": "staticwebassets\\images\\graphicImageTest.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\newsPackage.jpg",
+      "PackagePath": "staticwebassets\\images\\newsPackage.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\sportsPackage.jpg",
+      "PackagePath": "staticwebassets\\images\\sportsPackage.jpg"
     },
     {
       "Id": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\index.html",
