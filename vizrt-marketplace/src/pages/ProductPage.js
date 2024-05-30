@@ -34,9 +34,9 @@ const ProductPage = () => {
   }
 
   return (
-    <div className="bg-brandBgLight min-h-screen flex flex-col justify-top items-center px-4 sm:px-0 ">
-      <div className="bg-brandBgLight min-h-screen flex flex-col items-center">
-        <div className="absolute w-[1092px] h-[471px] top-[199px] left-[339px]">
+    <div className="bg-brandBgLight min-h-screen flex flex-col justify-top items-center px-4 sm:px-0">
+      <div className="min-h-screen">
+        <div className="absolute w-[1092px] h-[471px] top-[150px] left-[339px]">
           <div className="absolute w-[1036px] h-[437px] top-[34px] left-0">
             <div className="absolute w-[910px] h-[429px] top-[8px] left-0">
               <img
@@ -87,7 +87,7 @@ const ProductPage = () => {
       </div>
 
       {/* Tabs for About, Specifications, and Reviews */}
-      <div className="flex justify-center space-x-8 mt-[-200px] relative">
+      <div className="flex justify-center space-x-8 mt-[-340px] relative">
         <div
           className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${activeTab === "About" ? "underline" : ""}`}
           style={{ fontFamily: 'Play, Helvetica' }}

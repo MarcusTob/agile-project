@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\images\\Individual.webp"
     },
     {
+      "Id": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\Small-company.jpg",
+      "PackagePath": "staticwebassets\\images\\Small-company.jpg"
+    },
+    {
       "Id": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\graphicImageTest.jpg",
       "PackagePath": "staticwebassets\\images\\graphicImageTest.jpg"
     },

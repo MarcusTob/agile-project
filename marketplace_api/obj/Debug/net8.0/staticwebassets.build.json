@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "S6Wg6J/3WxwPQJgRdpF/0QrUU8rg3wsfDKdZadCgvhM=",
+  "Hash": "EapWSpHNqmT4dol98CFEQIMnALj4sRyS5pitIvtyDHw=",
   "Source": "marketplace-api",
   "BasePath": "_content/marketplace-api",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Individual.webp"
+    },
+    {
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\Small-company.jpg",
+      "SourceId": "marketplace-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
+      "BasePath": "_content/marketplace-api",
+      "RelativePath": "images/Small-company.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Small-company.jpg"
     },
     {
       "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\index.html",

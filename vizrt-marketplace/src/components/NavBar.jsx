@@ -45,7 +45,7 @@ const Navbar = ({
 
       {/* Icons */}
       <div className="flex space-x-6 items-center">
-      <a href="/"><FiShoppingCart className="text-3xl text-black" /></a>
+      <a href="/shoppingcart"><FiShoppingCart className="text-3xl text-black" /></a>
       <a href="/"><CgProfile className="text-3xl text-black" /></a>
       </div>
     </div>
