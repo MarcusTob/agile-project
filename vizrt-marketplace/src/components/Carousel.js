@@ -34,10 +34,10 @@ export default function Carousel({ slides }) {
 
         {/* Arrows and circles for navigating the carousel */}
         <div className="absolute top-0 h-full w-full justify-between item-center flex px-4 text-lg text-white">
-            <button onClick={previousSlide}>
+            <button onClick={previousSlide} className= 'text-5xl'>
                 <BsFillArrowLeftCircleFill/>
                 </button>
-                <button onClick={nextSlide}>
+                <button onClick={nextSlide} className= 'text-5xl'>
                     <BsFillArrowRightCircleFill/>
                     </button>
         </div>
