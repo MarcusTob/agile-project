@@ -29,9 +29,9 @@ export default function Carousel({ slides }) {
            
         }}
         >
-            {slides.map((s) => {
+            {slides.map((slide) => {
                 return (
-                <img src={s} className="object-cover"/>
+                <img src={slide} className="object-cover"/>
             );
             })}
         </div>
