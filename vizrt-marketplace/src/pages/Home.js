@@ -12,19 +12,6 @@ const imageUrl = "http://localhost:5219/images";
 
 {/* Pictures for carousel */}
 const Home = () => {
-  const [slides, setSlides] = useState([]);
-
-  useEffect(() => {
-    const packageIDs = [4, 5, 6];
-    const packagePromises = packageIDs.map(id => PackageService.getPackageById(id));
-
-    Promise.all(packagePromises)
-      .then(packages => {
-        const slides = packages.map(graphicPackage => `${imageUrl}/${graphicPackage.packageImage}`);
-        setSlides(slides);
-      });
-  }, []);
-
   {/* All components on Landing page */}
   return (
     <div className="bg-brandBgLight min-h-screen flex flex-col items-center">
@@ -33,7 +20,7 @@ const Home = () => {
         </div>
       
       <div className='w-[60%] m-auto pt-8'>
-        <Carousel slides={slides}/>
+        <Carousel />
       </div>
 
         <div className='pt-8'>
