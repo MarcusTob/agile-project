@@ -17,11 +17,11 @@ const Navbar = ({
     <div className="flex justify-between items-center bg-white p-4 shadow-md">
       {/* Logo */}
       <a href="/" className="flex items-center">
-        <img src={logoLogo} alt="Vizrt Logo" className="w-40 h-auto object-cover" />
+        <img src={logoLogo} alt="Vizrt Logo" className="w-32 h-auto object-cover" />
       </a>
 
       {/* Search Bar and Links */}
-      <div className="flex flex-col items-center w-1/2">
+      <div className="flex flex-col items-left w-1/2">
         <div className="border-2 border-solid border-gray-600 flex items-center w-full gap-2 p-2 rounded-md bg-white">
           <img
             className="w-6 h-6"
@@ -36,17 +36,18 @@ const Navbar = ({
             className="flex-1 text-gray-600 bg-transparent outline-none"
           />
         </div>
-        <div className="flex space-x-8 mt-2">
+        <div className="flex space-x-8 mt-2 start-end">
           <a href="/graphics" className="text-black text-xl font-medium">Graphics</a>
           <a href="/packages" className="text-black text-xl font-medium">Packages</a>
           <a href="/tools" className="text-black text-xl font-medium">Tools</a>
         </div>
       </div>
 
+
       {/* Icons */}
       <div className="flex space-x-6 items-center">
-      <a href="/"><FiShoppingCart className="text-3xl text-black" /></a>
-      <a href="/"><CgProfile className="text-3xl text-black" /></a>
+      <a href="/shoppingcart"><FiShoppingCart className="text-5xl text-black" /></a>
+      <a href="/"><CgProfile className="text-5xl text-black" /></a>
       </div>
     </div>
   );
