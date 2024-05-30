@@ -22,10 +22,10 @@ const FilterOptions = ({ products, setFilteredProducts }) => {
     }, [filter, sortByPrice, products, setFilteredProducts]);
 
     return (
-        <div className="mb-4">
-            <h2 className="text-xl font-bold mb-4 text-white">Filters</h2>
+        <div className="mb-4 bg-white p-6 shadow-md rounded-md" style={{ marginLeft: '20px', marginTop: '20px'}}>
+            <h2 className="text-xl font-bold mb-4 text-gray-900">Filters</h2>
             <div className="mb-4">
-                <label htmlFor="categoryFilter" className="block text-sm font-medium text-white">Category:</label>
+                <label htmlFor="categoryFilter" className="block text-sm font-medium text-gray">Category:</label>
                 <select
                     id="categoryFilter"
                     value={filter}
@@ -46,7 +46,7 @@ const FilterOptions = ({ products, setFilteredProducts }) => {
                 </select>
             </div>
             <div>
-                <label htmlFor="priceSort" className="block text-sm font-medium text-white">Price:</label>
+                <label htmlFor="priceSort" className="block text-sm font-medium text-gray">Price:</label>
                 <select
                     id="priceSort"
                     value={sortByPrice}

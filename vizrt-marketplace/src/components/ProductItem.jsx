@@ -27,6 +27,7 @@ const ProductItem = ({ product }) => {
                 <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
                 <p className="text-xl font-semibold text-black-700 mb-4">${product.price}</p>
                 <p className="text-base text-black-600 mb-4">{product.description}</p>
+                <p className="text-base font-semibold text-black-600 mb-4">{product.category}</p>
                 <div className="flex-grow"></div>
                 <button onClick={ handeViewItem } className="bg-black text-white py-2 px-4 rounded mt-auto">View Item</button>
             </div>
