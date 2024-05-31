@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../index.css";
 import "tailwindcss/tailwind.css";
 import CartService from '../services/CartService';
@@ -6,7 +6,7 @@ import CartService from '../services/CartService';
 const imageUrl = "http://localhost:5219/images";
 
 const ShoppingCart = () => {
-    const cartItems = CartService.getCart();
+    const [cartItems, setCartItems] = useState(CartService.getCart());
 
     return (
         <div className="bg-brandBgLight flex flex-col min-h-screen items-center">
@@ -14,26 +14,32 @@ const ShoppingCart = () => {
                 <div className="flex-grow bg-white p-4 rounded-lg shadow-md">
                     <h2 className="text-2xl font-semibold mb-4">Your Items</h2>
                     <div className="space-y-4">
-                        {/* Shopping cart items*/}
-                        <div>
-                            {cartItems.map((item, index) => (
-                            <div key={index}>
-                                {/* Display item details here */}
-                                <p>{item.name}</p>
-                                <p>{item.price}</p>
-                                <img src={`${imageUrl}/${item.productImage}`} alt={item.name} />
+                        {cartItems.length > 0 ? cartItems.map((item, index) => (
+                            <div key={index} className="flex items-center bg-gray-100 p-4 rounded-lg shadow-sm">
+                                <img className="w-16 h-16 object-cover rounded mr-4" src={`${imageUrl}/${item.productImage}`} alt={item.name} />
+                                <div className="flex-grow">
+                                    <p className="text-lg font-medium">{item.name}</p>
+                                    <p className="text-gray-700">${item.price.toFixed(2)}</p>
+                                </div>
                             </div>
-                        ))}
-                        </div>
-                        {/* <p className="text-gray-600">No items in your cart.</p> */}
+                        )) : (
+                            <p className="text-gray-600">No items in your cart.</p>
+                        )}
                     </div>
                 </div>
                 <div className="w-1/3 bg-white p-4 rounded-lg shadow-md flex flex-col justify-between">
                     <div>
                         <h2 className="text-2xl font-semibold mb-4">Order Summary</h2>
                         <div className="space-y-4">
-                            {/* Sumary of details*/}
-                            <p className="text-gray-600">Your cart is empty.</p>
+                            {cartItems.length > 0 ? (
+                                <div>
+                                    {/* Here you can add more summary details like total price, etc. */}
+                                    <p className="text-gray-700">Total Items: {cartItems.length}</p>
+                                    <p className="text-gray-700">Total Price: ${cartItems.reduce((total, item) => total + item.price, 0).toFixed(2)}</p>
+                                </div>
+                            ) : (
+                                <p className="text-gray-600">Your cart is empty.</p>
+                            )}
                         </div>
                     </div>
                     <div className="flex justify-center mt-4">
