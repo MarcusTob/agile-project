@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "T2CcwSt28gSE5nsmcdTgbMKPcB2/lcCQyigSKdkWeBc=",
+  "Hash": "mvz45I9NAdAEiFY0Pr60UlSxBExOJoHAdZq94duax8s=",
   "Source": "marketplace-api",
   "BasePath": "_content/marketplace-api",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "marketplace-api\\wwwroot",
       "Source": "marketplace-api",
-      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
       "BasePath": "_content/marketplace-api",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\Big-company.jpeg",
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\Big-company.jpeg",
       "SourceId": "marketplace-api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
       "BasePath": "_content/marketplace-api",
       "RelativePath": "images/Big-company.jpeg",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Big-company.jpeg"
     },
     {
-      "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\gamingPackage.webp",
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\gamingPackage.webp",
       "SourceId": "marketplace-api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
       "BasePath": "_content/marketplace-api",
       "RelativePath": "images/gamingPackage.webp",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\images\\gamingPackage.webp"
     },
     {
-      "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\graphicImageTest.jpg",
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\graphicImageTest.jpg",
       "SourceId": "marketplace-api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
       "BasePath": "_content/marketplace-api",
       "RelativePath": "images/graphicImageTest.jpg",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\images\\graphicImageTest.jpg"
     },
     {
-      "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\Individual.webp",
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\Individual.webp",
       "SourceId": "marketplace-api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
       "BasePath": "_content/marketplace-api",
       "RelativePath": "images/Individual.webp",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Individual.webp"
     },
     {
-      "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\newsPackage.jpg",
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\newsPackage.jpg",
       "SourceId": "marketplace-api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
       "BasePath": "_content/marketplace-api",
       "RelativePath": "images/newsPackage.jpg",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\images\\newsPackage.jpg"
     },
     {
-      "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\Small-company.jpg",
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\Small-company.jpg",
       "SourceId": "marketplace-api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
       "BasePath": "_content/marketplace-api",
       "RelativePath": "images/Small-company.jpg",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Small-company.jpg"
     },
     {
-      "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\images\\sportsPackage.jpg",
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\images\\sportsPackage.jpg",
       "SourceId": "marketplace-api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
       "BasePath": "_content/marketplace-api",
       "RelativePath": "images/sportsPackage.jpg",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sportsPackage.jpg"
     },
     {
-      "Identity": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\index.html",
+      "Identity": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\index.html",
       "SourceId": "marketplace-api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\thola\\Documents\\local-github\\agile-project\\marketplace_api\\wwwroot\\",
+      "ContentRoot": "E:\\PRO202_Vizrt\\agile-project\\marketplace_api\\wwwroot\\",
       "BasePath": "_content/marketplace-api",
       "RelativePath": "index.html",
       "AssetKind": "All",

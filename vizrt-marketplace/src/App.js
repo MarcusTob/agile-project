@@ -9,6 +9,7 @@ import PackagePage from './pages/PackagePage';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RegisterUser from './pages/RegisterUser';
 import Login from './pages/Login';
+import Tools from './pages/Tools';
 function App() {
   return (
     <div>
@@ -24,6 +25,7 @@ function App() {
           <Route path="/package/:id" element={<PackagePage />} />
           <Route path="/registeruser" element={<RegisterUser />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/tools" element={<Tools/>} />
         </Routes>
       </BrowserRouter>
     </div>

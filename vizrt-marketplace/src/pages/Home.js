@@ -4,17 +4,14 @@ import Carousel from '../components/Carousel';
 import Welcomeoffer from '../components/Welcomeoffer';
 import TrustedBy from '../components/TrustedBy';
 import "../index.css";
+import { useEffect, useState } from 'react';
+import PackageService from '../services/PackageService';
 import "tailwindcss/tailwind.css"
+
+const imageUrl = "http://localhost:5219/images";
 
 {/* Pictures for carousel */}
 const Home = () => {
-  let slides = [
-    "/images/Image1-carousel.webp",
-    "/images/Image2-carousel.jpeg",
-    "/images/Image3-carousel.webp",
-    "/images/Image4-carousel.png"
-  ]
-
   {/* All components on Landing page */}
   return (
     <div className="bg-brandBgLight min-h-screen flex flex-col items-center">
@@ -23,7 +20,7 @@ const Home = () => {
         </div>
       
       <div className='w-[60%] m-auto pt-8'>
-        <Carousel slides={slides}/>
+        <Carousel />
       </div>
 
         <div className='pt-8'>
