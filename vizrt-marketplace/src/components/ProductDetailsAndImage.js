@@ -11,7 +11,7 @@ const ProductDetailsAndImage = ({ imageUrl, product }) => {
           src={`${imageUrl}/${product.productImage}`}
         />
         <div
-          className="absolute w-[312px] top-0 left-[667px] font-bold text-brandTextOrange text-[40px] tracking-[0] leading-[60px]"
+          className="absolute w-[412px] top-0 left-[667px] font-bold text-brandTextOrange text-[40px] tracking-[0] leading-[60px]"
           style={{ fontFamily: 'Inter, Helvetica' }}
         >
           {product.name}
