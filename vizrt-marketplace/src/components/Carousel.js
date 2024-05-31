@@ -64,6 +64,21 @@ const Carousel = ({graphicPackage}) => {
           <BsFillArrowRightCircleFill/>
         </button>
       </div>
+      <div className="absolute bottom-0 py-4 flex justify-center gap-3">
+            {packages.map((graphicPackage, i)=>{
+                return (
+                    <div 
+                    onClick={()=>{
+                        setCurrent(i)
+                    }}
+                    key={"circle" + i}
+                    className={`rounded-full w-5 h-5 cursor-pointer ${
+                        i === current ? "bg-white" : "bg-gray-500"
+                    }`}
+                ></div>
+                );
+            })}
+        </div>
     </div>
   );
 };
