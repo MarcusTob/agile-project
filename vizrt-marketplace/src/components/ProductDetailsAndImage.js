@@ -1,4 +1,5 @@
 import React from 'react';
+import CartService from '../services/CartService';
 
 const ProductDetailsAndImage = ({ imageUrl, product }) => {
   return (
@@ -47,7 +48,18 @@ const ProductDetailsAndImage = ({ imageUrl, product }) => {
         </div>
         <div className="absolute w-[367px] h-[72px] top-[362px] left-[669px]">
           <div className="relative w-[365px] h-[72px] bg-collection-1-blue04 rounded-[17px]">
+            <button className="
+            absolute bg-brandBlue rounded-[17px] w-[247px] top-[3px] left-[15px] font-semibold text-white text-[40px] text-center tracking-[0] leading-[60px]" 
+            onClick={() => CartService.addToCart(product)}
+            >Add to cart             
             <img
+              className="absolute w-[48px] h-[48px] top-[13px] left-[255px]"
+              alt="Shopping cart"
+              src="https://c.animaapp.com/2XehKRee/img/shopping-cart-4.png"
+            />
+            </button>
+            
+            {/* <img
               className="absolute w-[48px] h-[48px] top-[14px] left-[300px]"
               alt="Shopping cart"
               src="https://c.animaapp.com/2XehKRee/img/shopping-cart-4.png"
@@ -58,7 +70,8 @@ const ProductDetailsAndImage = ({ imageUrl, product }) => {
               style={{ fontFamily: 'Inter, Helvetica' }}
             >
               Add to Cart
-            </div>
+            </div> */}
+            
           </div>
         </div>
       </div>
