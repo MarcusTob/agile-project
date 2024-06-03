@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RegisterUser from './pages/RegisterUser';
 import Login from './pages/Login';
 import Tools from './pages/Tools';
+import OrderComplete from './pages/OrderComplete';
 function App() {
   return (
     <div>
@@ -26,8 +27,8 @@ function App() {
           <Route path="/package/:id" element={<PackagePage />} />
           <Route path="/registeruser" element={<RegisterUser />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/tools" element={<Tools/>} />
-          <Route path="/sellingUpload" element={<SellingUploadPage/>} />
+          <Route path="/tools" element={<Tools />} />
+          <Route path="/ordercomplete" element={<OrderComplete />} />
         </Routes>
       </BrowserRouter>
     </div>
