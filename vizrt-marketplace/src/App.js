@@ -11,6 +11,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RegisterUser from './pages/RegisterUser';
 import Login from './pages/Login';
 import Tools from './pages/Tools';
+import MyCollectionPage from './pages/MyCollectionPage';
+
 function App() {
   return (
     <div>
@@ -28,6 +30,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/tools" element={<Tools/>} />
           <Route path="/sellingUpload" element={<SellingUploadPage/>} />
+          <Route path="/mycollection" element={<MyCollectionPage/>} />
         </Routes>
       </BrowserRouter>
     </div>
