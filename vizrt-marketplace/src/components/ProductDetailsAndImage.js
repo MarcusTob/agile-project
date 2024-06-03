@@ -1,79 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FiShoppingCart } from "react-icons/fi";
 import CartService from '../services/CartService';
 
 const ProductDetailsAndImage = ({ imageUrl, product }) => {
+  const [showMessage, setShowMessage] = useState(false);
+
+  const handleAddToCart = () => {
+    CartService.addToCart(product);
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 2000); // Hide the message after 2 seconds
+  };
+
   return (
-    <div className="relative w-[1092px] h-[471px] flex justify-center">
-      <div className="relative w-[910px] h-[429px]">
+    <div className="flex justify-center items-start w-full relative">
+      {/* Image Section */}
+      <div className="w-1/2 px-8">
         <img
-          className="absolute w-[648px] h-[429px] top-0 left-0 object-cover"
+          className="w-full h-auto object-cover"
           alt="Main"
           src={`${imageUrl}/${product.image}`}
         />
-        <div
-          className="absolute w-[412px] top-0 left-[667px] font-bold text-brandTextOrange text-[40px] tracking-[0] leading-[60px]"
-          style={{ fontFamily: 'Inter, Helvetica' }}
-        >
+      </div>
+      
+      {/* Details Section */}
+      <div className="w-1/2 flex flex-col justify-start items-start px-7">
+        <h1 className="text-5xl font-bold mb-6 text-brandOrange py-1 px-2 rounded-lg">
           {product.name}
+        </h1>
+        <p className="text-white mb-6 text-3xl">Price: ${product.price}</p>
+        <p className="text-white mb-2 text-2xl">Category: {product.category}</p>
+        <p className="text-white mb-6 text-2xl">Creator: {product.creator}</p>
+        <div className="flex items-center justify-start">
+          <img
+            className="w-30 h-10 mr-2"
+            alt="Star ratings"
+            src="https://c.animaapp.com/2XehKRee/img/star-ratings@2x.png"
+          />
+          <p className="text-white">{product.nrOfReviews} Reviews</p>
         </div>
-        <p
-          className="absolute w-[270px] top-[201px] left-[640px] text-shadow-[0px_4px_4px_#00000040] font-normal text-white text-[64px] text-center tracking-[0] leading-[96px] whitespace-nowrap"
-          style={{ fontFamily: 'Inter, Helvetica' }}
+        <button
+          className="bg-brandBlue text-white px-8 py-3 rounded-lg mt-9 flex items-center"
+          onClick={handleAddToCart}
         >
-          <span className="text-[#24df06]">$</span>
-          <span className="text-white">{product.price}</span>
-        </p>
-        <div
-          className="absolute w-[243px] top-[193px] left-[667px] font-light text-white text-[20px] tracking-[0] leading-[30px] whitespace-nowrap"
-          style={{ fontFamily: 'Roboto, Helvetica' }}
-        >
-          Category: {product.category}
-        </div>
-        <div
-          className="absolute top-[169px] left-[667px] font-extralight text-white text-[20px] text-center tracking-[0] leading-[30px] whitespace-nowrap"
-          style={{ fontFamily: 'Inter, Helvetica' }}
-        >
-          Creator: {product.creator}
-        </div>
-        <img
-          className="absolute w-[125px] h-[24px] top-[303px] left-[667px]"
-          alt="Star ratings"
-          src="https://c.animaapp.com/2XehKRee/img/star-ratings@2x.png"
-        />
-        <div
-          className="absolute w-[142px] top-[300px] left-[806px] font-normal text-white text-[20px] tracking-[0] leading-[30px]"
-          style={{ fontFamily: 'Inter, Helvetica' }}
-        >
-          {product.nrOfReviews} Reviews
-        </div>
-        <div className="absolute w-[367px] h-[72px] top-[362px] left-[669px]">
-          <div className="relative w-[365px] h-[72px] bg-collection-1-blue04 rounded-[17px]">
-            <button className="
-            absolute bg-brandBlue rounded-[17px] w-[247px] top-[3px] left-[15px] font-semibold text-white text-[40px] text-center tracking-[0] leading-[60px]" 
-            onClick={() => CartService.addToCart(product)}
-            >Add to cart             
-            <img
-              className="absolute w-[48px] h-[48px] top-[13px] left-[255px]"
-              alt="Shopping cart"
-              src="https://c.animaapp.com/2XehKRee/img/shopping-cart-4.png"
-            />
-            </button>
-            
-            {/* <img
-              className="absolute w-[48px] h-[48px] top-[14px] left-[300px]"
-              alt="Shopping cart"
-              src="https://c.animaapp.com/2XehKRee/img/shopping-cart-4.png"
-            />
-            <div style={{ width: '100%', height: '100%', background: '#3956E5', borderRadius: 17 }} />
-            <div
-              className="absolute w-[247px] top-[3px] left-[45px] font-semibold text-white text-[40px] text-center tracking-[0] leading-[60px]"
-              style={{ fontFamily: 'Inter, Helvetica' }}
-            >
-              Add to Cart
-            </div> */}
-            
+          <p className='text-2xl mr-2'>Add to Cart</p>
+          <FiShoppingCart className='text-2xl'/>
+        </button>
+        {showMessage && (
+          <div className="absolute bg-white rounded-lg p-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md">
+            <p className="text-gray-800 text-xl">Item added to cart!</p>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

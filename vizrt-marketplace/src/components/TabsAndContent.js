@@ -2,13 +2,12 @@ import React from 'react';
 
 const TabsAndContent = ({ activeTab, handleTabClick, product }) => {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="flex flex-col items-center">
       <div className="flex justify-center space-x-8 mt-4">
         <div
           className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
             activeTab === 'About' ? 'underline' : ''
           }`}
-          style={{ fontFamily: 'Play, Helvetica' }}
           onClick={() => handleTabClick('About')}
         >
           About
@@ -17,7 +16,6 @@ const TabsAndContent = ({ activeTab, handleTabClick, product }) => {
           className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
             activeTab === 'Specifications' ? 'underline' : ''
           }`}
-          style={{ fontFamily: 'Play, Helvetica' }}
           onClick={() => handleTabClick('Specifications')}
         >
           Specifications
@@ -26,13 +24,12 @@ const TabsAndContent = ({ activeTab, handleTabClick, product }) => {
           className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
             activeTab === 'Reviews' ? 'underline' : ''
           }`}
-          style={{ fontFamily: 'Play, Helvetica' }}
           onClick={() => handleTabClick('Reviews')}
         >
           Reviews
         </div>
       </div>
-      <div className="mt-4 text-white text-[32px] w-2/3 mx-auto" style={{ fontFamily: 'Pontano_Sans, Helvetica' }}>
+      <div className="mt-4 text-white text-[32px] w-full px-4">
         {activeTab === 'About' && <p>{product.description}</p>}
         {activeTab === 'Specifications' && (
           <p>Our product is made from high-quality materials that provide superior support and comfort.</p>

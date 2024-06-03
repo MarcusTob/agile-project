@@ -1,4 +1,6 @@
 const CartService = (()=> {
+    
+    //localStorage.clear();
 
     const addToCart = (item) => {
     let shoppingCart = localStorage.getItem('shoppingCart') ? JSON.parse(localStorage.getItem('shoppingCart')) : [];
