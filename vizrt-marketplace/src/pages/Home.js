@@ -4,11 +4,7 @@ import Carousel from '../components/Carousel';
 import Welcomeoffer from '../components/Welcomeoffer';
 import TrustedBy from '../components/TrustedBy';
 import "../index.css";
-import { useEffect, useState } from 'react';
-import PackageService from '../services/PackageService';
 import "tailwindcss/tailwind.css"
-
-const imageUrl = "http://localhost:5219/images";
 
 {/* Pictures for carousel */}
 const Home = () => {

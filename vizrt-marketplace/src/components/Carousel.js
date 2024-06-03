@@ -49,7 +49,7 @@ const Carousel = ({graphicPackage}) => {
         {packages.map((graphicPackage) => (
           <div key={graphicPackage.id} className="w-full flex justify-center items-center flex-shrink-0" style={{ width: '100%' }}>
             <div>
-              <img src={`${imageUrl}/${graphicPackage.packageImage}`} className="object-cover"/>
+              <img src={`${imageUrl}/${graphicPackage.image}`} className="object-cover"/>
               <button onClick={ handleViewItem } className="bg-black text-white py-2 px-4 rounded mt-auto z-10">View Item</button>
             </div>
           </div>

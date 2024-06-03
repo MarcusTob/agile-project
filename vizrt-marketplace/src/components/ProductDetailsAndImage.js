@@ -8,7 +8,7 @@ const ProductDetailsAndImage = ({ imageUrl, product }) => {
         <img
           className="absolute w-[648px] h-[429px] top-0 left-0 object-cover"
           alt="Main"
-          src={`${imageUrl}/${product.productImage}`}
+          src={`${imageUrl}/${product.image}`}
         />
         <div
           className="absolute w-[412px] top-0 left-[667px] font-bold text-brandTextOrange text-[40px] tracking-[0] leading-[60px]"

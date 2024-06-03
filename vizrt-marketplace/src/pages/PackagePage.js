@@ -42,7 +42,7 @@ const PackagePage = () => {
               <img
                 className="absolute w-[648px] h-[429px] top-0 left-0 object-cover"
                 alt="Main"
-                src={`${imageUrl}/${graphicPackage.packageImage}`}
+                src={`${imageUrl}/${graphicPackage.image}`}
               />
             </div>
             <div

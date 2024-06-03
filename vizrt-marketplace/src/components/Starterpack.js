@@ -22,7 +22,7 @@ const Starterpack = () => {
             <div className="relative w-32 sm:w-48 md:w-64 lg:w-80 xl:w-96 h-64 overflow-hidden">
             <div className="group">
                 <img
-                  src={`${imageUrl}/${graphicPackage.packageImage}`}
+                  src={`${imageUrl}/${graphicPackage.image}`}
                   alt={graphicPackage.name}
                   className='absolute object-cover h-full w-full blur-none transition duration-300 ease-in-out transform group-hover:blur-sm'
                 />
