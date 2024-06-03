@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RegisterUser from './pages/RegisterUser';
 import Login from './pages/Login';
 import Tools from './pages/Tools';
+import MyListings from './pages/MyListings';
 function App() {
   return (
     <div>
@@ -26,6 +27,8 @@ function App() {
           <Route path="/registeruser" element={<RegisterUser />} />
           <Route path="/login" element={<Login />} />
           <Route path="/tools" element={<Tools/>} />
+          <Route path="/listings" element={<MyListings />} />
+          {/* <Route path="/collection" element={< />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
