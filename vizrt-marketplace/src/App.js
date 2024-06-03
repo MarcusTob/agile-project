@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import Tools from './pages/Tools';
 import MyListings from './pages/MyListings';
 import MyCollectionPage from './pages/MyCollectionPage';
+import OrderComplete from './pages/OrderComplete';
 
 function App() {
   return (
