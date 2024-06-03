@@ -8,6 +8,14 @@ const imageUrl = "http://localhost:5219/images";
 const ShoppingCart = () => {
     const [cartItems, setCartItems] = useState(CartService.getCart());
 
+    // Function to remove item from cart
+    const removeFromCart = (index) => {
+        const updatedCart = [...cartItems];
+        updatedCart.splice(index, 1);
+        setCartItems(updatedCart);
+        CartService.updateCart(updatedCart); // Update local storage
+    };
+
     return (
         <div className="bg-brandBgLight flex flex-col min-h-screen items-center">
             <div className="flex w-full max-w-5xl mt-8 space-x-8">
@@ -21,6 +29,7 @@ const ShoppingCart = () => {
                                     <p className="text-lg font-medium">{item.name}</p>
                                     <p className="text-gray-700">${item.price.toFixed(2)}</p>
                                 </div>
+                                <button className="text-red-500 hover:text-red-700" onClick={() => removeFromCart(index)}>Remove from cart</button>
                             </div>
                         )) : (
                             <p className="text-gray-600">No items in your cart.</p>
