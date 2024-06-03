@@ -42,7 +42,6 @@ const ShoppingCart = () => {
                         <div className="space-y-4">
                             {cartItems.length > 0 ? (
                                 <div>
-                                    {/* Here you can add more summary details like total price, etc. */}
                                     <p className="text-gray-700">Total Items: {cartItems.length}</p>
                                     <p className="text-gray-700">Total Price: ${cartItems.reduce((total, item) => total + item.price, 0).toFixed(2)}</p>
                                 </div>
