@@ -11,7 +11,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RegisterUser from './pages/RegisterUser';
 import Login from './pages/Login';
 import Tools from './pages/Tools';
-import OrderComplete from './pages/OrderComplete';
+import MyCollectionPage from './pages/MyCollectionPage';
+
 function App() {
   return (
     <div>
@@ -29,6 +30,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/tools" element={<Tools />} />
           <Route path="/ordercomplete" element={<OrderComplete />} />
+          <Route path="/mycollection" element={<MyCollectionPage/>} />
         </Routes>
       </BrowserRouter>
     </div>
