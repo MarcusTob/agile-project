@@ -2,8 +2,19 @@ import React from "react";
 import { BiHide } from "react-icons/bi";
 import "../index.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import UserService from "../services/UserService";
 
 export const RegisterUser = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const user = await UserService.createUser({ username, password, email });
+  }
+
 
   return (
     <div className="bg-[#1e3541] flex flex-row justify-center w-full min-h-screen">
@@ -14,10 +25,10 @@ export const RegisterUser = () => {
         <div className="absolute w-[400px] h-[52px] top-[356px] left-[558px]">
           <input
             className="w-full h-full bg-transparent border-b-2 border-collection-1-brandtextwhite text-collection-1-brandtextwhite text-base pl-[15px] placeholder-white"
-            placeholder="Your name"
+            placeholder="Username"
             type="text"
-            value=""
-            readOnly
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div className="absolute w-[400px] h-[52px] top-[434px] left-[558px]">
@@ -25,8 +36,8 @@ export const RegisterUser = () => {
             className="w-full h-full bg-transparent border-b-2 border-collection-1-brandtextwhite text-collection-1-brandtextwhite text-base pl-[15px] placeholder-white"
             placeholder="Email"
             type="email"
-            value=""
-            readOnly
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="absolute w-[400px] h-[52px] top-[506px] left-[558px]">
@@ -34,16 +45,16 @@ export const RegisterUser = () => {
             className="w-full h-full bg-transparent border-b-2 border-collection-1-brandtextwhite text-collection-1-brandtextwhite text-base pl-[15px] placeholder-white"
             placeholder="Password"
             type="password"
-            value=""
-            readOnly
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <BiHide className="absolute top-[13px] right-[15px] text-collection-1-brandtextwhite" />
         </div>
         <div className="absolute w-[265px] h-[101px] top-[601px] left-[627px] bg-[#F08D5A] rounded-lg">
            <button
-             type="button"
-             className="w-full h-full bg-collection-1-brandtextorange rounded-lg text-black text-[32px] font-bold"
-            disabled
+            type="button"
+            className="w-full h-full bg-collection-1-brandtextorange rounded-lg text-black text-[32px] font-bold"
+            onClick={handleSubmit}
           >
             Create user
           </button>

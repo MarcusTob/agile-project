@@ -73,6 +73,15 @@ public class MarketplaceController : ControllerBase
         await context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetUserByID), new { id = newUser.UserID }, newUser);
     }
+    [HttpPost("user/login")]
+    public async Task<ActionResult<User>> Login(User user) {
+        User? userToLogin = await context.User.FirstOrDefaultAsync(u => u.Username == user.Username && u.Password == user.Password);
+        if (userToLogin != null) {
+            return Ok(userToLogin);
+        } else {
+            return NotFound();
+        }
+    }
 
     //UPDATE
     [HttpPut("products/{id}")]

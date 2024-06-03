@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const UserService = (() => {
-    const userUrl = "http://localhost:5219/Marketplace/User";
+    const userUrl = "http://localhost:5219/Marketplace/user";
 
-    const getUserById = async () => {
+    const getUserById = async (id) => {
         try{
             const response = await axios.get(`${userUrl}/${id}`);
             return response.data;
@@ -12,6 +12,7 @@ const UserService = (() => {
             console.error("error getting user", error);
         }
     }
+
     const createUser = async (newUser) => {
         try{
             const response = await axios.post(userUrl, newUser);
@@ -21,9 +22,20 @@ const UserService = (() => {
         }
     }
 
+    const userLogin = async (user) => {
+        try{
+            const response = await axios.post(`${userUrl}/login`, user);
+            return response.data;
+        }
+        catch(error){
+            console.log("error logging in", error);
+        }
+    }
+
     return{
         getUserById,
-        createUser
+        createUser,
+        userLogin
 
     }
 
