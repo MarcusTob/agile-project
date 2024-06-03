@@ -16,7 +16,7 @@ const ShoppingCart = () => {
                     <div className="space-y-4">
                         {cartItems.length > 0 ? cartItems.map((item, index) => (
                             <div key={index} className="flex items-center bg-gray-100 p-4 rounded-lg shadow-sm">
-                                <img className="w-16 h-16 object-cover rounded mr-4" src={`${imageUrl}/${item.productImage}`} alt={item.name} />
+                                <img className="w-16 h-16 object-cover rounded mr-4" src={`${imageUrl}/${item.image}`} alt={item.name} />
                                 <div className="flex-grow">
                                     <p className="text-lg font-medium">{item.name}</p>
                                     <p className="text-gray-700">${item.price.toFixed(2)}</p>

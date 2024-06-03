@@ -10,8 +10,6 @@ const ProductItem = ({ product }) => {
 
     const handeViewItem = () => {
         navigate(`/product/${product.productID}`);
-        console.log(product)
-        console.log(product.productID)
     }
 
 
@@ -19,7 +17,7 @@ const ProductItem = ({ product }) => {
         <div className="flex bg-brandOrange rounded-lg shadow-lg overflow-hidden my-8 w-full max-w-4xl mx-auto min-h-[300px]">
             {/* Image Section */}
             <div className="w-1/2 relative">
-                <img className="object-cover w-full h-full" src={`${imageUrl}/${product.productImage}`} alt={`Picture of ${product.name}`} />
+                <img className="object-cover w-full h-full" src={`${imageUrl}/${product.image}`} alt={`Picture of ${product.name}`} />
             </div>
 
             {/* Text Section */}

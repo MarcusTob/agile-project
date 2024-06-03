@@ -19,7 +19,7 @@ const PackageItem = ({ graphicPackage }) => {
         <div className="flex bg-brandOrange rounded-lg shadow-lg overflow-hidden my-4 w-full max-w-2xl mx-auto min-h-96">
             {/* Image Section */}
             <div className="w-1/2 h-full relative">
-                <img className="object-cover w-full h-full" src={`${imageUrl}/${graphicPackage.packageImage}`} alt={`Picture of ${graphicPackage.name}`} />
+                <img className="object-cover w-full h-full" src={`${imageUrl}/${graphicPackage.image}`} alt={`Picture of ${graphicPackage.name}`} />
             </div>
 
             {/* Text Section */}
