@@ -1,9 +1,22 @@
 import React from "react";
 import { BiHide } from "react-icons/bi";
 import "../index.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import UserService from "../services/UserService";
 
 export const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const user = await UserService.userLogin({ username, password });
+    if (user) { navigate('/') }
+    else { alert("Invalid username or password"); }
+  }
+  
   return (
     <div className="bg-[#1e3541] flex flex-row justify-center w-full min-h-screen">
       <div className="bg-collection-1-brandbglighter w-[1512px] h-[982px] relative">
@@ -13,10 +26,10 @@ export const Login = () => {
         <div className="absolute w-[400px] h-[52px] top-[356px] left-[558px]">
           <input
             className="w-full h-full bg-transparent border-b-2 border-collection-1-brandtextwhite text-collection-1-brandtextwhite text-base pl-[15px] placeholder-white"
-            placeholder="Email"
-            type="email"
-            value=""
-            readOnly
+            placeholder="Username"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div className="absolute w-[400px] h-[52px] top-[434px] left-[558px]">
@@ -24,8 +37,8 @@ export const Login = () => {
             className="w-full h-full bg-transparent border-b-2 border-collection-1-brandtextwhite text-collection-1-brandtextwhite text-base pl-[15px] placeholder-white"
             placeholder="Password"
             type="password"
-            value=""
-            readOnly
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <BiHide className="absolute top-[13px] right-[15px] text-collection-1-brandtextwhite" />
         </div>
@@ -40,7 +53,7 @@ export const Login = () => {
           <button
             type="button"
             className="w-full h-full bg-collection-1-brandtextorange rounded-lg text-black text-[32px] font-bold"
-            disabled
+            onClick={handleLogin}
           >
             Login
           </button>
