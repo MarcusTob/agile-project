@@ -44,6 +44,15 @@ public class MarketplaceController : ControllerBase
             return NotFound();
         }
     }
+    [HttpGet("user/{id}")]
+    public async Task<ActionResult<User>> GetUserByID(int id) {
+        User? user = await context.User.FindAsync(id);
+        if (user != null) {
+            return Ok(user);
+        } else{
+            return NotFound();
+        }
+    }
 
     //POST
     [HttpPost("products")]
@@ -57,6 +66,12 @@ public class MarketplaceController : ControllerBase
         context.Package.Add(newPackage);
         await context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetPackages), new { id = newPackage.PackageID }, newPackage);
+    }
+    [HttpPost("user")]
+    public async Task<ActionResult<User>> Post(User newUser) {
+        context.User.Add(newUser);
+        await context.SaveChangesAsync();
+        return CreatedAtAction(nameof(GetUserByID), new { id = newUser.UserID }, newUser);
     }
 
     //UPDATE
@@ -84,6 +99,7 @@ public class MarketplaceController : ControllerBase
     }
 
     //DELETE
+    //mostly used for cleaning up mock data
     [HttpDelete("products/{id}")]
     public async Task<ActionResult<Product>> DeleteProduct(int id) {
         Product? product = await context.Product.FindAsync(id);
@@ -98,6 +114,15 @@ public class MarketplaceController : ControllerBase
         Package? package = await context.Package.FindAsync(id);
         if (package != null) {
             context.Package.Remove(package);
+            await context.SaveChangesAsync();
+        }
+        return NoContent();
+    }
+    [HttpDelete("user/{id}")]
+    public async Task<ActionResult<User>> DeleteUser(int id) {
+        User? user = await context.User.FindAsync(id);
+        if (user != null) {
+            context.User.Remove(user);
             await context.SaveChangesAsync();
         }
         return NoContent();
