@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FiShoppingCart } from "react-icons/fi";
+import CartService from '../services/CartService';
 
 const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
+  const [showMessage, setShowMessage] = useState(false);
+
+  const handleAddToCart = () => {
+    CartService.addToCart(graphicPackage);
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 2000); // Hide the message after 2 seconds
+  };
+
   return (
     <div className="flex justify-center items-start w-full relative">
       {/* Image Section */}
@@ -11,7 +23,7 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
           src={`${imageUrl}/${graphicPackage.image}`}
         />
       </div>
-      
+
       {/* Details Section */}
       <div className="w-1/2 flex flex-col justify-start items-start px-7">
         <h1 className="text-5xl font-bold mb-6 text-brandOrange py-1 px-2 rounded-lg">
@@ -30,11 +42,17 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
         </div>
         <button
           className="bg-brandBlue text-white px-8 py-3 rounded-lg mt-9 flex items-center"
-          // You need to add functionality for adding to cart here if needed
+          onClick={handleAddToCart}
         >
           <p className='text-2xl mr-2'>Add to Cart</p>
-          {/* Add cart icon here if needed */}
+          <FiShoppingCart className='text-2xl'/>
         </button>
+        {/* Show message when item is added to cart */}
+        {showMessage && (
+           <div className="absolute bg-white rounded-lg p-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md">
+           <p className="text-gray-800 text-xl">Item added to cart!</p>
+         </div>
+        )}
       </div>
     </div>
   );
