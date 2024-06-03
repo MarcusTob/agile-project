@@ -18,8 +18,7 @@ const ProductItem = ({ product }) => {
             {/* Image Section */}
             <div className="w-1/2 relative">
                 <img className="object-cover w-full h-full" src={`${imageUrl}/${product.image}`} alt={`Picture of ${product.name}`} />
-            </div>
-
+                </div>
             {/* Text Section */}
             <div className="w-1/2 p-8 flex flex-col justify-start">
                 <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
