@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { FiShoppingCart } from "react-icons/fi";
-import CartService from "../services/CartService";
+import React, { useState } from 'react';
+import { FiShoppingCart, FiTrash2 } from "react-icons/fi";
+import { motion } from 'framer-motion';
+import CartService from '../services/CartService';
 
 // Define the ProductDetailsAndImage component
 const ProductDetailsAndImage = ({ imageUrl, product }) => {
   // State for showing the "Item added to cart!" message
   const [showMessage, setShowMessage] = useState(false);
+  const [colors, setColors] = useState([]);
+  const [rating, setRating] = useState(0);
 
   // Function to handle adding the product to the cart
   const handleAddToCart = () => {
@@ -19,10 +22,35 @@ const ProductDetailsAndImage = ({ imageUrl, product }) => {
     }, 2000);
   };
 
+  const handleAddColor = () => {
+    setColors([...colors, '#000000']);
+  };
+
+  const handleColorChange = (color, index) => {
+    const newColors = [...colors];
+    newColors[index] = color;
+    setColors(newColors);
+  };
+
+  const handleDeleteColor = (index) => {
+    const newColors = [...colors];
+    newColors.splice(index, 1);
+    setColors(newColors);
+  };
+
+  const handleHexCodeChange = (e, index) => {
+    const newColors = [...colors];
+    newColors[index] = e.target.value;
+    setColors(newColors);
+  };
+
+  const handleRating = (star) => {
+    setRating(star);
+  };
+
   // Render the component
   return (
     <div className="flex justify-center items-start w-full relative">
-      {/* Image Section */}
       <div className="w-1/2 px-8">
         <img
           className="w-full h-auto object-cover"
@@ -43,14 +71,48 @@ const ProductDetailsAndImage = ({ imageUrl, product }) => {
         <p className="text-white mb-2 text-2xl">Category: {product.category}</p>
         {/* Product creator */}
         <p className="text-white mb-6 text-2xl">Creator: {product.creator}</p>
-        {/* Star ratings */}
+        <div className="mb-4">
+          <h3 className="text-white font-bold mb-2">Colors</h3>
+          <div className="flex flex-wrap items-center">
+            {colors.map((color, index) => (
+              <div key={index} className="relative flex items-center mr-4 mb-4">
+                <input
+                  type="color"
+                  value={color}
+                  onChange={(e) => handleColorChange(e.target.value, index)}
+                  className="w-10 h-10"
+                />
+                <input
+                  type="text"
+                  value={color}
+                  onChange={(e) => handleHexCodeChange(e, index)}
+                  className="ml-2 p-1 border rounded w-24"
+                />
+                <button className="ml-2 text-gray-500" onClick={() => handleDeleteColor(index)}>
+                  <FiTrash2 />
+                </button>
+              </div>
+            ))}
+            <button className="bg-brandBg text-white px-4 py-2 rounded" onClick={handleAddColor}>
+              Add Color
+            </button>
+          </div>
+        </div>
         <div className="flex items-center justify-start">
-          <img
-            className="w-30 h-10 mr-2"
-            alt="Star ratings"
-            src="https://c.animaapp.com/2XehKRee/img/star-ratings@2x.png"
-          />
-          <p className="text-white">{product.nrOfReviews} Reviews</p>
+          <div className="flex space-x-3">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <motion.button
+                key={star}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
+                className={`text-3xl ${star <= rating ? 'text-yellow-500' : 'text-gray-400'}`}
+                onClick={() => handleRating(star)}
+              >
+                ★
+              </motion.button>
+            ))}
+          </div>
+          <p className="text-white ml-4">{product.nrOfReviews} Reviews</p>
         </div>
         {/* Add to Cart button */}
         <button

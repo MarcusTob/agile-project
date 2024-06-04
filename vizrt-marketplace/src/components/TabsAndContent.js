@@ -35,7 +35,7 @@ const TabsAndContent = ({ activeTab, handleTabClick, product }) => {
         </div>
       </div>
       {/* Content for active tab */}
-      <div className="mt-4 text-white text-[32px] w-full px-4">
+      <div className="mt-4 text-white text-[32px] w-full px-4 max-w-3xl mx-auto">
         {/* Display product description if the About tab is active */}
         {activeTab === "About" && <p>{product.description}</p>}
         {/* Display generic specifications */}

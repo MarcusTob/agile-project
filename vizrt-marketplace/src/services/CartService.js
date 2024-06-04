@@ -1,3 +1,5 @@
+let subscribers = [];
+
 const CartService = {
   // Method to retrieve the cart from local storage
   getCart: () => {

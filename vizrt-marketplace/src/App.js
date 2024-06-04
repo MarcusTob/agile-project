@@ -38,9 +38,7 @@ function App() {
           <Route path="/ordercomplete" element={<OrderComplete />} />
           <Route path="/collection" element={<MyCollectionPage />} />
           <Route path="/listings" element={<MyListings />} />
-          <Route path="/SellingUpload" element={<SellingUploadPage />} />
-
-          {/* <Route path="/collection" element={< />} /> */}
+          <Route path="/sellingUpload" element={<SellingUploadPage />} />
         </Routes>
       </BrowserRouter>
       </UserContext.Provider>

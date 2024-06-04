@@ -19,28 +19,22 @@ const MyCollectionPage = () => {
     setFilteredProducts(response);
   };
 
-  // useEffect to fetch products when the component mounts
-  useEffect(() => {
-    getAllProducts();
-  }, []);
-
-  // Render MyCollectionPage component
-  return (
-    <div className="bg-brandBgLight min-h-screen">
-      {/* Navbar component */}
-      <MyNavbar />
-      <div className="flex flex-col items-center px-4 py-8">
-        <div className="w-full max-w screen-xl">
-          {/* Title */}
-          <h2 className="text-3xl font-bold mb-8 text-center text-white">
-            My Collection
-          </h2>
-          {/* CollectionList component */}
-          <CollectionList products={products} />
+    // useEffect to fetch products when the component mounts
+    useEffect(() => {
+        getAllProducts();
+    }, []);
+    
+    return (
+        <div className=" bg-brandBgLight min-h-screen">
+            <MyNavbar />
+            <div className="flex flex-col items-center px-4 py-8" >
+                <div className="w-full max-w screen-xl">
+                    <CollectionList products={products} />
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
+
 
 export default MyCollectionPage;

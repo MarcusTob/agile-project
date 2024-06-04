@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { IoIosSearch } from "react-icons/io";
-import { CiFilter } from "react-icons/ci";
+import React, { useState } from 'react';
+import { IoIosSearch } from 'react-icons/io';
+import { CiFilter } from 'react-icons/ci';
+import { Link } from 'react-router-dom';
 
 // Header component accepts products and setFilteredProducts as props
 const Header = ({ products, setFilteredProducts }) => {
@@ -96,9 +97,11 @@ const Header = ({ products, setFilteredProducts }) => {
           )}
         </div>
         <div className="flex items-center">
-          <button className="bg-white hover:bg-blue-700 text-black font-bold py-2 px-4 rounded-full mr-4">
-            Create new listings
-          </button>
+        <Link to="/sellingUpload">
+           <button className="bg-white hover:bg-blue-700 text-black font-bold py-2 px-4 rounded-full mr-4">
+               Create new listings
+           </button>
+        </Link>
           <div className="relative">
             <button
               onClick={handleSearchClick}

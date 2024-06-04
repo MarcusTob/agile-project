@@ -5,12 +5,13 @@ import "../index.css";
 import "tailwindcss/tailwind.css";
 import { useContext } from "react";
 import UserContext from "../UserContext";
+import { IoIosSearch } from "react-icons/io";
+import CartService from '../services/CartService';
 
-const Navbar = ({
-  logoLogo = "https://c.animaapp.com/2XehKRee/img/logo-2@2x.png",
-}) => {
-  // State for search term
+
+const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [cartItems, setCartItems ] = useState(CartService.getCart());
   // Context for user authentication
   const { user, setUser } = useContext(UserContext);
 
@@ -25,31 +26,25 @@ const Navbar = ({
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
+    const unsubscribe = CartService.subscribe(newCart => {
+      setCartItems(newCart);
+      return unsubscribe;
   }, []);
+
 
   return (
     // Navbar container with flex properties, background, padding, and shadow
     <div className="flex justify-between items-center bg-white p-4 shadow-md">
       {/* Logo */}
       <a href="/" className="flex items-center">
-        <img
-          src={logoLogo}
-          alt="Vizrt Logo"
-          className="w-32 h-auto object-cover"
-        />
+        <img src="/images/logo-vizrt.png" alt="Vizrt Logo" className="w-32 h-auto object-cover" />
       </a>
 
       {/* Search Bar and Links */}
       <div className="flex flex-col items-left w-1/2">
         {/* Search bar container */}
         <div className="border-2 border-solid border-gray-600 flex items-center w-full gap-2 p-2 rounded-md bg-white">
-          {/* Search icon */}
-          <img
-            className="w-6 h-6"
-            alt="Search"
-            src="https://c.animaapp.com/2XehKRee/img/search-1.svg"
-          />
-          {/* Search input */}
+        <IoIosSearch size="1.5em"/>
           <input
             type="text"
             value={searchTerm}
@@ -74,11 +69,14 @@ const Navbar = ({
 
       {/* Icons */}
       <div className="flex space-x-6 items-center">
-        {/* Link to shopping cart */}
-        <a href="/shoppingcart">
+        <a href="/shoppingcart" className="relative">
           <FiShoppingCart className="text-5xl text-black" />
+          {cartItems.length > 0 && (
+            <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+              {cartItems.length}
+            </span>
+          )}
         </a>
-        {/* Link to user profile or login page */}
         <a href={user ? "/collection" : "/login"}>
           <CgProfile className="text-5xl text-black" />
         </a>
