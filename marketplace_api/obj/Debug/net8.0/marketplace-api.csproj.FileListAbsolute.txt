@@ -657,3 +657,4 @@ C:\Users\thola\Documents\local-github\agile-project\marketplace_api\obj\Debug\ne
 C:\Users\thola\Documents\local-github\agile-project\marketplace_api\obj\Debug\net8.0\marketplace-api.pdb
 C:\Users\thola\Documents\local-github\agile-project\marketplace_api\obj\Debug\net8.0\marketplace-api.genruntimeconfig.cache
 C:\Users\thola\Documents\local-github\agile-project\marketplace_api\obj\Debug\net8.0\ref\marketplace-api.dll
+E:\PRO202_Vizrt\agile-project\marketplace_api\bin\Debug\net8.0\Newtonsoft.Json.dll

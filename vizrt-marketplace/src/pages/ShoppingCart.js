@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../index.css";
 import "tailwindcss/tailwind.css";
 import CartService from '../services/CartService';
@@ -15,6 +15,19 @@ const ShoppingCart = () => {
         setCartItems(updatedCart);
         CartService.updateCart(updatedCart); // Update local storage
     };
+
+    const purchaseCart = async () => {
+        const userID = localStorage.getItem('userID');
+        if (!userID) {
+            console.log("User not logged in");
+            return;
+        }
+        await CartService.purchaseShoppingCart(userID);
+        setCartItems([]);
+    };
+    useEffect(() => {
+        setCartItems(CartService.getCart());
+    }, []);
 
     return (
         <div className="bg-brandBgLight flex flex-col min-h-screen items-center">
@@ -51,7 +64,9 @@ const ShoppingCart = () => {
                         </div>
                     </div>
                     <div className="flex justify-center mt-4">
-                        <button className="bg-blue-500 text-white font-bold py-2 px-12 rounded hover:bg-blue-700">
+                        <button 
+                        className="bg-blue-500 text-white font-bold py-2 px-12 rounded hover:bg-blue-700"
+                        onClick={purchaseCart}>
                             Order
                         </button>
                     </div>
