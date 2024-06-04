@@ -1,39 +1,43 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import PackageService from "../services/PackageService";
-import PackageDetailsAndImage from "../components/PackageDetailsAndImage";
+import React, { useState, useEffect } from "react"; // Import React and necessary hooks
+import { useParams } from "react-router-dom"; // Import useParams hook from react-router-dom
+import PackageService from "../services/PackageService"; // Import PackageService for fetching package data
+import PackageDetailsAndImage from "../components/PackageDetailsAndImage"; // Import PackageDetailsAndImage component
 
-const imageUrl = "http://localhost:5219/images";
+const imageUrl = "http://localhost:5219/images"; // Define the base URL for package images
 
 const PackagePage = () => {
-  const { id } = useParams();
-  const [graphicPackage, setPackage] = useState(null);
-  const [activeTab, setActiveTab] = useState("About");
+  const { id } = useParams(); // Destructure the id parameter from the URL using useParams
+  const [graphicPackage, setPackage] = useState(null); // State for storing the package data
+  const [activeTab, setActiveTab] = useState("About"); // State for managing active tab
 
+  // useEffect hook to fetch package data when the component mounts or when the id parameter changes
   useEffect(() => {
-    const fetchPackage = async () => {
-      if (id) {
+    const fetchPackage = async () => { // Define an async function to fetch package data
+      if (id) { // Check if the id parameter exists
         try {
-          const graphicPackage = await PackageService.getPackageById(id);
-          setPackage(graphicPackage);
+          const graphicPackage = await PackageService.getPackageById(id); // Fetch package data using PackageService
+          setPackage(graphicPackage); // Update the state with the fetched package data
         } catch (error) {
-          console.error("Failed to fetch package", error);
+          console.error("Failed to fetch package", error); // Log error if fetching package data fails
         }
       } else {
-        console.error("Package ID is undefined");
+        console.error("Package ID is undefined"); // Log error if the id parameter is undefined
       }
     };
-    fetchPackage();
-  }, [id]);
+    fetchPackage(); // Call the fetchPackage function
+  }, [id]); // useEffect dependency array with id parameter
 
+  // Function to handle tab click and update the active tab state
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
 
+  // Conditional rendering based on the existence of package data
   if (!graphicPackage) {
-    return <h1>Package not found</h1>;
+    return <h1>Package not found</h1>; // Render a message if package data is not available
   }
 
+  // Define content based on the active tab
   let content;
   switch (activeTab) {
     case "About":
@@ -59,10 +63,11 @@ const PackagePage = () => {
       content = <p>{graphicPackage.description}</p>;
   }
 
+  // Return JSX representing the PackagePage component
   return (
     <div className="bg-brandBgLight min-h-screen flex flex-col items-center px-4 sm:px-0">
       <div className="mt-8">
-        <PackageDetailsAndImage
+        <PackageDetailsAndImage // Render PackageDetailsAndImage component with package data
           imageUrl={imageUrl}
           graphicPackage={graphicPackage}
         />
@@ -108,4 +113,4 @@ const PackagePage = () => {
   );
 };
 
-export default PackagePage;
+export default PackagePage; // Export the PackagePage component

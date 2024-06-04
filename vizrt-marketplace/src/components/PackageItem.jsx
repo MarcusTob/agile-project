@@ -1,16 +1,17 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react"; // Import React
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook from react-router-dom
 
-const imageUrl = "http://localhost:5219/images";
+const imageUrl = "http://localhost:5219/images"; // Define the base URL for package images
 
-//cannot use Package because it is restricted, using GraphicPackage instead
+// Define PackageItem component
 const PackageItem = ({ graphicPackage }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Initialize the useNavigate hook
 
+  // Function to navigate to the package details page
   const handleViewItem = () => {
-    navigate(`/package/${graphicPackage.packageID}`);
-    console.log(graphicPackage);
-    console.log(graphicPackage.packageID);
+    navigate(`/package/${graphicPackage.packageID}`); // Navigate to the package details page using packageID
+    console.log(graphicPackage); // Log the graphicPackage data to console
+    console.log(graphicPackage.packageID); // Log the packageID to console
   };
 
   return (
@@ -35,7 +36,7 @@ const PackageItem = ({ graphicPackage }) => {
         </p>
         <div className="flex-grow"></div>
         <button
-          onClick={handleViewItem}
+          onClick={handleViewItem} // Attach handleViewItem function to onClick event of button
           className="bg-black text-white py-2 px-4 rounded mt-auto"
         >
           View Item
@@ -45,4 +46,4 @@ const PackageItem = ({ graphicPackage }) => {
   );
 };
 
-export default PackageItem;
+export default PackageItem; // Export PackageItem component
