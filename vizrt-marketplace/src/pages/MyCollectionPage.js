@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProductService from '../services/ProductService';
 import CollectionList from '../components/CollectionList';
 import ProfileNavbar from '../components/ProfileNavbar';
+import MyNavbar from '../components/MyNavbar';
 
 const MyCollectionPage = () => {
     const [products, setProducts] = useState([]);

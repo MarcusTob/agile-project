@@ -1,4 +1,6 @@
 import './App.css';
+import { useState } from 'react';
+import UserContext from './UserContext';
 import GraphicsListPage from './pages/GraphicsListPage';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
@@ -6,7 +8,6 @@ import ProductPage from './pages/ProductPage';
 import ShoppingCart from './pages/ShoppingCart';
 import PackagesListPage from './pages/PackagesListPage';
 import PackagePage from './pages/PackagePage';
-import SellingUploadPage from './pages/SellingUploadPage';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RegisterUser from './pages/RegisterUser';
 import Login from './pages/Login';
@@ -16,8 +17,10 @@ import MyCollectionPage from './pages/MyCollectionPage';
 import OrderComplete from './pages/OrderComplete';
 
 function App() {
+  const [user, setUser] = useState(null);
   return (
     <div>
+      <UserContext.Provider value={{user, setUser}}>
       <NavBar />
       <BrowserRouter>
         <Routes>
@@ -32,11 +35,12 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/tools" element={<Tools />} />
           <Route path="/ordercomplete" element={<OrderComplete />} />
-          <Route path="/mycollection" element={<MyCollectionPage/>} />
+          <Route path="/collection" element={<MyCollectionPage/>} />
           <Route path="/listings" element={<MyListings />} />
           {/* <Route path="/collection" element={< />} /> */}
         </Routes>
       </BrowserRouter>
+      </UserContext.Provider>
     </div>
   );
 }

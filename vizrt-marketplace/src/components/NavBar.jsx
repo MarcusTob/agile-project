@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import '../index.css';
 import 'tailwindcss/tailwind.css';
+import { useContext } from "react";
+import UserContext from "../UserContext";
 
 const Navbar = ({
   logoLogo = "https://c.animaapp.com/2XehKRee/img/logo-2@2x.png",
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const {user, setUser} = useContext(UserContext);
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   return (
     <div className="flex justify-between items-center bg-white p-4 shadow-md">
@@ -47,7 +57,7 @@ const Navbar = ({
       {/* Icons */}
       <div className="flex space-x-6 items-center">
       <a href="/shoppingcart"><FiShoppingCart className="text-5xl text-black" /></a>
-      <a href="/login"><CgProfile className="text-5xl text-black" /></a>
+      <a href={user ? "/collection" : "/login"}><CgProfile className="text-5xl text-black" /></a>
       </div>
     </div>
   );

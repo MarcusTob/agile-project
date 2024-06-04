@@ -2,10 +2,12 @@ import React from "react";
 import { BiHide } from "react-icons/bi";
 import "../index.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import UserService from "../services/UserService";
+import UserContext from "../UserContext";
 
 export const Login = () => {
+  const {setUser} = useContext(UserContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -13,7 +15,11 @@ export const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     const user = await UserService.userLogin({ username, password });
-    if (user) { navigate('/') }
+    if (user) { 
+      setUser(user);
+      localStorage.setItem("user", JSON.stringify(user));
+      navigate('/') 
+    }
     else { alert("Invalid username or password"); }
   }
   
