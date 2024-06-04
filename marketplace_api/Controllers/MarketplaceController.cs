@@ -116,7 +116,7 @@ public class MarketplaceController : ControllerBase
         }
         var updatedUser = new User
         {
-            BoughtItems = JsonConvert.DeserializeObject<List<string>>(JsonConvert.SerializeObject(items))
+            BoughtItems = items
         };
         context.Entry(user).CurrentValues.SetValues(updatedUser);
         context.Entry(user).State = EntityState.Modified;
