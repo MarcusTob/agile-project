@@ -16,8 +16,9 @@ export const Login = () => {
     e.preventDefault();
     const user = await UserService.userLogin({ username, password });
     if (user) { 
+      console.log(user);
       setUser(user);
-      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("userID", user.userID);
       navigate('/') 
     }
     else { alert("Invalid username or password"); }
