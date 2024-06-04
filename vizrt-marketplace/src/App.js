@@ -34,6 +34,8 @@ function App() {
           <Route path="/ordercomplete" element={<OrderComplete />} />
           <Route path="/mycollection" element={<MyCollectionPage/>} />
           <Route path="/listings" element={<MyListings />} />
+          <Route path="/SellingUpload" element={<SellingUploadPage />} />
+
           {/* <Route path="/collection" element={< />} /> */}
         </Routes>
       </BrowserRouter>

@@ -14,7 +14,7 @@ const MyNavbar = () => {
     <div className="bg-white p-4 shadow-md flex justify-between items-center">
       <div className="flex space-x-8">
         <NavLink
-          to="/collection"
+          to="/mycollection"
           className={({ isActive }) =>
             isActive ? "underline text-black text-lg font-semibold" : "text-black text-lg font-semibold"
           }
