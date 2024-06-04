@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
-import { FiEdit2, FiTrash2 } from 'react-icons/fi';
+import React, { useState } from "react";
+import { FiEdit2, FiTrash2 } from "react-icons/fi";
 
 const SellingUpload = () => {
   // State for images, details, and colors
   const [images, setImages] = useState([null, null, null]);
-  const [details, setDetails] = useState({ listing: '', price: '', about: '', specification: '' });
+  const [details, setDetails] = useState({
+    listing: "",
+    price: "",
+    about: "",
+    specification: "",
+  });
   const [colors, setColors] = useState([]);
 
   // Function to handle image upload
@@ -32,12 +37,12 @@ const SellingUpload = () => {
 
   // Function to delete a detail price, about, specification
   const handleDeleteDetail = (field) => {
-    setDetails({ ...details, [field]: '' });
+    setDetails({ ...details, [field]: "" });
   };
 
   // Function to add a new color
   const handleAddColor = () => {
-    setColors([...colors, '#000000']);
+    setColors([...colors, "#000000"]);
   };
 
   // Function to handle color change
@@ -71,20 +76,36 @@ const SellingUpload = () => {
           <div className="flex flex-col items-center space-y-4">
             {/* Display image previews */}
             {images.map((image, index) => (
-              <div key={index} className="relative w-40 h-40 bg-gray-300 rounded-md overflow-hidden">
+              <div
+                key={index}
+                className="relative w-40 h-40 bg-gray-300 rounded-md overflow-hidden"
+              >
                 {image ? (
-                  <img src={image} alt={`Preview ${index + 1}`} className="w-full h-full object-cover" />
+                  <img
+                    src={image}
+                    alt={`Preview ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
                 ) : (
-                  <span className="text-gray-500 flex items-center justify-center w-full h-full">Image {index + 1}</span>
+                  <span className="text-gray-500 flex items-center justify-center w-full h-full">
+                    Image {index + 1}
+                  </span>
                 )}
                 {/* Edit image button */}
                 <label className="absolute top-0 right-0 m-1 cursor-pointer text-gray-500">
                   <FiEdit2 />
-                  <input type="file" className="hidden" onChange={(e) => handleImageChange(e, index)} />
+                  <input
+                    type="file"
+                    className="hidden"
+                    onChange={(e) => handleImageChange(e, index)}
+                  />
                 </label>
                 {/* Delete image button */}
                 {image && (
-                  <button className="absolute top-0 left-0 m-1 text-gray-500" onClick={() => handleDeleteImage(index)}>
+                  <button
+                    className="absolute top-0 left-0 m-1 text-gray-500"
+                    onClick={() => handleDeleteImage(index)}
+                  >
                     <FiTrash2 />
                   </button>
                 )}
@@ -94,8 +115,12 @@ const SellingUpload = () => {
           {/* Details Inputs */}
           <div className="flex flex-col ml-10 w-full">
             <div className="flex items-center justify-between">
-              <h1 className="text-3xl font-bold mb-4">3D-effects of motion graphics</h1>
-              <button className="bg-brandBg text-white px-8 py-2 rounded">Post</button>
+              <h1 className="text-3xl font-bold mb-4">
+                3D-effects of motion graphics
+              </h1>
+              <button className="bg-brandBg text-white px-8 py-2 rounded">
+                Post
+              </button>
             </div>
             {/* Price Input */}
             <div className="mb-4 w-1/4">
@@ -109,7 +134,10 @@ const SellingUpload = () => {
               />
               {/* Delete price button */}
               {details.price && (
-                <button className="mt-2 text-gray-500" onClick={() => handleDeleteDetail('price')}>
+                <button
+                  className="mt-2 text-gray-500"
+                  onClick={() => handleDeleteDetail("price")}
+                >
                   <FiTrash2 />
                 </button>
               )}
@@ -126,7 +154,10 @@ const SellingUpload = () => {
                 />
                 {/* Delete about button */}
                 {details.about && (
-                  <button className="mt-2 text-gray-500" onClick={() => handleDeleteDetail('about')}>
+                  <button
+                    className="mt-2 text-gray-500"
+                    onClick={() => handleDeleteDetail("about")}
+                  >
                     <FiTrash2 />
                   </button>
                 )}
@@ -141,7 +172,10 @@ const SellingUpload = () => {
                 />
                 {/* Delete specification button */}
                 {details.specification && (
-                  <button className="mt-2 text-gray-500" onClick={() => handleDeleteDetail('specification')}>
+                  <button
+                    className="mt-2 text-gray-500"
+                    onClick={() => handleDeleteDetail("specification")}
+                  >
                     <FiTrash2 />
                   </button>
                 )}
@@ -153,7 +187,10 @@ const SellingUpload = () => {
               <div className="flex flex-wrap items-center">
                 {/* Color picker and hex code input */}
                 {colors.map((color, index) => (
-                  <div key={index} className="relative flex items-center mr-4 mb-4">
+                  <div
+                    key={index}
+                    className="relative flex items-center mr-4 mb-4"
+                  >
                     <input
                       type="color"
                       value={color}
@@ -167,20 +204,26 @@ const SellingUpload = () => {
                       className="ml-2 p-1 border rounded w-24"
                     />
                     {/* Delete color button */}
-                    <button className="ml-2 text-gray-500" onClick={() => handleDeleteColor(index)}>
+                    <button
+                      className="ml-2 text-gray-500"
+                      onClick={() => handleDeleteColor(index)}
+                    >
                       <FiTrash2 />
                     </button>
                   </div>
                 ))}
                 {/* Add color button */}
-                <button className="bg-brandBg text-white px-4 py-2 rounded" onClick={handleAddColor}>
+                <button
+                  className="bg-brandBg text-white px-4 py-2 rounded"
+                  onClick={handleAddColor}
+                >
                   Add Color
                 </button>
-                </div>
-             </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
     </div>
   );
 };

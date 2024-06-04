@@ -1,13 +1,13 @@
-import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const MyNavbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     // Perform logout logic here
-    console.log('User logged out');
-    navigate('/login'); // Redirect to login page or homepage
+    console.log("User logged out");
+    navigate("/login"); // Redirect to login page or homepage
   };
 
   return (
@@ -16,7 +16,9 @@ const MyNavbar = () => {
         <NavLink
           to="/mycollection"
           className={({ isActive }) =>
-            isActive ? "underline text-black text-lg font-semibold" : "text-black text-lg font-semibold"
+            isActive
+              ? "underline text-black text-lg font-semibold"
+              : "text-black text-lg font-semibold"
           }
         >
           My Collection
@@ -24,7 +26,9 @@ const MyNavbar = () => {
         <NavLink
           to="/listings"
           className={({ isActive }) =>
-            isActive ? "underline text-black text-lg font-semibold" : "text-black text-lg font-semibold"
+            isActive
+              ? "underline text-black text-lg font-semibold"
+              : "text-black text-lg font-semibold"
           }
         >
           My Listings

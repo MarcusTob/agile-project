@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
-import '../index.css';
-import 'tailwindcss/tailwind.css';
+import "../index.css";
+import "tailwindcss/tailwind.css";
 
 const Navbar = ({
   logoLogo = "https://c.animaapp.com/2XehKRee/img/logo-2@2x.png",
@@ -17,7 +17,11 @@ const Navbar = ({
     <div className="flex justify-between items-center bg-white p-4 shadow-md">
       {/* Logo */}
       <a href="/" className="flex items-center">
-        <img src={logoLogo} alt="Vizrt Logo" className="w-32 h-auto object-cover" />
+        <img
+          src={logoLogo}
+          alt="Vizrt Logo"
+          className="w-32 h-auto object-cover"
+        />
       </a>
 
       {/* Search Bar and Links */}
@@ -37,17 +41,26 @@ const Navbar = ({
           />
         </div>
         <div className="flex space-x-8 mt-2 start-end">
-          <a href="/graphics" className="text-black text-xl font-medium">Graphics</a>
-          <a href="/packages" className="text-black text-xl font-medium">Packages</a>
-          <a href="/tools" className="text-black text-xl font-medium">Tools</a>
+          <a href="/graphics" className="text-black text-xl font-medium">
+            Graphics
+          </a>
+          <a href="/packages" className="text-black text-xl font-medium">
+            Packages
+          </a>
+          <a href="/tools" className="text-black text-xl font-medium">
+            Tools
+          </a>
         </div>
       </div>
 
-
       {/* Icons */}
       <div className="flex space-x-6 items-center">
-      <a href="/shoppingcart"><FiShoppingCart className="text-5xl text-black" /></a>
-      <a href="/login"><CgProfile className="text-5xl text-black" /></a>
+        <a href="/shoppingcart">
+          <FiShoppingCart className="text-5xl text-black" />
+        </a>
+        <a href="/login">
+          <CgProfile className="text-5xl text-black" />
+        </a>
       </div>
     </div>
   );

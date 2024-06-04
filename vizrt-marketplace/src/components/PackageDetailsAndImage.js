@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
-import CartService from '../services/CartService';
+import CartService from "../services/CartService";
 
 const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
   const [showMessage, setShowMessage] = useState(false);
@@ -29,9 +29,15 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
         <h1 className="text-5xl font-bold mb-6 text-brandOrange py-1 px-2 rounded-lg">
           {graphicPackage.name}
         </h1>
-        <p className="text-white mb-6 text-3xl">Price: ${graphicPackage.price}</p>
-        <p className="text-white mb-2 text-2xl">Category: {graphicPackage.category}</p>
-        <p className="text-white mb-6 text-2xl">Creator: {graphicPackage.creator}</p>
+        <p className="text-white mb-6 text-3xl">
+          Price: ${graphicPackage.price}
+        </p>
+        <p className="text-white mb-2 text-2xl">
+          Category: {graphicPackage.category}
+        </p>
+        <p className="text-white mb-6 text-2xl">
+          Creator: {graphicPackage.creator}
+        </p>
         <div className="flex items-center justify-start">
           <img
             className="w-30 h-10 mr-2"
@@ -44,14 +50,14 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
           className="bg-brandBlue text-white px-8 py-3 rounded-lg mt-9 flex items-center"
           onClick={handleAddToCart}
         >
-          <p className='text-2xl mr-2'>Add to Cart</p>
-          <FiShoppingCart className='text-2xl'/>
+          <p className="text-2xl mr-2">Add to Cart</p>
+          <FiShoppingCart className="text-2xl" />
         </button>
         {/* Show message when item is added to cart */}
         {showMessage && (
-           <div className="absolute bg-white rounded-lg p-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md">
-           <p className="text-gray-800 text-xl">Item added to cart!</p>
-         </div>
+          <div className="absolute bg-white rounded-lg p-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md">
+            <p className="text-gray-800 text-xl">Item added to cart!</p>
+          </div>
         )}
       </div>
     </div>

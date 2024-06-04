@@ -13,10 +13,13 @@ export const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     const user = await UserService.userLogin({ username, password });
-    if (user) { navigate('/') }
-    else { alert("Invalid username or password"); }
-  }
-  
+    if (user) {
+      navigate("/");
+    } else {
+      alert("Invalid username or password");
+    }
+  };
+
   return (
     <div className="bg-[#1e3541] flex flex-row justify-center w-full min-h-screen">
       <div className="bg-collection-1-brandbglighter w-[1512px] h-[982px] relative">
@@ -43,12 +46,16 @@ export const Login = () => {
           <BiHide className="absolute top-[13px] right-[15px] text-collection-1-brandtextwhite" />
         </div>
         <div className="absolute left-[558px] top-[500px] flex items-center">
-             <input type="checkbox" id="remember" name="remember" />
-             <label htmlFor="remember" className="ml-2 text-white">Remember me</label>
-           </div>
-          <div className="absolute right-[558px] top-[500px]">
-          <Link to="/forgot-password" className="text-red-500">Forgot password?</Link>
-            </div>
+          <input type="checkbox" id="remember" name="remember" />
+          <label htmlFor="remember" className="ml-2 text-white">
+            Remember me
+          </label>
+        </div>
+        <div className="absolute right-[558px] top-[500px]">
+          <Link to="/forgot-password" className="text-red-500">
+            Forgot password?
+          </Link>
+        </div>
         <div className="absolute w-[265px] h-[101px] top-[601px] left-[627px] bg-[#F08D5A] rounded-lg">
           <button
             type="button"
@@ -61,7 +68,9 @@ export const Login = () => {
         <p className="absolute w-[398px] top-[725px] left-[558px] font-normal text-[22px] text-center text-transparent">
           <span className="text-[#f08d5a]">Don't have an account?</span>
           <span className="text-[#626262]">&nbsp;</span>
-          <Link to="/registeruser" className="font-semibold text-white">Register here!</Link>
+          <Link to="/registeruser" className="font-semibold text-white">
+            Register here!
+          </Link>
         </p>
       </div>
     </div>
