@@ -108,21 +108,21 @@ public class MarketplaceController : ControllerBase
         return NoContent();
     }
 
-    [HttpPut("user/purchase/{id}")]
-    public async Task<IActionResult> Purchase (int id, List<ItemsFeature> items){
-        var user = await context.User.FindAsync(id);
-        if (user == null) {
-            return NotFound();
-        }
-        var updatedUser = new User
-        {
-            BoughtItems = items
-        };
-        context.Entry(user).CurrentValues.SetValues(updatedUser);
-        context.Entry(user).State = EntityState.Modified;
-        await context.SaveChangesAsync();
-        return NoContent();        
-    }
+    // [HttpPut("user/purchase/{id}")]
+    // public async Task<IActionResult> Purchase (int id, List<ItemsFeature> items){
+    //     var user = await context.User.FindAsync(id);
+    //     if (user == null) {
+    //         return NotFound();
+    //     }
+    //     var updatedUser = new User
+    //     {
+    //         BoughtItems = JsonConvert.DeserializeObject<List<Product>>(JsonConvert.SerializeObject(items))        
+    //     };
+    //     context.Entry(user).CurrentValues.SetValues(updatedUser);
+    //     context.Entry(user).State = EntityState.Modified;
+    //     await context.SaveChangesAsync();
+    //     return NoContent();        
+    // }
 
     //DELETE
     //mostly used for cleaning up mock data
