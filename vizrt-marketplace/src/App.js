@@ -8,6 +8,8 @@ import PackagesListPage from "./pages/PackagesListPage";
 import PackagePage from "./pages/PackagePage";
 import SellingUploadPage from "./pages/SellingUploadPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useState } from "react";
+import UserContext from "./UserContext";
 import RegisterUser from "./pages/RegisterUser";
 import Login from "./pages/Login";
 import Tools from "./pages/Tools";
