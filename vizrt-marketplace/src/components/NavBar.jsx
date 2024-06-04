@@ -29,6 +29,8 @@ const Navbar = () => {
     const unsubscribe = CartService.subscribe(newCart => {
       setCartItems(newCart);
       return unsubscribe;
+    }); // Add closing parenthesis here
+
   }, []);
 
 
