@@ -3,25 +3,31 @@ import PackageList from "../components/PackageList";
 import PackageService from "../services/PackageService";
 
 const PackageListPage = () => {
-  // State to store the list of all products
-  const [graphicPackage, setGraphicPackage] = useState([]);
+  // State to store the list of all packages
+  const [graphicPackages, setGraphicPackages] = useState([]);
 
-  // Function to fetch all products from the API
+  // Function to fetch all packages from the API
   const getAllPackages = async () => {
-    // Fetch products from ProductService
-    const response = await PackageService.getAllPackages();
-    // Set the fetched products to the products state
-    setGraphicPackage(response);
+    try {
+      // Fetch packages from PackageService
+      const response = await PackageService.getAllPackages();
+      // Set the fetched packages to the graphicPackages state
+      setGraphicPackages(response);
+    } catch (error) {
+      console.error("Failed to fetch packages", error);
+    }
   };
 
-  // useEffect to fetch products when the component mounts
+  // useEffect to fetch packages when the component mounts
   useEffect(() => {
     getAllPackages();
   }, []);
 
+  // Render the component
   return (
     <div className="flex bg-brandBgLight">
-      <PackageList graphicPackages={graphicPackage} />
+      {/* Render the PackageList component */}
+      <PackageList graphicPackages={graphicPackages} />
     </div>
   );
 };

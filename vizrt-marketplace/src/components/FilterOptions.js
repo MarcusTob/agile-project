@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
 
+// FilterOptions component accepts products and setFilteredProducts as props
 const FilterOptions = ({ products, setFilteredProducts }) => {
+  // State to store the selected filter category
   const [filter, setFilter] = useState("");
+  // State to store the selected price sorting option
   const [sortByPrice, setSortByPrice] = useState("");
 
+  // useEffect to apply filters and sorting whenever filter, sortByPrice, or products change
   useEffect(() => {
-    // Apply filters
+    // Apply category filter
     let filteredProducts = products.filter((product) =>
       product.category.includes(filter)
     );
 
-    // Apply sorting
+    // Apply price sorting
     if (sortByPrice === "lowToHigh") {
       filteredProducts.sort((a, b) => a.price - b.price);
     } else if (sortByPrice === "highToLow") {
@@ -40,6 +44,7 @@ const FilterOptions = ({ products, setFilteredProducts }) => {
           onChange={(e) => setFilter(e.target.value)}
           className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
         >
+          {/* Filter options for product categories */}
           <option value="">All</option>
           <option value="3D">3D Graphics</option>
           <option value="Animation">Animation</option>
@@ -66,6 +71,7 @@ const FilterOptions = ({ products, setFilteredProducts }) => {
           onChange={(e) => setSortByPrice(e.target.value)}
           className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
         >
+          {/* Sorting options for product prices */}
           <option value="">None</option>
           <option value="lowToHigh">Low to High</option>
           <option value="highToLow">High to Low</option>

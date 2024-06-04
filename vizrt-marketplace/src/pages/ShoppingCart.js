@@ -18,16 +18,19 @@ const ShoppingCart = () => {
 
   return (
     <div className="bg-brandBgLight flex flex-col min-h-screen items-center">
+      {/* Cart Items */}
       <div className="flex w-full max-w-5xl mt-8 space-x-8">
         <div className="flex-grow bg-white p-4 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold mb-4">Your Items</h2>
           <div className="space-y-4">
             {cartItems.length > 0 ? (
+              // Display cart items if there are items in the cart
               cartItems.map((item, index) => (
                 <div
                   key={index}
                   className="flex items-center bg-gray-100 p-4 rounded-lg shadow-sm"
                 >
+                  {/* Display item image, name, and price */}
                   <img
                     className="w-16 h-16 object-cover rounded mr-4"
                     src={`${imageUrl}/${item.image}`}
@@ -37,6 +40,7 @@ const ShoppingCart = () => {
                     <p className="text-lg font-medium">{item.name}</p>
                     <p className="text-gray-700">${item.price.toFixed(2)}</p>
                   </div>
+                  {/* Button to remove item from cart */}
                   <button
                     className="text-red-500 hover:text-red-700"
                     onClick={() => removeFromCart(index)}
@@ -46,15 +50,18 @@ const ShoppingCart = () => {
                 </div>
               ))
             ) : (
+              // Display message if cart is empty
               <p className="text-gray-600">No items in your cart.</p>
             )}
           </div>
         </div>
+        {/* Order Summary */}
         <div className="w-1/3 bg-white p-4 rounded-lg shadow-md flex flex-col justify-between">
           <div>
             <h2 className="text-2xl font-semibold mb-4">Order Summary</h2>
             <div className="space-y-4">
               {cartItems.length > 0 ? (
+                // Display total items and total price if there are items in the cart
                 <div>
                   <p className="text-gray-700">
                     Total Items: {cartItems.length}
@@ -67,10 +74,12 @@ const ShoppingCart = () => {
                   </p>
                 </div>
               ) : (
+                // Display message if cart is empty
                 <p className="text-gray-600">Your cart is empty.</p>
               )}
             </div>
           </div>
+          {/* Button to place order */}
           <div className="flex justify-center mt-4">
             <button className="bg-blue-500 text-white font-bold py-2 px-12 rounded hover:bg-blue-700">
               Order

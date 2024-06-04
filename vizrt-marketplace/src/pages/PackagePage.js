@@ -6,10 +6,14 @@ import PackageDetailsAndImage from "../components/PackageDetailsAndImage";
 const imageUrl = "http://localhost:5219/images";
 
 const PackagePage = () => {
+  // Get package ID from route params
   const { id } = useParams();
+  // State to store the package data
   const [graphicPackage, setPackage] = useState(null);
+  // State to manage active tab
   const [activeTab, setActiveTab] = useState("About");
 
+  // Fetch package data based on ID
   useEffect(() => {
     const fetchPackage = async () => {
       if (id) {
@@ -26,14 +30,12 @@ const PackagePage = () => {
     fetchPackage();
   }, [id]);
 
+  // Function to handle tab click
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
 
-  if (!graphicPackage) {
-    return <h1>Package not found</h1>;
-  }
-
+  // Define content based on active tab
   let content;
   switch (activeTab) {
     case "About":
@@ -59,8 +61,10 @@ const PackagePage = () => {
       content = <p>{graphicPackage.description}</p>;
   }
 
+  // Render the component
   return (
     <div className="bg-brandBgLight min-h-screen flex flex-col items-center px-4 sm:px-0">
+      {/* Render package details and image */}
       <div className="mt-8">
         <PackageDetailsAndImage
           imageUrl={imageUrl}
@@ -69,33 +73,18 @@ const PackagePage = () => {
       </div>
       {/* Tabs for About, Specifications, and Reviews */}
       <div className="flex justify-center space-x-8 mt-8">
-        <div
-          className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
-            activeTab === "About" ? "underline" : ""
-          }`}
-          style={{ fontFamily: "Play, Helvetica" }}
-          onClick={() => handleTabClick("About")}
-        >
-          About
-        </div>
-        <div
-          className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
-            activeTab === "Specifications" ? "underline" : ""
-          }`}
-          style={{ fontFamily: "Play, Helvetica" }}
-          onClick={() => handleTabClick("Specifications")}
-        >
-          Specifications
-        </div>
-        <div
-          className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
-            activeTab === "Reviews" ? "underline" : ""
-          }`}
-          style={{ fontFamily: "Play, Helvetica" }}
-          onClick={() => handleTabClick("Reviews")}
-        >
-          Reviews
-        </div>
+        {["About", "Specifications", "Reviews"].map((tab) => (
+          <div
+            key={tab}
+            className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
+              activeTab === tab ? "underline" : ""
+            }`}
+            style={{ fontFamily: "Play, Helvetica" }}
+            onClick={() => handleTabClick(tab)}
+          >
+            {tab}
+          </div>
+        ))}
       </div>
       {/* Conditionally rendered content based on active tab */}
       <div

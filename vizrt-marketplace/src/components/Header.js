@@ -2,30 +2,38 @@ import React, { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { CiFilter } from "react-icons/ci";
 
+// Header component accepts products and setFilteredProducts as props
 const Header = ({ products, setFilteredProducts }) => {
+  // State to store the search query
   const [searchQuery, setSearchQuery] = useState("");
+  // State to manage the visibility of the search box
   const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(false);
+  // State to manage the visibility of the filter box
   const [isFilterBoxVisible, setIsFilterBoxVisible] = useState(false);
 
+  // Toggle the visibility of the filter box
   const handleFilterClick = () => {
     setIsFilterBoxVisible(!isFilterBoxVisible);
   };
 
+  // Toggle the visibility of the search box
   const handleSearchClick = () => {
     setIsSearchBoxVisible(!isSearchBoxVisible);
   };
 
+  // Update search query and filter products as user types
   const handleSearchChange = (event) => {
     const query = event.target.value;
     setSearchQuery(query);
 
-    // Filter products as you type
+    // Filter products based on the search query
     const filteredProducts = products.filter((product) =>
       product.name.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredProducts(filteredProducts);
   };
 
+  // Apply filter based on the selected filter type
   const applyFilter = (filterType) => {
     let filteredProducts = [...products];
     switch (filterType) {

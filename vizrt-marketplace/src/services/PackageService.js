@@ -1,29 +1,40 @@
 import axios from "axios";
 
 const PackageService = (() => {
+  // Define the base URL for the packages API
   const packageUrl = "http://localhost:5219/Marketplace/Packages";
 
+  // Function to fetch all packages
   const getAllPackages = async () => {
     try {
+      // Send a GET request to the packageUrl
       const response = await axios.get(packageUrl);
+      // Return the data from the response
       return response.data;
     } catch (error) {
-      console.error("error getting packages", error);
+      // Log any errors that occur during the request
+      console.error("Error getting packages", error);
     }
   };
 
+  // Function to fetch a package by its ID
   const getPackageById = async (id) => {
     try {
+      // Send a GET request to the specific package URL using the provided ID
       const response = await axios.get(`${packageUrl}/${id}`);
+      // Return the data from the response
       return response.data;
     } catch (error) {
-      console.error("error getting package by id", error);
+      // Log any errors that occur during the request
+      console.error("Error getting package by ID", error);
     }
   };
 
+  // Return an object with the exposed functions
   return {
     getAllPackages,
     getPackageById,
   };
 })();
-export default PackageService;
+
+export default PackageService; // Export the PackageService object

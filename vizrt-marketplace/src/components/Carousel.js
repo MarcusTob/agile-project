@@ -9,9 +9,12 @@ import { useNavigate } from "react-router-dom";
 const imageUrl = "http://localhost:5219/images";
 
 const Carousel = ({ graphicPackage }) => {
+  // State to store the fetched packages
   const [packages, setPackages] = useState([]);
+  // State to track the current slide index
   const [current, setCurrent] = useState(0);
 
+  // Fetch packages by their IDs when the component mounts
   useEffect(() => {
     const packageIDs = [4, 5, 6];
     const packagePromises = packageIDs.map((id) =>
@@ -23,11 +26,13 @@ const Carousel = ({ graphicPackage }) => {
     });
   }, []);
 
+  // Function to move to the previous slide
   let previousSlide = () => {
     if (current === 0) setCurrent(packages.length - 1);
     else setCurrent(current - 1);
   };
 
+  // Function to move to the next slide
   let nextSlide = () => {
     if (current === packages.length - 1) setCurrent(0);
     else setCurrent(current + 1);
@@ -35,6 +40,7 @@ const Carousel = ({ graphicPackage }) => {
 
   const navigate = useNavigate();
 
+  // Function to handle view item button click and navigate to the package details page
   const handleViewItem = () => {
     const graphicPackage = packages[current];
     navigate(`/package/${graphicPackage.packageID}`);

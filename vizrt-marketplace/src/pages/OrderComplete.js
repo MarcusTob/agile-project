@@ -4,20 +4,24 @@ import "../index.css";
 import "tailwindcss/tailwind.css";
 
 const OrderComplete = () => {
+  // State for rating
   const [rating, setRating] = useState(0);
 
+  // Function to handle rating
   const handleRating = (rate) => {
     setRating(rate);
   };
 
   return (
     <div className="bg-brandBgLight flex flex-col min-h-screen items-center justify-center">
+      {/* Container with motion animation */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="bg-white p-12 rounded-lg shadow-md w-full max-w-4xl h-[80vh] text-center flex flex-col justify-center"
       >
+        {/* Heading */}
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -26,6 +30,7 @@ const OrderComplete = () => {
         >
           Thank You For Your Order
         </motion.h2>
+        {/* Download button */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -33,6 +38,7 @@ const OrderComplete = () => {
         >
           Download
         </motion.button>
+        {/* Rating section */}
         <div className="flex flex-col items-center space-y-8">
           <motion.p
             initial={{ opacity: 0 }}
@@ -42,6 +48,7 @@ const OrderComplete = () => {
           >
             Rate your shopping experience
           </motion.p>
+          {/* Star rating buttons */}
           <div className="flex space-x-3">
             {[1, 2, 3, 4, 5].map((star) => (
               <motion.button
