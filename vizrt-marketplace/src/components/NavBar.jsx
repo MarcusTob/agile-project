@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import "../index.css";
@@ -29,8 +29,7 @@ const Navbar = () => {
     const unsubscribe = CartService.subscribe(newCart => {
       setCartItems(newCart);
       return unsubscribe;
-    }); // Add closing parenthesis here
-
+    });
   }, []);
 
 
