@@ -13,8 +13,7 @@ export const RegisterUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await UserService.createUser({ username, password, email });
-  }
-
+  };
 
   return (
     <div className="bg-[#1e3541] flex flex-row justify-center w-full min-h-screen">
@@ -51,7 +50,7 @@ export const RegisterUser = () => {
           <BiHide className="absolute top-[13px] right-[15px] text-collection-1-brandtextwhite" />
         </div>
         <div className="absolute w-[265px] h-[101px] top-[601px] left-[627px] bg-[#F08D5A] rounded-lg">
-           <button
+          <button
             type="button"
             className="w-full h-full bg-collection-1-brandtextorange rounded-lg text-black text-[32px] font-bold"
             onClick={handleSubmit}
@@ -62,7 +61,9 @@ export const RegisterUser = () => {
         <p className="absolute w-[398px] top-[725px] left-[558px] font-normal text-[22px] text-center text-transparent">
           <span className="text-[#f08d5a]">Already have a user?</span>
           <span className="text-[#626262]">&nbsp;</span>
-          <Link to="/login" className="font-semibold text-white">Sign in here!</Link>
+          <Link to="/login" className="font-semibold text-white">
+            Sign in here!
+          </Link>
         </p>
       </div>
     </div>

@@ -1,13 +1,12 @@
-import React from 'react'
-import SellingUpload from '../components/SellingUpload'
+import React from "react";
+import SellingUpload from "../components/SellingUpload";
 
 const SellingUploadPage = () => {
   return (
     <div>
-      <SellingUpload/>
+      <SellingUpload />
     </div>
-  )
-}
+  );
+};
 
-export default SellingUploadPage
-
+export default SellingUploadPage;

@@ -1,6 +1,6 @@
-import React from 'react';
-import { FiEdit2 } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { FiEdit2 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const Listing = ({ product, imageUrl }) => (
   <div className="relative w-full h-auto bg-white mt-10 p-4 rounded-lg shadow-md">
