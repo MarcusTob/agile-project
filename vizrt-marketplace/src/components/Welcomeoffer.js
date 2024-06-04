@@ -6,6 +6,7 @@ const Welcomeoffer = () => {
   }
   return (
     <div className="flex flex-col items-center justify-center bg-brandBgLight">
+            <a href="https://www.vizrt.com/campaign/summer-of-storytelling/">
       <div className="max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden flex">
         <div className="relative w-1/2">
           <img
@@ -31,6 +32,7 @@ const Welcomeoffer = () => {
           </p>
         </div>
       </div>
+      </a>
     </div>
   );
 };
