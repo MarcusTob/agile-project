@@ -29,7 +29,7 @@ const TabsAndContent = ({ activeTab, handleTabClick, product }) => {
           Reviews
         </div>
       </div>
-      <div className="mt-4 text-white text-[32px] w-full px-4">
+      <div className="mt-4 text-white text-[32px] w-full px-4 max-w-3xl mx-auto">
         {activeTab === 'About' && <p>{product.description}</p>}
         {activeTab === 'Specifications' && (
           <p>Our product is made from high-quality materials that provide superior support and comfort.</p>

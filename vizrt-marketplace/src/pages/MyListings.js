@@ -36,7 +36,7 @@ const MyListings = () => {
       <div className="flex flex-col items-center w-full mt-8">
         <div className="w-[1512px] min-h-screen p-8">
           <Header products={products} setFilteredProducts={setFilteredProducts} />
-          <div className="mt-20"> {/* Adjusted margin-top to place listings below the header */}
+          <div className="mt-20">
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product, index) => (
                 <Listing key={product.id || index} product={product} imageUrl={imageUrl} />

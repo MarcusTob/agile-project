@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import { CiFilter } from 'react-icons/ci';
+import { Link } from 'react-router-dom';
 
 const Header = ({ products, setFilteredProducts }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -19,7 +20,6 @@ const Header = ({ products, setFilteredProducts }) => {
     const query = event.target.value;
     setSearchQuery(query);
 
-    // Filter products as you type
     const filteredProducts = products.filter(product =>
       product.name.toLowerCase().includes(query.toLowerCase())
     );
@@ -73,9 +73,11 @@ const Header = ({ products, setFilteredProducts }) => {
           )}
         </div>
         <div className="flex items-center">
-          <button className="bg-white hover:bg-blue-700 text-black font-bold py-2 px-4 rounded-full mr-4">
-            Create new listings
-          </button>
+        <Link to="/sellingUpload">
+           <button className="bg-white hover:bg-blue-700 text-black font-bold py-2 px-4 rounded-full mr-4">
+               Create new listings
+           </button>
+        </Link>
           <div className="relative">
             <button onClick={handleSearchClick} className="w-[52px] h-[42px] bg-white rounded-[20px] flex items-center justify-center">
               <IoIosSearch className="text-black text-2xl" />

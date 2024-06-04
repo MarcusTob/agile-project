@@ -1,33 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import '../index.css';
 import 'tailwindcss/tailwind.css';
+import { IoIosSearch } from "react-icons/io";
+import CartService from '../services/CartService';
 
-const Navbar = ({
-  logoLogo = "https://c.animaapp.com/2XehKRee/img/logo-2@2x.png",
-}) => {
+
+const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [cartItems, setCartItems ] = useState(CartService.getCart());
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
+  useEffect(() => {
+    const unsubscribe = CartService.subscribe(newCart => {
+      setCartItems(newCart);
+    });
+
+    return unsubscribe;
+  }, []);
+
 
   return (
     <div className="flex justify-between items-center bg-white p-4 shadow-md">
       {/* Logo */}
       <a href="/" className="flex items-center">
-        <img src={logoLogo} alt="Vizrt Logo" className="w-32 h-auto object-cover" />
+        <img src="/images/logo-vizrt.png" alt="Vizrt Logo" className="w-32 h-auto object-cover" />
       </a>
 
       {/* Search Bar and Links */}
       <div className="flex flex-col items-left w-1/2">
         <div className="border-2 border-solid border-gray-600 flex items-center w-full gap-2 p-2 rounded-md bg-white">
-          <img
-            className="w-6 h-6"
-            alt="Search"
-            src="https://c.animaapp.com/2XehKRee/img/search-1.svg"
-          />
+        <IoIosSearch size="1.5em"/>
           <input
             type="text"
             value={searchTerm}
@@ -43,11 +49,17 @@ const Navbar = ({
         </div>
       </div>
 
-
       {/* Icons */}
       <div className="flex space-x-6 items-center">
-      <a href="/shoppingcart"><FiShoppingCart className="text-5xl text-black" /></a>
-      <a href="/login"><CgProfile className="text-5xl text-black" /></a>
+        <a href="/shoppingcart" className="relative">
+          <FiShoppingCart className="text-5xl text-black" />
+          {cartItems.length > 0 && (
+            <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+              {cartItems.length}
+            </span>
+          )}
+        </a>
+        <a href="/login"><CgProfile className="text-5xl text-black" /></a>
       </div>
     </div>
   );
