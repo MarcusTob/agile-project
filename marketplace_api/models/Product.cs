@@ -14,6 +14,9 @@ namespace marketplace_api.Models{
     public List<string> Tags { get; set; } = [];
     public string? Image { get; set; } = null;
 
+    public ICollection<ShoppingCart>? ShoppingCarts { get; set; }
+
+
     // public virtual ICollection<PackageProduct> PackageProducts { get; set; }
     }
 }

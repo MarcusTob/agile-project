@@ -15,7 +15,7 @@ public class MarketplaceController : ControllerBase
     }
 
     //CRUD OPERATIONS
-    //GET
+    //Products
     [HttpGet("products")]
     public async Task<List<Product>> GetProducts() {
         List<Product> products = await context.Product.ToListAsync();
@@ -30,6 +30,34 @@ public class MarketplaceController : ControllerBase
             return NotFound();
         }
     }
+    [HttpPost("products")]
+    public async Task<ActionResult<Product>> Post(Product newProduct) {
+        context.Product.Add(newProduct);
+        await context.SaveChangesAsync();
+        return CreatedAtAction(nameof(GetProducts), new { id = newProduct.ProductID }, newProduct);
+    }
+    [HttpPut("products/{id}")]
+    public async Task<ActionResult<Product>> PutProduct(int id, Product updatedProduct) {
+        Product? productToUpdate = await context.Product.FindAsync(id);
+        if (productToUpdate == null) {
+            return NotFound();
+        }
+        context.Entry(productToUpdate).CurrentValues.SetValues(updatedProduct);
+        context.Entry(productToUpdate).State = EntityState.Modified;
+        await context.SaveChangesAsync();
+        return NoContent();
+    }
+    [HttpDelete("products/{id}")]
+    public async Task<ActionResult<Product>> DeleteProduct(int id) {
+        Product? product = await context.Product.FindAsync(id);
+        if (product != null) {
+            context.Product.Remove(product);
+            await context.SaveChangesAsync();
+        }
+        return NoContent();
+    }
+
+    //Packages
     [HttpGet("packages")]
     public async Task<List<Package>> GetPackages() {
         List<Package> packages = await context.Package.ToListAsync();
@@ -44,6 +72,34 @@ public class MarketplaceController : ControllerBase
             return NotFound();
         }
     }
+    [HttpPost("packages")]
+    public async Task<ActionResult<Package>> Post(Package newPackage) {
+        context.Package.Add(newPackage);
+        await context.SaveChangesAsync();
+        return CreatedAtAction(nameof(GetPackages), new { id = newPackage.PackageID }, newPackage);
+    }
+    [HttpPut("packages/{id}")]
+    public async Task<ActionResult<Package>> PutPackage(int id, Package updatedPackage) {
+        Package? packageToUpdate = await context.Package.FindAsync(id);
+        if (packageToUpdate == null) {
+            return NotFound();
+        }
+        context.Entry(packageToUpdate).CurrentValues.SetValues(updatedPackage);
+        context.Entry(packageToUpdate).State = EntityState.Modified;
+        await context.SaveChangesAsync();
+        return NoContent();
+    }
+    [HttpDelete("package/{id}")]
+    public async Task<ActionResult<Package>> DeletePackage(int id) {
+        Package? package = await context.Package.FindAsync(id);
+        if (package != null) {
+            context.Package.Remove(package);
+            await context.SaveChangesAsync();
+        }
+        return NoContent();
+    }
+
+    //User
     [HttpGet("user/{id}")]
     public async Task<ActionResult<User>> GetUserByID(int id) {
         User? user = await context.User.FindAsync(id);
@@ -52,20 +108,6 @@ public class MarketplaceController : ControllerBase
         } else{
             return NotFound();
         }
-    }
-
-    //POST
-    [HttpPost("products")]
-    public async Task<ActionResult<Product>> Post(Product newProduct) {
-        context.Product.Add(newProduct);
-        await context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetProducts), new { id = newProduct.ProductID }, newProduct);
-    }
-    [HttpPost("packages")]
-    public async Task<ActionResult<Package>> Post(Package newPackage) {
-        context.Package.Add(newPackage);
-        await context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetPackages), new { id = newPackage.PackageID }, newPackage);
     }
     [HttpPost("user")]
     public async Task<ActionResult<User>> Post(User newUser) {
@@ -82,51 +124,6 @@ public class MarketplaceController : ControllerBase
             return NotFound();
         }
     }
-
-    //UPDATE
-    [HttpPut("products/{id}")]
-    public async Task<ActionResult<Product>> PutProduct(int id, Product updatedProduct) {
-        Product? productToUpdate = await context.Product.FindAsync(id);
-        if (productToUpdate == null) {
-            return NotFound();
-        }
-        context.Entry(productToUpdate).CurrentValues.SetValues(updatedProduct);
-        context.Entry(productToUpdate).State = EntityState.Modified;
-        await context.SaveChangesAsync();
-        return NoContent();
-    }
-    [HttpPut("packages/{id}")]
-    public async Task<ActionResult<Package>> PutPackage(int id, Package updatedPackage) {
-        Package? packageToUpdate = await context.Package.FindAsync(id);
-        if (packageToUpdate == null) {
-            return NotFound();
-        }
-        context.Entry(packageToUpdate).CurrentValues.SetValues(updatedPackage);
-        context.Entry(packageToUpdate).State = EntityState.Modified;
-        await context.SaveChangesAsync();
-        return NoContent();
-    }
-
-    //DELETE
-    //mostly used for cleaning up mock data
-    [HttpDelete("products/{id}")]
-    public async Task<ActionResult<Product>> DeleteProduct(int id) {
-        Product? product = await context.Product.FindAsync(id);
-        if (product != null) {
-            context.Product.Remove(product);
-            await context.SaveChangesAsync();
-        }
-        return NoContent();
-    }
-    [HttpDelete("package/{id}")]
-    public async Task<ActionResult<Package>> DeletePackage(int id) {
-        Package? package = await context.Package.FindAsync(id);
-        if (package != null) {
-            context.Package.Remove(package);
-            await context.SaveChangesAsync();
-        }
-        return NoContent();
-    }
     [HttpDelete("user/{id}")]
     public async Task<ActionResult<User>> DeleteUser(int id) {
         User? user = await context.User.FindAsync(id);
@@ -135,5 +132,53 @@ public class MarketplaceController : ControllerBase
             await context.SaveChangesAsync();
         }
         return NoContent();
+    }
+
+
+    //ShoppingCart
+    [HttpGet("shoppingCart/{id}")]
+    public async Task<ActionResult<ShoppingCart>> GetShoppingCart(int id) {
+        ShoppingCart? shoppingCart = await context.ShoppingCart.FindAsync(id);
+        if (shoppingCart != null) {
+            return Ok(shoppingCart);
+        } else {
+            return NotFound();
+        }
+    }   
+    [HttpPost("shoppingCart/initializeCart")]
+    public async Task<ActionResult<ShoppingCart>> InitializeCart(int userID) {
+    var user = await context.User.FindAsync(userID);
+
+    if (user == null) {
+        return NotFound();
+    }
+
+    var shoppingCart = new ShoppingCart {
+        UserID = userID,
+    };
+
+    context.ShoppingCart.Add(shoppingCart);
+    await context.SaveChangesAsync();
+
+    return CreatedAtAction(nameof(GetShoppingCart), new { id = shoppingCart.CartID }, shoppingCart);
+}
+    [HttpPost("shoppingCart/addToCart")]
+    public async Task<ActionResult<ShoppingCart>> AddToCart(int userID, int productID) {
+        var user = await context.User.FindAsync(userID);
+        var product = await context.Product.FindAsync(productID);
+
+        if (user == null || product == null) {
+            return NotFound();
+        }
+
+        var shoppingCart = new ShoppingCart {
+            UserID = userID,
+            ProductID = productID,
+        };
+        context.ShoppingCart.Add(shoppingCart);
+        await context.SaveChangesAsync();
+
+        return CreatedAtAction(nameof(GetShoppingCart), new { id = shoppingCart.CartID }, shoppingCart);
+
     }
 }
