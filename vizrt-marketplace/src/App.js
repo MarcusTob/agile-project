@@ -36,7 +36,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/tools" element={<Tools />} />
           <Route path="/ordercomplete" element={<OrderComplete />} />
-          <Route path="/collection" element={<MyCollectionPage />} />
+          <Route path="/mycollection" element={<MyCollectionPage />} />
           <Route path="/listings" element={<MyListings />} />
           <Route path="/sellingUpload" element={<SellingUploadPage />} />
         </Routes>
