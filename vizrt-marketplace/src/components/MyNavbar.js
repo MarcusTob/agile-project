@@ -20,7 +20,7 @@ const MyNavbar = () => {
       <div className="flex space-x-8">
         {/* NavLink to /mycollection */}
         <NavLink
-          to="/collection"
+          to="/mycollection"
           className={({ isActive }) =>
             isActive
               ? "underline text-black text-p font-customFont font-semibold"
