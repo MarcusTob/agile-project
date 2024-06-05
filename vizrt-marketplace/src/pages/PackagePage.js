@@ -75,7 +75,7 @@ const PackagePage = () => {
       {/* Tabs for About, Specifications, and Reviews */}
       <div className="flex justify-center space-x-8 mt-8">
         <div
-          className={`font-customFont text-h3 text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
+          className={`font-customFont text-h3 text-white text-center tracking-[0] leading-[60px] cursor-pointer ${
             activeTab === "About" ? "underline" : ""
           }`}
           onClick={() => handleTabClick("About")}
@@ -83,7 +83,7 @@ const PackagePage = () => {
           About
         </div>
         <div
-          className={`font-customFont text-h3 text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
+          className={`font-customFont text-h3 text-white text-center tracking-[0] leading-[60px] cursor-pointer ${
             activeTab === "Specifications" ? "underline" : ""
           }`}
           onClick={() => handleTabClick("Specifications")}
@@ -91,7 +91,7 @@ const PackagePage = () => {
           Specifications
         </div>
         <div
-          className={`font-customFont text-h3 text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
+          className={`font-customFont text-h3 text-white text-center tracking-[0] leading-[60px] cursor-pointer ${
             activeTab === "Reviews" ? "underline" : ""
           }`}
           onClick={() => handleTabClick("Reviews")}
