@@ -26,7 +26,7 @@ const OrderComplete = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.75 }}
-          className="text-4xl font-semibold mb-8"
+          className="text-h1 font-customFont font-semibold mb-8"
         >
           Thank You For Your Order
         </motion.h2>
@@ -34,7 +34,7 @@ const OrderComplete = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-blue-500 text-white font-bold py-2 px-6 rounded hover:bg-blue-700 mb-8 text-lg w-60 mx-auto"
+          className="bg-blue-500 text-white font-bold py-2 px-6 rounded hover:bg-blue-700 mb-8 w-60 mx-auto text-p font-customFont"
         >
           Download
         </motion.button>
@@ -44,7 +44,7 @@ const OrderComplete = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="text-2xl font-medium mb-6"
+            className="text-h3 font-customFont font-medium mb-6"
           >
             Rate your shopping experience
           </motion.p>
@@ -55,7 +55,7 @@ const OrderComplete = () => {
                 key={star}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.8 }}
-                className={`text-3xl ${
+                className={`text-h3 ${
                   star <= rating ? "text-yellow-500" : "text-gray-400"
                 }`}
                 onClick={() => handleRating(star)}

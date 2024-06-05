@@ -28,22 +28,22 @@ const ProductItem = ({ product }) => {
       {/* Text Section */}
       <div className="w-1/2 p-8 flex flex-col justify-start">
         {/* Product name */}
-        <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
+        <h3 className="text-h3 font-bold font-customFont mb-2">{product.name}</h3>
         {/* Product price */}
-        <p className="text-xl font-semibold text-black-700 mb-4">
+        <p className="text-p font-semibold font-customFont text-black mb-4">
           ${product.price}
         </p>
         {/* Product description */}
-        <p className="text-base text-black-600 mb-4">{product.description}</p>
+        <p className="text-p3 font-customFont text-black mb-4">{product.description}</p>
         {/* Product category */}
-        <p className="text-base font-semibold text-black-600 mb-4">
+        <p className="text-p3 font-semibold text-black mb-4">
           {product.category}
         </p>
         <div className="flex-grow"></div>
         {/* View Item button */}
         <button
           onClick={handleViewItem}
-          className="bg-black text-white py-2 px-4 rounded mt-auto"
+          className="bg-black text-p3 font-customFont text-white py-2 rounded mt-auto"
         >
           View Item
         </button>

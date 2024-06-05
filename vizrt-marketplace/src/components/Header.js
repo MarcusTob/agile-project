@@ -71,25 +71,25 @@ const Header = ({ products, setFilteredProducts }) => {
             <div className="absolute top-full mt-2 bg-white p-2 rounded-lg shadow-lg z-10 w-[200px]">
               <button
                 onClick={() => applyFilter("price-asc")}
-                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200"
+                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200 text-p3 font-customFont"
               >
                 Price: Low to High
               </button>
               <button
                 onClick={() => applyFilter("price-desc")}
-                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200"
+                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200 text-p3 font-customFont"
               >
                 Price: High to Low
               </button>
               <button
                 onClick={() => applyFilter("recent")}
-                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200"
+                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200 text-p3 font-customFont"
               >
                 Recent Purchases
               </button>
               <button
                 onClick={() => applyFilter("old")}
-                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200"
+                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200 text-p3 font-customFont"
               >
                 Old Purchases
               </button>
@@ -98,7 +98,7 @@ const Header = ({ products, setFilteredProducts }) => {
         </div>
         <div className="flex items-center">
         <Link to="/sellingUpload">
-           <button className="bg-white hover:bg-blue-700 text-black font-bold py-2 px-4 rounded-full mr-4">
+           <button className="bg-white hover:bg-blue-700 text-black font-bold text-p3 font-customFont py-2 px-4 rounded-full mr-4">
                Create new listings
            </button>
         </Link>

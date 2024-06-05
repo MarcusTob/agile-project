@@ -6,14 +6,14 @@ const TrustedBy = () => {
   return (
     <div className="bg-white py-10 w-full flex flex-col items-center">
       {/* Title */}
-      <h2 className="text-xl font-semibold mb-6">Trusted By</h2>
+      <h3 className="text-h3 font-semibold mb-6 focustomFont">Trusted By</h3>
       {/* Logos */}
       <div className="flex justify-around w-3/4">
         {/* Logo: PGA Tour */}
         <img
           src="/images/pga-tour.webp"
           alt="PGA Tour"
-          className="h-16 w-auto"
+          className="h-16 w-20"
         />
         {/* Logo: NFL */}
         <img src="/images/nfl-logo.png" alt="NFL" className="h-16 w-auto" />

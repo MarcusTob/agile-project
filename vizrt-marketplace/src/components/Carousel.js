@@ -49,7 +49,7 @@ const Carousel = ({ graphicPackage }) => {
 
   return (
     <div className="overflow-hidden relative flex flex-col items-center">
-      <h1 className="text-white text-3xl font-bold mb-2">Featured Items</h1>
+      <h1 className="text-white text-h3 font-bold mb-2">Featured Items</h1>
       <div
         className={`flex transition ease-out duration-400`}
         style={{
@@ -69,11 +69,11 @@ const Carousel = ({ graphicPackage }) => {
                 alt={graphicPackage.name}
               />
               <div className="absolute top-0 left-0 bg-white text-black p-2 rounded-xl">
-                <h1 className="text-xl">{graphicPackage.name}</h1>
-                <p>Price: {graphicPackage.price}$</p>
+                <h1 className="text-p font-customFont">{graphicPackage.name}</h1>
+                <p className="text-p3 font-customFont">Price: {graphicPackage.price}$</p>
                 <button
                   onClick={handleViewItem}
-                  className="bg-black text-white py-1 px-2 rounded mt-2"
+                  className="bg-black text-white py-1 px-9 rounded mt-2 text-p font-customFont"
                 >
                   View Item
                 </button>

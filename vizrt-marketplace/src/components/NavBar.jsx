@@ -56,13 +56,13 @@ const Navbar = () => {
         </div>
         {/* Navigation links */}
         <div className="flex space-x-8 mt-2 start-end">
-          <a href="/graphics" className="text-black text-xl font-medium">
+          <a href="/graphics" className="text-black text-p font-customFont">
             Graphics
           </a>
-          <a href="/packages" className="text-black text-xl font-medium">
+          <a href="/packages" className="text-black text-p font-customFont">
             Packages
           </a>
-          <a href="/tools" className="text-black text-xl font-medium">
+          <a href="/tools" className="text-black text-p font-customFont">
             Tools
           </a>
         </div>

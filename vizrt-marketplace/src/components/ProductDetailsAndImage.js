@@ -62,17 +62,17 @@ const ProductDetailsAndImage = ({ imageUrl, product }) => {
       {/* Details Section */}
       <div className="w-1/2 flex flex-col justify-start items-start px-7">
         {/* Product name */}
-        <h1 className="text-5xl font-bold mb-6 text-brandOrange py-1 px-2 rounded-lg">
+        <h1 className="text-h1 font-customFont font-bold mb-6 text-brandOrange py-1 px-2 rounded-lg">
           {product.name}
         </h1>
         {/* Product price */}
-        <p className="text-white mb-6 text-3xl">Price: ${product.price}</p>
+        <p className="text-white mb-6 text-h3 font-customFont">Price: ${product.price}</p>
         {/* Product category */}
-        <p className="text-white mb-2 text-2xl">Category: {product.category}</p>
+        <p className="text-white mb-2 text-p font-customFont">Category: {product.category}</p>
         {/* Product creator */}
-        <p className="text-white mb-6 text-2xl">Creator: {product.creator}</p>
+        <p className="text-white mb-6 text-p font-customFont">Creator: {product.creator}</p>
         <div className="mb-4">
-          <h3 className="text-white font-bold mb-2">Colors</h3>
+          <h3 className="text-white font-bold mb-2 text-p font-customFont">Colors</h3>
           <div className="flex flex-wrap items-center">
             {colors.map((color, index) => (
               <div key={index} className="relative flex items-center mr-4 mb-4">
@@ -93,7 +93,7 @@ const ProductDetailsAndImage = ({ imageUrl, product }) => {
                 </button>
               </div>
             ))}
-            <button className="bg-brandBg text-white px-4 py-2 rounded" onClick={handleAddColor}>
+            <button className="bg-brandBg text-white px-4 py-2 rounded text-p3 font-customFont" onClick={handleAddColor}>
               Add Color
             </button>
           </div>
@@ -112,20 +112,20 @@ const ProductDetailsAndImage = ({ imageUrl, product }) => {
               </motion.button>
             ))}
           </div>
-          <p className="text-white ml-4">{product.nrOfReviews} Reviews</p>
+          <p className="text-white ml-4 text-p3 font-customFont">{product.nrOfReviews} Reviews</p>
         </div>
         {/* Add to Cart button */}
         <button
           className="bg-brandBlue text-white px-8 py-3 rounded-lg mt-9 flex items-center"
           onClick={handleAddToCart}
         >
-          <p className="text-2xl mr-2">Add to Cart</p>
+          <p className="text-p font-customFont mr-2">Add to Cart</p>
           <FiShoppingCart className="text-2xl" />
         </button>
         {/* Show "Item added to cart!" message */}
         {showMessage && (
           <div className="absolute bg-white rounded-lg p-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md">
-            <p className="text-gray-800 text-xl">Item added to cart!</p>
+            <p className="text-gray text-h3 font-customFont">Item added to cart!</p>
           </div>
         )}
       </div>

@@ -8,7 +8,7 @@ const TabsAndContent = ({ activeTab, handleTabClick, product }) => {
       <div className="flex justify-center space-x-8 mt-4">
         {/* About tab */}
         <div
-          className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
+          className={`font-customFont text-h3 text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
             activeTab === "About" ? "underline" : ""
           }`}
           onClick={() => handleTabClick("About")}
@@ -17,7 +17,7 @@ const TabsAndContent = ({ activeTab, handleTabClick, product }) => {
         </div>
         {/* Specifications tab */}
         <div
-          className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
+          className={`font-customFont text-h3 text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
             activeTab === "Specifications" ? "underline" : ""
           }`}
           onClick={() => handleTabClick("Specifications")}
@@ -26,7 +26,7 @@ const TabsAndContent = ({ activeTab, handleTabClick, product }) => {
         </div>
         {/* Reviews tab */}
         <div
-          className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
+          className={`font-customFont text-h3 text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
             activeTab === "Reviews" ? "underline" : ""
           }`}
           onClick={() => handleTabClick("Reviews")}
@@ -35,7 +35,7 @@ const TabsAndContent = ({ activeTab, handleTabClick, product }) => {
         </div>
       </div>
       {/* Content for active tab */}
-      <div className="mt-4 text-white text-[32px] w-full px-4 max-w-3xl mx-auto">
+      <div className="mt-4 text-white font-customFont text-p text-[32px] w-full px-4 max-w-3xl mx-auto">
         {/* Display product description if the About tab is active */}
         {activeTab === "About" && <p>{product.description}</p>}
         {/* Display generic specifications */}

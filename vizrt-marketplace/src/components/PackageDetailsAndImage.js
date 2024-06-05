@@ -32,15 +32,15 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
       {/* Details Section */}
       <div className="w-1/2 flex flex-col justify-start items-start px-7">
         {/* Package name */}
-        <h1 className="text-5xl font-bold mb-6 text-brandOrange py-1 px-2 rounded-lg">
+        <h1 className="text-h1 font-customFont font-bold mb-6 text-brandOrange py-1 px-2 rounded-lg">
           {graphicPackage.name}
         </h1>
         {/* Price */}
-        <p className="text-white mb-6 text-3xl">Price: ${graphicPackage.price}</p>
+        <p className="text-white mb-6 text-h3 font-customFont">Price: ${graphicPackage.price}</p>
         {/* Category */}
-        <p className="text-white mb-2 text-2xl">Category: {graphicPackage.category}</p>
+        <p className="text-white mb-2 text-p font-customFont">Category: {graphicPackage.category}</p>
         {/* Creator */}
-        <p className="text-white mb-6 text-2xl">Creator: {graphicPackage.creator}</p>
+        <p className="text-white mb-6 text-p font-customFont">Creator: {graphicPackage.creator}</p>
         {/* Star ratings and reviews */}
         <div className="flex items-center justify-start">
           <img
@@ -55,13 +55,13 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
           className="bg-brandBlue text-white px-8 py-3 rounded-lg mt-9 flex items-center"
           onClick={handleAddToCart}
         >
-          <p className="text-2xl mr-2">Add to Cart</p>
+          <p className="text-p font-customFont mr-2">Add to Cart</p>
           <FiShoppingCart className="text-2xl" />
         </button>
         {/* Show message when item is added to cart */}
         {showMessage && (
           <div className="absolute bg-white rounded-lg p-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md">
-            <p className="text-gray-800 text-xl">Item added to cart!</p>
+            <p className="text-gray-800 text-h3 font-customFont">Item added to cart!</p>
           </div>
         )}
       </div>

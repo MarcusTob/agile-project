@@ -34,7 +34,7 @@ const PackagePage = () => {
 
   // Conditional rendering based on the existence of package data
   if (!graphicPackage) {
-    return <h1>Package not found</h1>; // Render a message if package data is not available
+    return <h1 className="font-customFont text-h3">Package not found</h1>; // Render a message if package data is not available
   }
 
   // Define content based on the active tab
@@ -75,28 +75,25 @@ const PackagePage = () => {
       {/* Tabs for About, Specifications, and Reviews */}
       <div className="flex justify-center space-x-8 mt-8">
         <div
-          className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
+          className={`font-customFont text-h3 text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
             activeTab === "About" ? "underline" : ""
           }`}
-          style={{ fontFamily: "Play, Helvetica" }}
           onClick={() => handleTabClick("About")}
         >
           About
         </div>
         <div
-          className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
+          className={`font-customFont text-h3 text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
             activeTab === "Specifications" ? "underline" : ""
           }`}
-          style={{ fontFamily: "Play, Helvetica" }}
           onClick={() => handleTabClick("Specifications")}
         >
           Specifications
         </div>
         <div
-          className={`font-normal text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
+          className={`font-customFont text-h3 text-white text-[40px] text-center tracking-[0] leading-[60px] cursor-pointer ${
             activeTab === "Reviews" ? "underline" : ""
           }`}
-          style={{ fontFamily: "Play, Helvetica" }}
           onClick={() => handleTabClick("Reviews")}
         >
           Reviews
@@ -104,8 +101,7 @@ const PackagePage = () => {
       </div>
       {/* Conditionally rendered content based on active tab */}
       <div
-        className="mt-4 text-white text-[32px]"
-        style={{ fontFamily: "Pontano_Sans, Helvetica" }}
+        className="mt-4 text-white text-[32px] font-customFont text-p"
       >
         {content}
       </div>

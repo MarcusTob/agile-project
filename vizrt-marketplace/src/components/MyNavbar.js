@@ -23,8 +23,8 @@ const MyNavbar = () => {
           to="/mycollection"
           className={({ isActive }) =>
             isActive
-              ? "underline text-black text-lg font-semibold"
-              : "text-black text-lg font-semibold"
+              ? "underline text-black text-p font-customFont font-semibold"
+              : "text-black text-p font-customFont font-semibold"
           }
         >
           My Collection
@@ -34,8 +34,8 @@ const MyNavbar = () => {
           to="/listings"
           className={({ isActive }) =>
             isActive
-              ? "underline text-black text-lg font-semibold"
-              : "text-black text-lg font-semibold"
+              ? "underline text-black text-p font-customFont font-semibold"
+              : "text-black text-p font-customFont font-semibold"
           }
         >
           My Listings
@@ -44,7 +44,7 @@ const MyNavbar = () => {
       {/* Logout button */}
       <button
         onClick={handleLogout}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-p font-customFont"
       >
         Logout
       </button>

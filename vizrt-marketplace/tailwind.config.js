@@ -27,6 +27,13 @@ module.exports = {
         "m3-label-small": "var(--m3-label-small-font-family)",
         navtext: "var(--navtext-font-family)",
         "presets-body2": "var(--presets-body2-font-family)",
+        customFont:["'customFont', Arial"]
+      },
+      fontSize: {
+        h1: '40px',
+        h3: '30px', 
+        p: '19px',
+        p3: '16px', 
       },
     },
   },

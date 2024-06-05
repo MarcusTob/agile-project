@@ -27,17 +27,17 @@ const PackageItem = ({ graphicPackage }) => {
 
       {/* Text Section */}
       <div className="w-1/2 p-8 flex flex-col justify-start">
-        <h1 className="text-3xl font-bold mb-2">{graphicPackage.name}</h1>
-        <p className="text-xl font-semibold text-black-700 mb-4">
+        <h3 className="text-h3 font-bold font-customFont mb-2">{graphicPackage.name}</h3>
+        <p className="text-p font-semibold font-customFont text-black mb-4">
           ${graphicPackage.price}
         </p>
-        <p className="text-base text-black-600 mb-4">
+        <p className="text-p3 font-customFont text-black mb-4">
           {graphicPackage.description}
         </p>
         <div className="flex-grow"></div>
         <button
           onClick={handleViewItem} // Attach handleViewItem function to onClick event of button
-          className="bg-black text-white py-2 px-4 rounded mt-auto"
+          className="bg-black text-p3 font-customFont text-white py-2 px-4 rounded mt-auto"
         >
           View Item
         </button>

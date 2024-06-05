@@ -19,21 +19,21 @@ const Listing = ({ product, imageUrl }) => (
         src={`${imageUrl}/${product.productImage}`}
       />
       {/* Product details container */}
-      <div className="ml-4 mt-4 sm:mt-0">
+      <div className="flex flex-col ml-4 mt-4 sm:mt-0">
         {/* Product name */}
-        <div className="font-semibold text-[#000000] text-[24px] leading-[normal]">
+        <div className="font-semibold text-h3 font-customFont leading-[normal]">
           {product.name}
         </div>
         {/* Product description */}
-        <p className="text-[#000000] text-base leading-[24px] mt-2">
+        <p className="text-p font-customFont leading-[24px] mt-2">
           {product.description}
         </p>
         {/* Product size and price */}
-        <div className="flex flex-col sm:flex-row mt-4">
-          <div className="font-semibold text-[#000000] text-[18px] leading-[normal]">
+        <div className="flex mt-4 flex-wrap">
+          <div className="font-semibold text-p font-customFont leading-[normal] mr-4 mb-2">
             Size: {product.size}
           </div>
-          <div className="ml-0 sm:ml-8 mt-2 sm:mt-0 font-semibold text-[#000000] text-[18px] leading-[normal]">
+          <div className="font-semibold text-p font-customFont leading-[normal]">
             Price: ${product.price}
           </div>
         </div>

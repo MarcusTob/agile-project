@@ -21,7 +21,7 @@ const ShoppingCart = () => {
       {/* Cart Items */}
       <div className="flex w-full max-w-5xl mt-8 space-x-8">
         <div className="flex-grow bg-white p-4 rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold mb-4">Your Items</h2>
+          <h2 className="text-h3 font-customFont font-semibold mb-4">Your Items</h2>
           <div className="space-y-4">
             {cartItems.length > 0 ? (
               // Display cart items if there are items in the cart
@@ -37,12 +37,12 @@ const ShoppingCart = () => {
                     alt={item.name}
                   />
                   <div className="flex-grow">
-                    <p className="text-lg font-medium">{item.name}</p>
-                    <p className="text-gray-700">${item.price.toFixed(2)}</p>
+                    <p className="text-p font-customFont">{item.name}</p>
+                    <p className="text-gray-700 text-p3 font-customFont">${item.price.toFixed(2)}</p>
                   </div>
                   {/* Button to remove item from cart */}
                   <button
-                    className="text-red-500 hover:text-red-700"
+                    className="text-red-500 hover:text-red-700 text-p3 font-customFont"
                     onClick={() => removeFromCart(index)}
                   >
                     Remove from cart
@@ -51,22 +51,22 @@ const ShoppingCart = () => {
               ))
             ) : (
               // Display message if cart is empty
-              <p className="text-gray-600">No items in your cart.</p>
+              <p className="text-gray-600 text-p font-customFont">No items in your cart.</p>
             )}
           </div>
         </div>
         {/* Order Summary */}
         <div className="w-1/3 bg-white p-4 rounded-lg shadow-md flex flex-col justify-between">
           <div>
-            <h2 className="text-2xl font-semibold mb-4">Order Summary</h2>
+            <h2 className="text-h3 font-customFont font-semibold mb-4">Order Summary</h2>
             <div className="space-y-4">
               {cartItems.length > 0 ? (
                 // Display total items and total price if there are items in the cart
                 <div>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 text-p font-customFont">
                     Total Items: {cartItems.length}
                   </p>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 text-p font-customFont">
                     Total Price: $
                     {cartItems
                       .reduce((total, item) => total + item.price, 0)
@@ -75,13 +75,13 @@ const ShoppingCart = () => {
                 </div>
               ) : (
                 // Display message if cart is empty
-                <p className="text-gray-600">Your cart is empty.</p>
+                <p className="text-gray-600 text-p font-customFont">Your cart is empty.</p>
               )}
             </div>
           </div>
           {/* Button to place order */}
           <div className="flex justify-center mt-4">
-            <button className="bg-blue-500 text-white font-bold py-2 px-12 rounded hover:bg-blue-700">
+            <button className="bg-blue-500 text-white font-bold py-2 px-12 rounded hover:bg-blue-700 text-p font-customFont">
               Order
             </button>
           </div>

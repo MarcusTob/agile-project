@@ -30,11 +30,11 @@ const FilterOptions = ({ products, setFilteredProducts }) => {
       className="mb-4 bg-white p-6 shadow-md rounded-md"
       style={{ marginLeft: "20px", marginTop: "20px" }}
     >
-      <h2 className="text-xl font-bold mb-4 text-gray-900">Filters</h2>
+      <p className="text-p font-customFont font-bold mb-4 text-black">Filters</p>
       <div className="mb-4">
         <label
           htmlFor="categoryFilter"
-          className="block text-sm font-medium text-gray"
+          className="block text-p3 font-customFont text-gray"
         >
           Category:
         </label>
@@ -42,7 +42,7 @@ const FilterOptions = ({ products, setFilteredProducts }) => {
           id="categoryFilter"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+          className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
         >
           {/* Filter options for product categories */}
           <option value="">All</option>
@@ -61,7 +61,7 @@ const FilterOptions = ({ products, setFilteredProducts }) => {
       <div>
         <label
           htmlFor="priceSort"
-          className="block text-sm font-medium text-gray"
+          className="block text-p3 font-customFont text-gray"
         >
           Price:
         </label>
@@ -69,7 +69,7 @@ const FilterOptions = ({ products, setFilteredProducts }) => {
           id="priceSort"
           value={sortByPrice}
           onChange={(e) => setSortByPrice(e.target.value)}
-          className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+          className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
         >
           {/* Sorting options for product prices */}
           <option value="">None</option>

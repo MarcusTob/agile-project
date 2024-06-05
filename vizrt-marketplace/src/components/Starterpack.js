@@ -24,7 +24,7 @@ const Starterpack = () => {
   return (
     <div className="flex flex-col items-center">
       {/* Title */}
-      <h1 className="text-white text-3xl font-bold mb-6">Starter packs</h1>
+      <h1 className="text-white text-h3 font-bold mb-6 font-customFont">Starter packs</h1>
       {/* Grid of starter packs */}
       <div className="flex justify-center gap-5 flex-wrap">
         {/* Map through the graphic packages and render each as a link */}
@@ -46,7 +46,7 @@ const Starterpack = () => {
                 {/* Overlay with package name */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 transition duration-300 ease-in-out group-hover:opacity-100">
                   {/* Package name */}
-                  <span className="text-white text-xl font-bold">
+                  <span className="text-white text-p font-bold font-customFont">
                     {graphicPackage.name}
                   </span>
                 </div>

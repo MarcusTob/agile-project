@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Listing from "../components/Listing";
 import MyNavbar from "../components/MyNavbar";
 
+// URL to match your backend configuration
 const imageUrl = "http://localhost:5219/images";
 
 const MyListings = () => {
@@ -41,7 +42,7 @@ const MyListings = () => {
       {/* Navbar component */}
       <MyNavbar />
       <div className="flex flex-col items-center w-full mt-8">
-        <div className="w-[1512px] min-h-screen p-8">
+        <div className="w-full px-8">
           {/* Header component */}
           <Header
             products={products}

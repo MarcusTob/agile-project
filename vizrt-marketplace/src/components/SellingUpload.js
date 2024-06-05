@@ -70,7 +70,7 @@ const SellingUpload = () => {
     <div className="bg-brandBg min-h-screen flex flex-col items-center py-10">
       <div className="bg-white p-10 w-full rounded-lg max-w-7xl">
         {/* Header */}
-        <h1 className="text-2xl font-bold mb-6">Create a New Listing</h1>
+        <h1 className="text-h1 font-customFont font-bold mb-6">Create a New Listing</h1>
         <div className="flex">
           {/* Image Uploads */}
           <div className="flex flex-col items-center space-y-4">
@@ -87,7 +87,7 @@ const SellingUpload = () => {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <span className="text-gray-500 flex items-center justify-center w-full h-full">
+                  <span className="text-gray text-p3 font-customFont flex items-center justify-center w-full h-full">
                     Image {index + 1}
                   </span>
                 )}
@@ -115,16 +115,16 @@ const SellingUpload = () => {
           {/* Details Inputs */}
           <div className="flex flex-col ml-10 w-full">
             <div className="flex items-center justify-between">
-              <h1 className="text-3xl font-bold mb-4">
+              <h3 className="text-h3 font-customFont font-bold mb-4">
                 3D-effects of motion graphics
-              </h1>
-              <button className="bg-brandBg text-white px-8 py-2 rounded">
+              </h3>
+              <button className="bg-brandBg text-white px-8 py-2 rounded text-p3 font-customFont">
                 Post
               </button>
             </div>
             {/* Price Input */}
             <div className="mb-4 w-1/4">
-              <label className="block text-2xl font-semibold mb-2">Price</label>
+              <label className="block text-p3 font-customFont font-semibold mb-2">Price</label>
               <input
                 type="text"
                 name="price"
@@ -145,7 +145,7 @@ const SellingUpload = () => {
             {/* About and Specification Inputs */}
             <div className="flex space-x-10 mb-4">
               <div className="flex-1">
-                <h3 className="text-lg font-bold mb-2">About</h3>
+                <h3 className="font-bold mb-2 text-p3 font-customFont">About</h3>
                 <textarea
                   name="about"
                   value={details.about}
@@ -163,7 +163,7 @@ const SellingUpload = () => {
                 )}
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-bold mb-2">Specification</h3>
+                <h3 className="font-bold mb-2 text-p3 font-customFont">Specification</h3>
                 <textarea
                   name="specification"
                   value={details.specification}
@@ -183,7 +183,7 @@ const SellingUpload = () => {
             </div>
             {/* Color Inputs */}
             <div className="mb-4">
-              <h3 className="text-lg font-bold mb-2">Colors</h3>
+              <h3 className="font-bold mb-2 text-p3 font-customFont">Colors</h3>
               <div className="flex flex-wrap items-center">
                 {/* Color picker and hex code input */}
                 {colors.map((color, index) => (
@@ -214,7 +214,7 @@ const SellingUpload = () => {
                 ))}
                 {/* Add color button */}
                 <button
-                  className="bg-brandBg text-white px-4 py-2 rounded"
+                  className="bg-brandBg text-white px-4 py-2 rounded text-p3 font-customFont"
                   onClick={handleAddColor}
                 >
                   Add Color
