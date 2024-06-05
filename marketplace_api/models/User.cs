@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace marketplace_api.Models{
     public class User{
@@ -7,6 +8,8 @@ namespace marketplace_api.Models{
         public string Username { get; set; } = "";
         public string Password { get; set; } = "";
         public string Email { get; set; } = "";
-        // public List<string>? BoughtItems { get; set; } = [];
-    }
+        
+        [NotMapped]  
+        public ICollection<Product> Collection { get; set; }
+}
 }
