@@ -101,7 +101,7 @@ const PackagePage = () => {
       </div>
       {/* Conditionally rendered content based on active tab */}
       <div
-        className="mt-4 text-white text-[32px] font-customFont text-p"
+        className="mt-4 text-white font-customFont text-p w-full px-4 max-w-3xl mx-auto" 
       >
         {content}
       </div>
