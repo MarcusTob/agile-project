@@ -145,40 +145,31 @@ public class MarketplaceController : ControllerBase
             return NotFound();
         }
     }   
-    [HttpPost("shoppingCart/initializeCart")]
-    public async Task<ActionResult<ShoppingCart>> InitializeCart(int userID) {
-    var user = await context.User.FindAsync(userID);
+    [HttpPost("shoppingCart/addToCart")]
+    public async Task<ActionResult<ShoppingCart>> AddToCart(int userID, int productID) {
+    User? user = await context.User.FindAsync(userID);
+    Product? product = await context.Product.FindAsync(productID);
 
-    if (user == null) {
+    if (user == null || product == null) {
         return NotFound();
     }
 
-    var shoppingCart = new ShoppingCart {
-        UserID = userID,
-    };
+    // Look up the shopping cart for the user
+    ShoppingCart? shoppingCart = await context.ShoppingCart
+        .FirstOrDefaultAsync(sc => sc.UserID == userID);
 
-    context.ShoppingCart.Add(shoppingCart);
+    // If a shopping cart exists, add the product to it
+    if (shoppingCart != null) {
+        shoppingCart.ProductID.Add(productID);
+    }
+    // If a shopping cart doesn't exist, create a new one and add the product to it
+    else {
+        shoppingCart = new ShoppingCart { UserID = userID, ProductID = new List<int>{ productID } };
+        context.ShoppingCart.Add(shoppingCart);
+    }
+
     await context.SaveChangesAsync();
 
     return CreatedAtAction(nameof(GetShoppingCart), new { id = shoppingCart.CartID }, shoppingCart);
 }
-    [HttpPost("shoppingCart/addToCart")]
-    public async Task<ActionResult<ShoppingCart>> AddToCart(int userID, int productID) {
-        var user = await context.User.FindAsync(userID);
-        var product = await context.Product.FindAsync(productID);
-
-        if (user == null || product == null) {
-            return NotFound();
-        }
-
-        var shoppingCart = new ShoppingCart {
-            UserID = userID,
-            ProductID = productID,
-        };
-        context.ShoppingCart.Add(shoppingCart);
-        await context.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetShoppingCart), new { id = shoppingCart.CartID }, shoppingCart);
-
-    }
 }

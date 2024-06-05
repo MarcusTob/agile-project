@@ -14,16 +14,16 @@ public class MarketplaceContext : DbContext
     public DbSet<marketplace_api.Models.ShoppingCart> ShoppingCart {get; set;}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<ShoppingCart>()
-            .HasOne(sc => sc.User)
-            .WithMany(u => u.ShoppingCarts)
-            .HasForeignKey(sc => sc.UserID);
+{
+    modelBuilder.Entity<ShoppingCart>()
+        .HasOne(sc => sc.User)
+        .WithOne(u => u.ShoppingCart)
+        .HasForeignKey<ShoppingCart>(sc => sc.UserID);
 
-        modelBuilder.Entity<ShoppingCart>()
-            .HasOne(sc => sc.Product)
-            .WithMany(p => p.ShoppingCarts)
-            .HasForeignKey(sc => sc.ProductID);
-    }
+    modelBuilder.Entity<ShoppingCart>()
+        .HasOne(sc => sc.Product)
+        .WithMany(p => p.ShoppingCarts)
+        .HasForeignKey(sc => sc.ProductID);
+}
 
 }

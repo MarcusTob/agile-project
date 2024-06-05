@@ -8,6 +8,6 @@ namespace marketplace_api.Models{
         public string Password { get; set; } = "";
         public string Email { get; set; } = "";
 
-        public ICollection<ShoppingCart>? ShoppingCarts { get; set; }
+        public ShoppingCart ShoppingCart { get; set; }
     }
 }

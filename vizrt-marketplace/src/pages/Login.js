@@ -26,7 +26,7 @@ export const Login = () => {
       // Set user in context
       setUser(user);
       // Store user in local storage
-      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("userID", user.userID);
       // Redirect to home page
       navigate("/");
     } else {

@@ -1,4 +1,5 @@
 let subscribers = [];
+let cartApi = "http://localhost:5219/Marketplace/shoppingCart";
 
 const CartService = {
   // Method to retrieve the cart from local storage
@@ -10,10 +11,20 @@ const CartService = {
   
   // Method to add an item to the cart
   addToCart: (item) => {
-    const cart = CartService.getCart(); // Retrieve current cart
-    cart.push(item); // Add item to cart
-    localStorage.setItem("cart", JSON.stringify(cart)); // Update cart in local storage
-    CartService.notifySubscribers();
+    fetch(`${cartApi}/addToCart`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(item),
+    })
+    .then(response => response.json())
+    .then(data => {
+      CartService.notifySubscribers();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   },
   
   // Method to remove an item from the cart by index
