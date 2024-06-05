@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import CartService from "../services/CartService";
+import { motion } from "framer-motion";
 
 const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
   // State to control the visibility of the message when item is added to cart
   const [showMessage, setShowMessage] = useState(false);
+  const [rating, setRating] = useState(0);
 
   // Function to handle adding item to cart
   const handleAddToCart = () => {
@@ -18,6 +20,10 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
     }, 2000);
   };
 
+  const handleRating = (star) => {
+    setRating(star);
+  };
+
   return (
     <div className="flex justify-center items-start w-full relative">
       {/* Image Section */}
@@ -26,6 +32,7 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
           className="w-full h-auto object-cover"
           alt="Main"
           src={`${imageUrl}/${graphicPackage.image}`}
+          style={{ width: '600px', height: '500px' }}
         />
       </div>
 
@@ -43,12 +50,20 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
         <p className="text-white mb-6 text-2xl">Creator: {graphicPackage.creator}</p>
         {/* Star ratings and reviews */}
         <div className="flex items-center justify-start">
-          <img
-            className="w-30 h-10 mr-2"
-            alt="Star ratings"
-            src="https://c.animaapp.com/2XehKRee/img/star-ratings@2x.png"
-          />
-          <p className="text-white">{graphicPackage.nrOfReviews} Reviews</p>
+        <div className="flex space-x-3">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <motion.button
+                key={star}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
+                className={`text-3xl ${star <= rating ? 'text-yellow-500' : 'text-gray-400'}`}
+                onClick={() => handleRating(star)}
+              >
+                ★
+              </motion.button>
+            ))}
+          </div>
+          <p className="text-white ml-4">{graphicPackage.nrOfReviews} Reviews</p>
         </div>
         {/* Button to add to cart */}
         <button

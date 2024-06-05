@@ -6,8 +6,8 @@ const imageUrl = "http://localhost:5219/images"; // Define the base URL for pack
 // Define PackageList component
 const PackageList = ({ graphicPackages }) => {
   return (
-    <div className="flex justify-center items-center min-h-screen w-full">
-      <div className="grid grid-cols-1 gap-6 px-4 lg:grid-cols-2">
+    <div className="flex justify-center items-start pt-4 min-h-screen w-full">
+      <div className="grid grid-cols-1 gap-10 px-4 lg:grid-cols-2">
         {graphicPackages.map((graphicPackage) => (
           <PackageItem // Render PackageItem component for each graphic package
             key={graphicPackage.PackageID} // Use PackageID as the unique key

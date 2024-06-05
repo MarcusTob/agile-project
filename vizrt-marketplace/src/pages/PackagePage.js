@@ -104,7 +104,7 @@ const PackagePage = () => {
       </div>
       {/* Conditionally rendered content based on active tab */}
       <div
-        className="mt-4 text-white text-[32px]"
+        className="mt-4 text-white text-[32px] w-full px-4 max-w-3xl mx-auto"
         style={{ fontFamily: "Pontano_Sans, Helvetica" }}
       >
         {content}
