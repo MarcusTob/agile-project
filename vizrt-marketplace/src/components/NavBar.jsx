@@ -78,7 +78,7 @@ const Navbar = () => {
             </span>
           )}
         </a>
-        <a href={user ? "/collection" : "/login"}>
+        <a href={user ? "/mycollection" : "/login"}>
           <CgProfile className="text-5xl text-black" />
         </a>
       </div>
