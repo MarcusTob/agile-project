@@ -9,7 +9,7 @@ import "tailwindcss/tailwind.css";
 {
   /* Pictures for carousel */
 }
-const Home = () => {
+const LandingPage = () => {
   {
     /* All components on Landing page */
   }
@@ -33,4 +33,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default LandingPage;
