@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import "../index.css";
 import "tailwindcss/tailwind.css";
 import CartService from "../services/CartService";
+import { useNavigate } from "react-router-dom";
 
 const imageUrl = "http://localhost:5219/images";
 
 const ShoppingCart = () => {
   const [cartItems, setCartItems] = useState(CartService.getCart());
-
+  const navigate = useNavigate();
   // Function to remove item from cart
   const removeFromCart = (index) => {
     const updatedCart = [...cartItems];
@@ -15,6 +16,10 @@ const ShoppingCart = () => {
     setCartItems(updatedCart);
     CartService.updateCart(updatedCart); // Update local storage
   };
+  // Function to handle navigation to the order complete page
+const handleOrder = () => {
+  navigate('/ordercomplete');
+};
 
   return (
     <div className="bg-brandBgLight flex flex-col min-h-screen items-center">
@@ -81,9 +86,12 @@ const ShoppingCart = () => {
           </div>
           {/* Button to place order */}
           <div className="flex justify-center mt-4">
-            <button className="bg-blue-500 text-white font-bold py-2 px-12 rounded hover:bg-blue-700 text-p font-customFont">
+          <button 
+              onClick={handleOrder}
+              className="bg-blue-500 text-white font-bold py-2 px-12 rounded hover:bg-blue-700 text-p font-customFont"
+                   >
               Order
-            </button>
+           </button>
           </div>
         </div>
       </div>

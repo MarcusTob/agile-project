@@ -2,14 +2,20 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "../index.css";
 import "tailwindcss/tailwind.css";
+import { useNavigate } from "react-router-dom";
 
 const OrderComplete = () => {
   // State for rating
   const [rating, setRating] = useState(0);
+  const navigate = useNavigate();
 
   // Function to handle rating
   const handleRating = (rate) => {
     setRating(rate);
+  };
+
+  const handleDownload = () => {
+    navigate('/mycollection');
   };
 
   return (
@@ -35,6 +41,7 @@ const OrderComplete = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="bg-blue-500 text-white font-bold py-2 px-6 rounded hover:bg-blue-700 mb-8 w-60 mx-auto text-p font-customFont"
+          onClick={handleDownload}
         >
           Download
         </motion.button>
