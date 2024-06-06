@@ -5,7 +5,7 @@ const SellingUpload = () => {
   // State for images, details, and colors
   const [images, setImages] = useState([null, null, null]);
   const [details, setDetails] = useState({
-    listing: "",
+    title: "",
     price: "",
     about: "",
     specification: "",
@@ -116,7 +116,14 @@ const SellingUpload = () => {
           <div className="flex flex-col ml-10 w-full">
             <div className="flex items-center justify-between">
               <h3 className="text-h3 font-customFont font-bold mb-4">
-                3D-effects of motion graphics
+              <label className="block text-h3 font-customFont font-semibold mb-2">Title</label>
+              <input
+                type="text"
+                name="title"
+                value={details.title}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded"
+              />
               </h3>
               <button className="bg-brandBg text-white px-8 py-2 rounded text-p3 font-customFont">
                 Post

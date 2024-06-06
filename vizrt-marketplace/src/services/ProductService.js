@@ -30,10 +30,24 @@ const ProductService = (() => {
     }
   };
 
+  //function to post a new product
+  const postProduct = async (newProduct) => {
+    try {
+      // Send a POST request to the product URL with the product data
+      const response = await axios.post(productUrl, newProduct);
+      // Return the data from the response
+      return response.data;
+    } catch (error) {
+      // Log any errors that occur during the request
+      console.error("Error posting product", error);
+    }
+  };
+
   // Return an object with the exposed functions
   return {
     getAllProducts,
     getProductById,
+    postProduct,
   };
 })();
 

@@ -1,5 +1,5 @@
 import React from "react";
-import DownloadItem from "../Browsing/DownloadItem"; // Changed from ProductItem to DownloadItem
+import DownloadItem from "./DownloadItem";
 
 // The CollectionList component receives a list of products as a prop
 const CollectionList = ({ products }) => {
