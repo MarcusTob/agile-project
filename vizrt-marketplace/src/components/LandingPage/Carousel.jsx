@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import PackageService from "../services/PackageService";
+import PackageService from "../../services/PackageService";
 import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,

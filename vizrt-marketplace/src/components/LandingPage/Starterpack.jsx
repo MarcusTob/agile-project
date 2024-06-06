@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "tailwindcss/tailwind.css";
-import "../index.css";
-import PackageService from "../services/PackageService";
+import PackageService from "../../services/PackageService";
 
 // Defines the base URL for package images
 const imageUrl = "http://localhost:5219/images";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
-import CartService from "../services/CartService";
+import CartService from "../../services/CartService";
 import { motion } from "framer-motion";
 
 const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {

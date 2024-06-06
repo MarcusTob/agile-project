@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ProductService from "../services/ProductService";
-import Header from "../components/Header";
-import Listing from "../components/Listing";
-import MyNavbar from "../components/MyNavbar";
+import Header from "../components/Profile/Header";
+import Listing from "../components/Profile/Listing";
+import MyNavbar from "../components/Profile/MyNavbar";
 
 // URL to match your backend configuration
 const imageUrl = "http://localhost:5219/images";

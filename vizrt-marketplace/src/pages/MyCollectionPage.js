@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductService from "../services/ProductService";
-import CollectionList from "../components/CollectionList";
-import MyNavbar from "../components/MyNavbar";
+import CollectionList from "../components/Profile/CollectionList";
+import MyNavbar from "../components/Profile/MyNavbar";
 
 // MyCollectionPage component
 const MyCollectionPage = () => {

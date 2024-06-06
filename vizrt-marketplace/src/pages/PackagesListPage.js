@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import PackageList from "../components/PackageList";
+import PackageList from "../components/Browsing/PackageList";
 import PackageService from "../services/PackageService";
 
 const PackageListPage = () => {

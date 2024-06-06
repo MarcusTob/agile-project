@@ -1,5 +1,5 @@
 import React from "react";
-import ProductItem from "./ProductItem";
+import ProductItem from "../Browsing/ProductItem";
 
 // The CollectionList component receives a list of products as a prop
 const CollectionList = ({ products }) => {

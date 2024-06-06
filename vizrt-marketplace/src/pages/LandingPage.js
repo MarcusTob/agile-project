@@ -1,8 +1,8 @@
 import React from "react";
-import Starterpack from "../components/Starterpack";
-import Carousel from "../components/Carousel";
-import Welcomeoffer from "../components/Welcomeoffer";
-import TrustedBy from "../components/TrustedBy";
+import Starterpack from "../components/LandingPage/Starterpack";
+import Carousel from "../components/LandingPage/Carousel";
+import Welcomeoffer from "../components/LandingPage/Welcomeoffer";
+import TrustedBy from "../components/LandingPage/TrustedBy";
 import "../index.css";
 import "tailwindcss/tailwind.css";
 

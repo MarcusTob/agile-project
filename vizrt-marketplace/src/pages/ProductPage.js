@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProductService from "../services/ProductService";
-import ProductDetailsAndImage from "../components/ProductDetailsAndImage";
-import TabsAndContent from "../components/TabsAndContent";
+import ProductDetailsAndImage from "../components/Browsing/ProductDetailsAndImage";
+import TabsAndContent from "../components/Browsing/TabsAndContent";
 
 const imageUrl = "http://localhost:5219/images";
 

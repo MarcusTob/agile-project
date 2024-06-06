@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import FilterOptions from "../components/FilterOptions";
-import ProductList from "../components/ProductList";
+import FilterOptions from "../components/Browsing/FilterOptions";
+import ProductList from "../components/Browsing/ProductList";
 import ProductService from "../services/ProductService";
 
 const GraphicsListPage = () => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"; // Import React and necessary hooks
 import { useParams } from "react-router-dom"; // Import useParams hook from react-router-dom
 import PackageService from "../services/PackageService"; // Import PackageService for fetching package data
-import PackageDetailsAndImage from "../components/PackageDetailsAndImage"; // Import PackageDetailsAndImage component
+import PackageDetailsAndImage from "../components/Browsing/PackageDetailsAndImage"; // Import PackageDetailsAndImage component
 
 const imageUrl = "http://localhost:5219/images"; // Define the base URL for package images
 

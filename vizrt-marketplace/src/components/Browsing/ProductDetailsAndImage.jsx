@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FiShoppingCart, FiTrash2 } from "react-icons/fi";
 import { motion } from 'framer-motion';
-import CartService from '../services/CartService';
+import CartService from '../../services/CartService';
 
 // Define the ProductDetailsAndImage component
 const ProductDetailsAndImage = ({ imageUrl, product }) => {

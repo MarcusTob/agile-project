@@ -1,6 +1,6 @@
 import React from 'react'
-import SellingUpload from '../components/SellingUpload'
-import MyNavbar from '../components/MyNavbar'
+import SellingUpload from '../components/Profile/SellingUpload'
+import MyNavbar from '../components/Profile/MyNavbar'
 
 const SellingUploadPage = () => {
   return (
