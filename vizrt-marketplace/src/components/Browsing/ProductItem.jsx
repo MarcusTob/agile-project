@@ -21,7 +21,7 @@ const ProductItem = ({ product }) => {
       {/* Image Section */}
       <div className="w-1/2 relative">
         <img
-          className="object-cover w-full h-full"
+          className="object-scale-down w-full h-full"
           src={`${imageUrl}/${product.image}`}
           alt={`Picture of ${product.name}`}
         />
