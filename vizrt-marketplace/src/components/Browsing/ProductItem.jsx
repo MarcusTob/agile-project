@@ -12,6 +12,7 @@ const ProductItem = ({ product }) => {
   // Function to handle viewing the details of the product
   const handleViewItem = () => {
     navigate(`/product/${product.productID}`);
+    console.log(product.colors)
   };
 
   // Render the component
@@ -39,6 +40,15 @@ const ProductItem = ({ product }) => {
         <p className="text-p3 font-semibold text-black mb-4">
           {product.category}
         </p>
+        {/* fetched as an array of strings, need to split the colors on the comma. */}
+        <div className="flex space-x-2">
+          {product.colors[0].split(',').map((color, i)=> (
+            <div
+              key={i}
+              style={{ backgroundColor: color, width: "20px", height: "20px", borderRadius: "50%"}}
+              ></div>
+          ))}
+        </div>
         <div className="flex-grow"></div>
         {/* View Item button */}
         <button

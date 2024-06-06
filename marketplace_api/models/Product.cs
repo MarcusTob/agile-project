@@ -11,6 +11,7 @@ namespace marketplace_api.Models{
     public string Creator { get; set;} = "";
     public int NrOfReviews { get; set; } = 0;
     public double Rating { get; set; } = 0.0;
+    public List<string> Colors {get; set;} = [];
     public List<string> Tags { get; set; } = [];
     public string? Image { get; set; } = null;
 
