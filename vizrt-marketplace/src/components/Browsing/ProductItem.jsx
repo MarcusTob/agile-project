@@ -41,7 +41,7 @@ const ProductItem = ({ product }) => {
           {product.category}
         </p>
         {/* fetched as an array of strings, need to split the colors on the comma. */}
-        <div className="flex space-x-2">
+        <div className="flex space-x-2  mb-4">
           {product.colors[0].split(',').map((color, i)=> (
             <div
               key={i}
