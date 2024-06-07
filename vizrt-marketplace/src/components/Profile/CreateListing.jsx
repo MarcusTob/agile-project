@@ -5,7 +5,6 @@ import ImageUploadService from '../../services/ImageUploadService.ts';
 const CreateListing = (onCreateProduct) => {
   const [image, setImage] = useState(null);
   const [newProduct, setNewProduct] = useState({
-    productID: 0,
     name: '',
     description: '',
     price: 0,
@@ -52,7 +51,6 @@ const CreateListing = (onCreateProduct) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input name="productID" value={newProduct.productID} onChange={handleChange} placeholder="ProductID" />
       <input name="name" value={newProduct.name} onChange={handleChange} placeholder="Name" />
       <input name="description" value={newProduct.description} onChange={handleChange} placeholder="Description" />
       <input name="price" value={newProduct.price} onChange={handleChange} placeholder="Price" />

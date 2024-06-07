@@ -7,7 +7,7 @@ const SellingUploadPage = () => {
   return (
     <div>
       <MyNavbar/>
-      <SellingUpload/>
+      <CreateListing/>
     </div>
   );
 };
