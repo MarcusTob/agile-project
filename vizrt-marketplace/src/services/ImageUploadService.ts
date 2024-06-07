@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const ImageUploadService =( () =>{
-    const imageUploadUrl = "http://localhost:5056/imageUpload";
+    const imageUploadUrl = "http://localhost:5219/ImageUpload";
 
     const uploadImage = async (image: File) => {
         const formData = new FormData();
@@ -14,6 +14,8 @@ const ImageUploadService =( () =>{
             headers: { "Content-Type": "multipart/form-data"}
         });
         formData.delete("file");
+
+        return result
     }
     return {
         uploadImage
