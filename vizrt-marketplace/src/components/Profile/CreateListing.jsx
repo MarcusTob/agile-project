@@ -101,7 +101,7 @@ const CreateListing = ({ onCreateProduct }) => {
               </div>
               {/* Image upload button */}
               <label className="bg-gray-300 rounded px-4 py-2 border cursor-pointer text-center">
-                Velg fil
+                Choose file
                 <input 
                   className="hidden" 
                   type="file" 
