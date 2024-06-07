@@ -32,14 +32,14 @@ const ProductService = (() => {
 
   //function to post a new product
   const postProduct = async (newProduct) => {
-    console.log(newProduct)
-    const response = await axios.post('http://localhost:5219/Marketplace/products', newProduct, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    return response.data;
-  };
+    console.log(newProduct, productUrl)
+    try {
+      const response = await axios.post(productUrl, newProduct);
+      return response.data;
+    } catch (error) {
+      console.error("Error posting product", error);
+    }
+  }
 
   // Return an object with the exposed functions
   return {

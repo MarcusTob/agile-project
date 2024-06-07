@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import ProductService from '../../services/ProductService';
 import ImageUploadService from '../../services/ImageUploadService.ts';
 
-const CreateListing = (onCreateProduct) => {
+const CreateListing = ({onCreateProduct}) => {
   const [image, setImage] = useState(null);
   const [newProduct, setNewProduct] = useState({
+    productID: 0,
     name: '',
     description: '',
     price: 0,
@@ -24,42 +25,60 @@ const CreateListing = (onCreateProduct) => {
     setNewProduct({ ...newProduct, image: file.name });
   }
 
-  const handleChange = (e) => {
-    let value = e.target.value;
-    if (e.target.name === 'productID' || e.target.name === 'price' || e.target.name === 'nrOfReviews' || e.target.name === 'rating') {
-      value = Number(value);
-    } else if (e.target.name === 'colors' || e.target.name === 'tags') {
-      value = value.split(',').map(item => item.trim());
-    }
-    setNewProduct({ ...newProduct, [e.target.name]: value });
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  // Convert the tags and colors strings into arrays
+  const tagsArray = newProduct.tags.split(',').map(tag => tag.trim());
+  const colorsArray = newProduct.colors.split(',').map(color => color.trim());
+
+  const updatedProduct = {
+    ...newProduct,
+    tags: tagsArray,
+    colors: colorsArray,
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
     try {
-      if (image != null) {
-        const imageUrl = await ImageUploadService.uploadImage(image);
-        newProduct.image = imageUrl;
+      if(image!=null){
+        await ImageUploadService.uploadImage(image);
       }
-      await ProductService.postProduct(newProduct);
-      onCreateProduct(newProduct);
+    }
+    catch (error) {
+      console.error('Error uploading image:', error);
+    }
+    try{
+      const response = await ProductService.postProduct(newProduct);
+      onCreateProduct(updatedProduct);
+      setNewProduct({
+        productID: 0,
+        name: '',
+        description: '',
+        price: 0,
+        category: '',
+        specifications: '',
+        creator: '',
+        nrOfReviews: 0,
+        rating: 0,
+        tags: [],
+        image: '',
+        colors: []
+      });
       console.log(newProduct);
-    } catch (error) {
-      console.error("Error uploading image or creating product", error);
+    }
+    catch (error) {
+      console.error('Error creating product:', error);
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input name="name" value={newProduct.name} onChange={handleChange} placeholder="Name" />
-      <input name="description" value={newProduct.description} onChange={handleChange} placeholder="Description" />
-      <input name="price" value={newProduct.price} onChange={handleChange} placeholder="Price" />
-      <input name="category" value={newProduct.category} onChange={handleChange} placeholder="Category" />
-      <input name="specifications" value={newProduct.specifications} onChange={handleChange} placeholder="Specifications" />
-      <input name="creator" value={newProduct.creator} onChange={handleChange} placeholder="Creator" />
-      <input name="nrOfReviews" value={newProduct.nrOfReviews} onChange={handleChange} placeholder="NrOfReviews" />
-      <input name="rating" value={newProduct.rating} onChange={handleChange} placeholder="Rating" />
-      <input name="tags" value={newProduct.tags} onChange={handleChange} placeholder="Tags" />
+      <input name="productID" value={newProduct.productID} onChange={(e)=>setNewProduct({...newProduct, productID: e.target.value})} placeholder="ProductID" />
+      <input name="name" value={newProduct.name} onChange={(e)=>setNewProduct({...newProduct, name: e.target.value})} placeholder="Name" />
+      <input name="description" value={newProduct.description} onChange={(e)=>setNewProduct({...newProduct, description: e.target.value})} placeholder="Description" />
+      <input name="price" value={newProduct.price} onChange={(e)=>setNewProduct({...newProduct, price: e.target.value})} placeholder="Price" />
+      <input name="category" value={newProduct.category} onChange={(e)=>setNewProduct({...newProduct, category: e.target.value})} placeholder="Category" />
+      <input name="specifications" value={newProduct.specifications} onChange={(e)=>setNewProduct({...newProduct, specifications: e.target.value})} placeholder="Specifications" />
+      <input name="creator" value={newProduct.creator} onChange={(e)=>setNewProduct({...newProduct, creator: e.target.value})} placeholder="Creator" />
+      <input name="tags" value={newProduct.tags} onChange={(e)=>setNewProduct({...newProduct, tags: e.target.value})} placeholder="Tags" />
       <input 
         className="bg-gray-300 rounded"
         type="file"
@@ -67,7 +86,7 @@ const CreateListing = (onCreateProduct) => {
         onChange={handleImageChange}
         > 
       </input>      
-      <input name="colors" value={newProduct.colors} onChange={handleChange} placeholder="Colors" />
+      <input name="colors" value={newProduct.colors} onChange={(e)=>setNewProduct({...newProduct, colors: e.target.value})} placeholder="Colors" />
       <button type="submit">Submit</button>
     </form>
   );
