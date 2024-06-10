@@ -1,13 +1,10 @@
 import React from "react";
 import ProductItem from "./ProductItem";
 
-// Define the ProductList component
 const ProductList = ({ products }) => {
-  // Render the component
   return (
-    <div className="flex justify-center items-center min-h-screen w-full">
-      <div className="grid grid-cols-1 gap-10 px-4 lg:grid-cols-2">
-        {/* Map over each product and render a ProductItem component */}
+    <div className="flex justify-center items-start min-h-screen w-full p-4">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full">
         {products.map((product) => (
           <ProductItem key={product.ProductID} product={product} />
         ))}
@@ -16,5 +13,4 @@ const ProductList = ({ products }) => {
   );
 };
 
-// Export the component
 export default ProductList;

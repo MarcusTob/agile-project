@@ -1,27 +1,21 @@
 import React, { useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
-import CartService from "../../services/CartService";
 import { motion } from "framer-motion";
+import CartService from "../../services/CartService";
 
 const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
-  // State to control the visibility of the message when item is added to cart
-  const [showMessage, setShowMessage] = useState(false);
-  const [rating, setRating] = useState(0);
+  const [showMessage, setShowMessage] = useState(false); // State for controlling the visibility of the message when the item is added to cart
 
-  // Function to handle adding item to cart
+  // Function to handle adding an item to the cart
   const handleAddToCart = () => {
     // Call CartService to add the graphicPackage to the cart
     CartService.addToCart(graphicPackage);
-    // Show message
+    // Show the message
     setShowMessage(true);
     // Hide the message after 2 seconds
     setTimeout(() => {
       setShowMessage(false);
     }, 2000);
-  };
-
-  const handleRating = (star) => {
-    setRating(star);
   };
 
   return (
@@ -32,7 +26,7 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
           className="w-full h-auto object-cover"
           alt="Main"
           src={`${imageUrl}/${graphicPackage.image}`}
-          style={{ width: '600px', height: '500px' }}
+          style={{ width: "600px", height: "500px" }}
         />
       </div>
 
@@ -43,27 +37,36 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
           {graphicPackage.name}
         </h1>
         {/* Price */}
-        <p className="text-white mb-6 text-h3 font-customFont">Price: ${graphicPackage.price}</p>
+        <p className="text-white mb-6 text-h3 font-customFont">
+          Price: ${graphicPackage.price}
+        </p>
         {/* Category */}
-        <p className="text-white mb-2 text-p font-customFont">Category: {graphicPackage.category}</p>
-        {/* Creator */}
-        <p className="text-white mb-6 text-p font-customFont">Creator: {graphicPackage.creator}</p>
+        <p className="text-white mb-2 text-p font-customFont">
+          Category: {graphicPackage.category}
+        </p>
+     
         {/* Star ratings and reviews */}
-        <div className="flex items-center justify-start">
-        <div className="flex space-x-3">
+        <div className="flex items-center justify-start mb-4">
+          <div className="flex space-x-1">
             {[1, 2, 3, 4, 5].map((star) => (
               <motion.button
                 key={star}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.8 }}
-                className={`text-3xl ${star <= rating ? 'text-yellow-500' : 'text-gray-400'}`}
-                onClick={() => handleRating(star)}
+                className={`text-3xl ${
+                  star <= graphicPackage.rating ? "text-yellow-500" : "text-gray-400"
+                }`}
               >
                 ★
               </motion.button>
             ))}
           </div>
-          <p className="text-white ml-4">{graphicPackage.nrOfReviews} Reviews</p>
+          <p className="text-white ml-2 text-p3 font-customFont">
+            {graphicPackage.rating.toFixed(1)}
+          </p>
+          <p className="text-white ml-4 text-p3 font-customFont">
+            ({graphicPackage.nrOfReviews} Reviews)
+          </p>
         </div>
         {/* Button to add to cart */}
         <button
@@ -73,7 +76,7 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
           <p className="text-p font-customFont mr-2">Add to Cart</p>
           <FiShoppingCart className="text-2xl" />
         </button>
-        {/* Show message when item is added to cart */}
+        {/* Show message when the item is added to cart */}
         {showMessage && (
           <div className="absolute bg-white rounded-lg p-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md">
             <p className="text-gray-800 text-h3 font-customFont">Item added to cart!</p>

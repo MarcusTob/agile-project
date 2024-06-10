@@ -62,9 +62,6 @@ const Navbar = () => {
           <a href="/packages" className="text-black text-p font-customFont">
             Packages
           </a>
-          <a href="/toolsPage" className="text-black text-p font-customFont">
-            Tools
-          </a>
         </div>
       </div>
 

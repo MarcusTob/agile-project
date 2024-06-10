@@ -1,18 +1,18 @@
-import React from "react";
-import { BiHide } from "react-icons/bi";
-import "../index.css";
+import React, { useState, useContext } from "react";
+import { BiHide, BiShow } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useContext } from "react";
+import "../index.css";
 import UserService from "../services/UserService";
 import UserContext from "../UserContext";
 
 // Login component
-export const Login = () => {
+const Login = () => {
   // Access setUser function from UserContext
   const { setUser } = useContext(UserContext);
   // State for username and password inputs
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   // Navigate function from react-router-dom
   const navigate = useNavigate();
 
@@ -35,6 +35,10 @@ export const Login = () => {
     }
   };
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   // Render login form
   return (
     <div className="bg-brandBgLight flex items-center justify-center w-full min-h-screen">
@@ -46,6 +50,7 @@ export const Login = () => {
           {/* Username input */}
           <input
             className="w-full bg-transparent border-b-2 border-collection-1-brandtextwhite text-collection-1-brandtextwhite text-p font-customFont pl-3 placeholder-white"
+            style={{ color: 'white' }} // Ensure text color is white
             placeholder="Username"
             type="text"
             value={username}
@@ -55,14 +60,19 @@ export const Login = () => {
           <div className="relative">
             <input
               className="w-full bg-transparent border-b-2 border-collection-1-brandtextwhite text-collection-1-brandtextwhite text-p font-customFont pl-3 placeholder-white"
+              style={{ color: 'white' }} // Ensure text color is white
               placeholder="Password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            {/* Hide password icon */}
-            <BiHide className="absolute top-1/2 right-3 transform -translate-y-1/2 text-collection-1-brandtextwhite" />
-          </div>
+            {/* Toggle show/hide password icon */}
+      {showPassword ? (
+        <BiShow onClick={toggleShowPassword} className="absolute top-1/2 right-3 transform -translate-y-1/2 text-white" />
+      ) : (
+        <BiHide onClick={toggleShowPassword} className="absolute top-1/2 right-3 transform -translate-y-1/2 text-white" />
+      )}
+    </div>
           {/* Remember me checkbox and forgot password link */}
           <div className="flex justify-between items-center">
             <div className="flex items-center">

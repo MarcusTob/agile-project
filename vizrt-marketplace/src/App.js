@@ -12,7 +12,6 @@ import { useState } from "react";
 import UserContext from "./UserContext";
 import RegisterUser from "./pages/RegisterUser";
 import Login from "./pages/Login";
-import ToolsPage from "./pages/ToolsPage";
 import MyListings from "./pages/MyListings";
 import MyCollectionPage from "./pages/MyCollectionPage";
 import OrderComplete from "./pages/OrderComplete";
@@ -34,7 +33,6 @@ function App() {
           <Route path="/package/:id" element={<PackagePage />} />
           <Route path="/registeruser" element={<RegisterUser />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/ToolsPage" element={<ToolsPage />} />
           <Route path="/ordercomplete" element={<OrderComplete />} />
           <Route path="/mycollection" element={<MyCollectionPage />} />
           <Route path="/listings" element={<MyListings />} />

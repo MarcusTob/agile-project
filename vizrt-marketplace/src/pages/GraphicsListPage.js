@@ -4,37 +4,29 @@ import ProductList from "../components/Browsing/ProductList";
 import ProductService from "../services/ProductService";
 
 const GraphicsListPage = () => {
-  // State to store the list of all products
   const [products, setProducts] = useState([]);
-  // State to store the list of filtered products
   const [filteredProducts, setFilteredProducts] = useState([]);
 
-  // Function to fetch all products from the API
   const getAllProducts = async () => {
-    // Fetch products from ProductService
     const response = await ProductService.getAllProducts();
-    // Set the fetched products to the products state
     setProducts(response);
-    // Initialize filteredProducts with all products initially
     setFilteredProducts(response);
   };
 
-  // useEffect to fetch products when the component mounts
   useEffect(() => {
     getAllProducts();
   }, []);
 
   return (
-    <div className="flex bg-brandBgLight">
-      <div className="pl-4">
-        {/* Pass products and setFilteredProducts function to FilterOptions */}
-        <FilterOptions
-          products={products}
-          setFilteredProducts={setFilteredProducts}
-        />
+    <div className="flex bg-brandBgLight min-h-screen">
+      <div className="w-1/4 p-4">
+        <FilterOptions products={products} setFilteredProducts={setFilteredProducts} />
       </div>
-      {/* Pass the filtered products to ProductList for display */}
-      <ProductList products={filteredProducts} />
+      <div className="w-3/4 p-4 flex justify-center items-center">
+        <div className="flex flex-col justify-center items-center min-h-full">
+          <ProductList products={filteredProducts} />
+        </div>
+      </div>
     </div>
   );
 };

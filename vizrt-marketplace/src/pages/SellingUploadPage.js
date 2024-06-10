@@ -1,5 +1,4 @@
 import React from 'react'
-import SellingUpload from '../components/Profile/SellingUpload'
 import CreateListing from '../components/Profile/CreateListing'
 import MyNavbar from '../components/Profile/MyNavbar'
 import ProductService from '../services/ProductService'

@@ -33,6 +33,7 @@ export const RegisterUser = () => {
           {/* Username input */}
           <input
             className="w-full bg-transparent border-b-2 border-collection-1-brandtextwhite text-collection-1-brandtextwhite  text-p font-customFont pl-3 placeholder-white"
+            style={{ color: 'white' }}
             placeholder="Username"
             type="text"
             value={username}
@@ -41,6 +42,7 @@ export const RegisterUser = () => {
           {/* Email input */}
           <input
             className="w-full bg-transparent border-b-2 border-collection-1-brandtextwhite text-collection-1-brandtextwhite  text-p font-customFont pl-3 placeholder-white"
+            style={{ color: 'white' }}
             placeholder="Email"
             type="email"
             value={email}
@@ -50,6 +52,7 @@ export const RegisterUser = () => {
             {/* Password input */}
             <input
               className="w-full bg-transparent border-b-2 border-collection-1-brandtextwhite text-collection-1-brandtextwhite  text-p font-customFont pl-3 placeholder-white"
+              style={{ color: 'white' }}
               placeholder="Password"
               type="password"
               value={password}
