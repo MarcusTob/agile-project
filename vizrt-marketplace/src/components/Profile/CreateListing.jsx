@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import { FiEdit2, FiTrash2 } from 'react-icons/fi';
-import ProductService from '../../services/ProductService';
+import React, { useState, useContext } from 'react';
+import { FiTrash2 } from 'react-icons/fi';
 import ImageUploadService from '../../services/ImageUploadService.ts';
 
 const CreateListing = ({ onCreateProduct }) => {
   const [image, setImage] = useState(null);  // State for storing the image file
   const [newProduct, setNewProduct] = useState({
-    productID: 0,
     name: '',
     description: '',
     price: 0,
     category: '',
     specifications: '',
-    creator: '',
+    //automatically takes the username of the logged in user and sets it as the "creator"
+    creator: localStorage.getItem('username'),
     nrOfReviews: 0,
     rating: 0,
     tags: '',
@@ -31,7 +30,7 @@ const CreateListing = ({ onCreateProduct }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Convert tags and colors from comma-separated strings to arrays
+    // Convert tags and colors from comma-separated strings to arrays, to match what the database expects
     const tagsArray = newProduct.tags.split(',').map(tag => tag.trim());
     const colorsArray = newProduct.colors.split(',').map(color => color.trim());
 
@@ -53,17 +52,15 @@ const CreateListing = ({ onCreateProduct }) => {
 
     // Attempt to create the new product
     try {
-      const response = await ProductService.postProduct(updatedProduct);
       onCreateProduct(updatedProduct);
       // Reset the form state
       setNewProduct({
-        productID: 0,
         name: '',
         description: '',
         price: 0,
         category: '',
         specifications: '',
-        creator: '',
+        creator: localStorage.getItem('username'),
         nrOfReviews: 0,
         rating: 0,
         tags: '',
@@ -94,7 +91,7 @@ const CreateListing = ({ onCreateProduct }) => {
                 )}
                 {/* Remove image button */}
                 {image && (
-                  <button className="absolute top-0 left-0 m-1 text-gray-500" onClick={() => setImage(null)}>
+                  <button className="absolute text-brandRed top-0 right-0 m-1" onClick={() => setImage(null)}>
                     <FiTrash2 />
                   </button>
                 )}
@@ -113,16 +110,6 @@ const CreateListing = ({ onCreateProduct }) => {
             {/* Details Inputs */}
             <div className="flex flex-col w-full">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-p3 font-customFont font-semibold mb-2">Product ID</label>
-                  <input 
-                    name="productID" 
-                    value={newProduct.productID} 
-                    onChange={(e) => setNewProduct({ ...newProduct, productID: e.target.value })} 
-                    placeholder="ProductID" 
-                    className="w-full p-2 border rounded" 
-                  />
-                </div>
                 <div>
                   <label className="block text-p3 font-customFont font-semibold mb-2">Name</label>
                   <input 
@@ -170,16 +157,6 @@ const CreateListing = ({ onCreateProduct }) => {
                     value={newProduct.specifications} 
                     onChange={(e) => setNewProduct({ ...newProduct, specifications: e.target.value })} 
                     placeholder="Specifications" 
-                    className="w-full p-2 border rounded" 
-                  />
-                </div>
-                <div>
-                  <label className="block text-p3 font-customFont font-semibold mb-2">Creator</label>
-                  <input 
-                    name="creator" 
-                    value={newProduct.creator} 
-                    onChange={(e) => setNewProduct({ ...newProduct, creator: e.target.value })} 
-                    placeholder="Creator" 
                     className="w-full p-2 border rounded" 
                   />
                 </div>

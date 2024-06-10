@@ -27,6 +27,7 @@ const Login = () => {
       setUser(user);
       // Store user in local storage
       localStorage.setItem("userID", user.userID);
+      localStorage.setItem("username", user.username)
       // Redirect to home page
       navigate("/");
     } else {

@@ -8,6 +8,7 @@ const SellingUploadPage = () => {
     <div>
       <MyNavbar/>
       <CreateListing onCreateProduct={async (newProduct) => {
+  //takes the newly created product and sends it to the database
   try {
     await ProductService.postProduct(newProduct);
   } catch (error) {
