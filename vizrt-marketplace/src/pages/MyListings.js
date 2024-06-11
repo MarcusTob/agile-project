@@ -19,9 +19,13 @@ const MyListings = () => {
     const fetchProducts = async () => {
       try {
         const data = await ProductService.getAllProducts();
+        const username = localStorage.getItem("username");
+        const editableProducts = data.filter(
+          product => product.creator === username
+        );
         // Set products and initialize filteredProducts with all products
-        setProducts(data);
-        setFilteredProducts(data);
+        setProducts(editableProducts);
+        setFilteredProducts(editableProducts);
       } catch (err) {
         setError(err.message); // Set error message if fetching fails
       } finally {
