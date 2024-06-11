@@ -28,10 +28,6 @@ const ProductDetailsAndImage = ({ imageUrl, product }) => {
     }, 2000);
   };
 
-  const handleColorChange = (color) => {
-    setSelectedColor(color.hex);
-  };
-
   return (
     <div className="flex justify-center items-start w-full relative p-4">
       <div className="w-1/2 px-8">

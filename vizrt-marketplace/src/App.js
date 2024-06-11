@@ -15,6 +15,7 @@ import Login from "./pages/Login";
 import MyListings from "./pages/MyListings";
 import MyCollectionPage from "./pages/MyCollectionPage";
 import OrderComplete from "./pages/OrderComplete";
+import EditListing from "./pages/EditListing";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -37,6 +38,7 @@ function App() {
           <Route path="/mycollection" element={<MyCollectionPage />} />
           <Route path="/listings" element={<MyListings />} />
           <Route path="/sellingUpload" element={<SellingUploadPage />} />
+          <Route path="/editListing/:id" element={<EditListing />} />
         </Routes>
       </BrowserRouter>
       </UserContext.Provider>

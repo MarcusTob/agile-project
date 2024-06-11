@@ -30,6 +30,18 @@ const ProductService = (() => {
     }
   };
 
+  const updateProduct = async (id, updatedProduct) => {
+    try {
+      // Send a PUT request to the specific product URL using the provided ID and updated product data
+      const response = await axios.put(`${productUrl}/${id}`, updatedProduct);
+      // Return the data from the response
+      return response.data;
+    } catch (error) {
+      // Log any errors that occur during the request
+      console.error("Error updating product", error);
+    }
+  };
+
   //function to post a new product
   const postProduct = async (newProduct) => {
     console.log(newProduct, productUrl)
@@ -41,11 +53,14 @@ const ProductService = (() => {
     }
   }
 
+
+
   // Return an object with the exposed functions
   return {
     getAllProducts,
     getProductById,
     postProduct,
+    updateProduct
   };
 })();
 
