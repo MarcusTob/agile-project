@@ -14,7 +14,7 @@ return (
   <div className="relative w-full h-auto bg-white mt-10 p-4 rounded-lg shadow-md">
     {/* Edit icon with a link to the edit page */}
       <FiEdit2 
-      className="text-black text-2xl cursor-pointer"
+      className="text-black text-2xl cursor-pointer right-4 top-4 absolute"
       onClick={handleViewItem}
       />
     {/* Flex container for product image and details */}

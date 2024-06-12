@@ -85,7 +85,7 @@ public class MarketplaceController : ControllerBase
 
     //UPDATE
     [HttpPut("products/{id}")]
-    public async Task<ActionResult<Product>> PutProduct(int id, Product updatedProduct) {
+    public async Task<ActionResult<Product>> UpdateProduct(int id, Product updatedProduct) {
         Product? productToUpdate = await context.Product.FindAsync(id);
         if (productToUpdate == null) {
             return NotFound();
@@ -96,7 +96,7 @@ public class MarketplaceController : ControllerBase
         return NoContent();
     }
     [HttpPut("packages/{id}")]
-    public async Task<ActionResult<Package>> PutPackage(int id, Package updatedPackage) {
+    public async Task<ActionResult<Package>> UpdatePackage(int id, Package updatedPackage) {
         Package? packageToUpdate = await context.Package.FindAsync(id);
         if (packageToUpdate == null) {
             return NotFound();

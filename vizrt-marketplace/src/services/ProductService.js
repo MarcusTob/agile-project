@@ -31,9 +31,15 @@ const ProductService = (() => {
   };
 
   const updateProduct = async (id, updatedProduct) => {
+    console.log(`Updating product with ID: ${id}`);
+    console.log(updatedProduct);
     try {
       // Send a PUT request to the specific product URL using the provided ID and updated product data
-      const response = await axios.put(`${productUrl}/${id}`, updatedProduct);
+      const response = await axios.put(`${productUrl}/${id}`, updatedProduct, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       // Return the data from the response
       return response.data;
     } catch (error) {

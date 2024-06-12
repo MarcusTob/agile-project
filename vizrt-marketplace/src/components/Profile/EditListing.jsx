@@ -8,9 +8,10 @@ import { useEffect } from 'react';
 const EditListing = ({ onUpdateProduct }) => {
     // Get the product ID from the URL
     const { id } = useParams();
-  
+    
     const [image, setImage] = useState(null);  // State for storing the image file
     const [updatedProduct, setUpdatedProduct] = useState({
+      productID: '',
       name: '',
       description: '',
       price: 0,
@@ -30,6 +31,7 @@ const EditListing = ({ onUpdateProduct }) => {
         try {
           const product = await ProductService.getProductById(id);
           setUpdatedProduct({
+            productID: product.productID,
             name: product.name,
             description: product.description,
             price: product.price,
@@ -60,6 +62,18 @@ const EditListing = ({ onUpdateProduct }) => {
   // Handler for form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    e.preventDefault();
+
+    // Convert tags and colors from comma-separated strings to arrays, to match what the database expects
+    const tagsArray = updatedProduct.tags.split(',').map(tag => tag.trim());
+    const colorsArray = updatedProduct.colors.split(',').map(color => color.trim());
+
+    const updatedProductPlus = {
+      ...updatedProduct,
+      tags: tagsArray,
+      colors: colorsArray,
+    };
+
     // Attempt to upload the image if it exists
     try {
       if (image != null) {
@@ -72,8 +86,8 @@ const EditListing = ({ onUpdateProduct }) => {
 
     // Attempt to create the new product
     try {
-      await onUpdateProduct(updatedProduct);
-      console.log(updatedProduct);
+      await onUpdateProduct(id, updatedProductPlus);
+      console.log(updatedProductPlus);
     }
     catch (error) {
       console.error('Error updating product:', error);
@@ -92,7 +106,7 @@ const EditListing = ({ onUpdateProduct }) => {
                 {image ? (
                   <img src={URL.createObjectURL(image)} alt="Preview" className="w-full h-full object-cover" />
                 ) : (
-                  <span className="text-gray text-p3 font-customFont flex items-center justify-center w-full h-full">No Image</span>
+                  <span className="text-gray text-p3 font-customFont flex items-center justify-center w-full h-full">Image</span>
                 )}
                 {/* Remove image button */}
                 {image && (

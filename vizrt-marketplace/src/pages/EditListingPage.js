@@ -3,14 +3,14 @@ import EditListing from '../components/Profile/EditListing'
 import MyNavbar from '../components/Profile/MyNavbar'
 import ProductService from '../services/ProductService'
 
-const SellingUploadPage = () => {
+const EditListingPage = () => {
   return (
     <div>
       <MyNavbar/>
-      <EditListing onUpdateProduct={async (updatedProduct) => {
+      <EditListing onUpdateProduct={async (id, updatedProduct) => {
   //takes the newly created product and sends it to the database
   try {
-    await ProductService.updateProduct(updatedProduct);
+    await ProductService.updateProduct(id, updatedProduct);
   } catch (error) {
     console.error('Error updating product:', error);
   }
@@ -19,4 +19,4 @@ const SellingUploadPage = () => {
   );
 };
 
-export default SellingUploadPage;
+export default EditListingPage;
