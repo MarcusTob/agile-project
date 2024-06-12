@@ -59,6 +59,14 @@ const ProductService = (() => {
     }
   }
 
+  const deleteProduct = async (id) => {
+    try {
+      await axios.delete(`${productUrl}/${id}`);
+    }
+    catch (error) {
+      console.error("Error deleting product", error);
+    }
+  }
 
 
   // Return an object with the exposed functions
@@ -66,7 +74,8 @@ const ProductService = (() => {
     getAllProducts,
     getProductById,
     postProduct,
-    updateProduct
+    updateProduct,
+    deleteProduct
   };
 })();
 

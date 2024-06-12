@@ -1,20 +1,37 @@
 import React from "react";
-import { FiEdit2 } from "react-icons/fi";
+import ProductService from "../../services/ProductService";
+import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 // Listing component accepts product and imageUrl as props
 const Listing = ({ product, imageUrl }) => {
+  //navigation to the product the user wants to edit
   const navigate = useNavigate();
   const handleViewItem = () => {
     navigate(`/editListing/${product.productID}`);
   };
 
+  const handleDeleteProduct = async () => {
+    try {
+      //delete the product
+      await ProductService.deleteProduct(product.productID);
+      //refresh page to remove deleted item from view
+      window.location.reload();
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    }
+  }
+
 return (
   // Main container with styling
   <div className="relative w-full h-auto bg-white mt-10 p-4 rounded-lg shadow-md">
-    {/* Edit icon with a link to the edit page */}
+    {/* Edit icon with a link to the edit page or delete the product */}
+    <FiTrash2 
+    className="text-brandRed text-2xl cursor-pointer right-2 top-4 absolute"
+    onClick={handleDeleteProduct}
+    />
       <FiEdit2 
-      className="text-black text-2xl cursor-pointer right-4 top-4 absolute"
+      className="text-black text-2xl cursor-pointer right-10 top-4 absolute"
       onClick={handleViewItem}
       />
     {/* Flex container for product image and details */}
@@ -35,11 +52,8 @@ return (
         <p className="text-p font-customFont leading-[24px] mt-2">
           {product.description}
         </p>
-        {/* Product size and price */}
+        {/* Product price */}
         <div className="flex mt-4 flex-wrap">
-          <div className="font-semibold text-p font-customFont leading-[normal] mr-4 mb-2">
-            Size: {product.size}
-          </div>
           <div className="font-semibold text-p font-customFont leading-[normal]">
             Price: ${product.price}
           </div>

@@ -161,13 +161,23 @@ const EditListing = ({ onUpdateProduct }) => {
                 </div>
                 <div>
                   <label className="block text-p3 font-customFont font-semibold mb-2">Category</label>
-                  <input 
+                  <select 
                     name="category" 
                     value={updatedProduct.category} 
                     onChange={(e) => setUpdatedProduct({ ...updatedProduct, category: e.target.value })} 
                     placeholder="Category" 
                     className="w-full p-2 border rounded" 
-                  />
+                    >
+                    <option value="">Choose a category</option>
+                    <option value="News Graphics">News Graphics</option>
+                    <option value="Sports Graphics">Sports Graphics</option>
+                    <option value="Weather Graphics">Weather Graphics</option>
+                    <option value="Election Graphics">Election Graphics</option>
+                    <option value="Corporate Graphics">Corporate Graphics</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Financial">Financial</option>
+                    <option value="Eports">Eports</option>
+                  </select>
                 </div>
                 <div>
                   <label className="block text-p3 font-customFont font-semibold mb-2">Specifications</label>
