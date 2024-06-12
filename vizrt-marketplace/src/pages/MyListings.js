@@ -63,7 +63,7 @@ const MyListings = () => {
                 />
               ))
             ) : (
-              <p>No products available</p>
+               <p class="text-white">No products available</p>
             )}
           </div>
         </div>
