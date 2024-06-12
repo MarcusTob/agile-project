@@ -83,7 +83,7 @@ const EditListing = ({ onUpdateProduct }) => {
   return (
     <div className="bg-brandBg min-h-screen flex flex-col items-center py-10">
       <div className="bg-white p-10 w-full rounded-lg max-w-7xl">
-        <h1 className="text-h1 font-customFont font-bold mb-6">Create a New Listing</h1>
+        <h1 className="text-h1 font-customFont font-bold mb-6">Edit this listing</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex">
             {/* Image Display and Upload */}
