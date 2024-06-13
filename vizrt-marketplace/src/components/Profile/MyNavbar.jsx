@@ -8,9 +8,11 @@ const MyNavbar = () => {
   // Handle logout logic
   const handleLogout = () => {
     // Perform logout logic here
-    console.log("User logged out");
+    localStorage.removeItem("username");
+    localStorage.removeItem("userID");
     // Redirect to login page
     navigate("/login");
+    window.location.reload();
   };
 
   return (
