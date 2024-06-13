@@ -11,7 +11,7 @@ const ProductService = (() => {
       // Return the data from the response
       return response.data;
     } catch (error) {
-      // Log any errors that occur during the request
+      // error logging for debugging
       console.error("Error getting products", error);
     }
   };
@@ -19,21 +19,22 @@ const ProductService = (() => {
   // Function to fetch a product by its ID
   const getProductById = async (id) => {
     try {
-      // Send a GET request to the specific product URL using the provided ID
+      // get request to api using id
       const response = await axios.get(`${productUrl}/${id}`);
       // Return the data from the response
       return response.data;
     } catch (error) {
-      // Log any errors that occur during the request
+      // error logging for debugging
       console.error("Error getting product by ID", error);
     }
   };
 
   const updateProduct = async (id, updatedProduct) => {
+    //debugging
     console.log(`Updating product with ID: ${id}`);
     console.log(updatedProduct);
     try {
-      // Send a PUT request to the specific product URL using the provided ID and updated product data
+      // put request to update product using id
       const response = await axios.put(`${productUrl}/${id}`, updatedProduct, {
         headers: {
           'Content-Type': 'application/json',
@@ -42,33 +43,36 @@ const ProductService = (() => {
       // Return the data from the response
       return response.data;
     } catch (error) {
-      // Log any errors that occur during the request
+      // error logging for debugging
       console.error("Error updating product", error);
     }
   };
 
   //function to post a new product
   const postProduct = async (newProduct) => {
+    //debugging
     console.log(newProduct, productUrl)
     try {
+      //post request to update new product
       const response = await axios.post(productUrl, newProduct);
       return response.data;
     } catch (error) {
+      // error logging for debugging
       console.error("Error posting product", error);
     }
   }
 
   const deleteProduct = async (id) => {
     try {
+      //delete request to delete product using id
       await axios.delete(`${productUrl}/${id}`);
     }
     catch (error) {
+      // error logging for debugging
       console.error("Error deleting product", error);
     }
   }
 
-
-  // Return an object with the exposed functions
   return {
     getAllProducts,
     getProductById,

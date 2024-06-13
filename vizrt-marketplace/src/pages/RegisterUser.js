@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import { BiHide } from "react-icons/bi";
 import "../index.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UserService from "../services/UserService";
 
+
 export const RegisterUser = () => {
-  // State variables for username, password, and email
+  // State variables for username, password and email
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+
+  const navigate = useNavigate();
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Call the UserService to create a new user
-    const user = await UserService.createUser({ username, password, email });
-    if (user) {
-      // Handle successful registration-redirect to login or home
-    } else {
-      // Handle registration failure-show an error message
-    }
+    await UserService.createUser({ username, password, email });
+    // Redirect to home page
+    navigate("/login");
   };
 
   return (

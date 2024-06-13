@@ -3,12 +3,13 @@ const tailwindcss = require("tailwindcss");
 
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   variants: {
     extend: {},
   },
   theme: {
     extend: {
+      //custom colours
       colors: {
         brandBg: "#1A2C33",
         brandBgLight: "#1e3541",
@@ -23,12 +24,14 @@ module.exports = {
         brandTextBlue: "#82AAB9",
         brandTextOrange: "#F08D5A",
       },
+      //custom fonts
       fontFamily: {
         "m3-label-small": "var(--m3-label-small-font-family)",
         navtext: "var(--navtext-font-family)",
         "presets-body2": "var(--presets-body2-font-family)",
         customFont:["'customFont', Arial"]
       },
+      //custom font sizes
       fontSize: {
         h1: '40px',
         h3: '30px', 

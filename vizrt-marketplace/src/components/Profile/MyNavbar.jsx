@@ -6,11 +6,11 @@ const MyNavbar = () => {
 
   // Handle logout logic
   const handleLogout = () => {
-    // Perform logout logic here
+    // removes login credentials from localstorage
     localStorage.removeItem("username");
     localStorage.removeItem("userID");
-    // Redirect to login page
-    navigate("/login");
+    // Redirect to landing page
+    navigate("/");
     window.location.reload();
   };
 

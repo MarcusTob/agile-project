@@ -62,7 +62,6 @@ const PackagePage = () => {
       content = <p>{graphicPackage.description}</p>;
   }
 
-  // Return JSX representing the PackagePage component
   return (
     <div className="bg-brandBgLight min-h-screen flex flex-col items-center px-4 sm:px-0">
       <div className="mt-8">

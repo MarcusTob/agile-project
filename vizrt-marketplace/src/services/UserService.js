@@ -6,12 +6,12 @@ const UserService = (() => {
   // Function to fetch a user by their ID
   const getUserById = async (id) => {
     try {
-      // Send a GET request to the specific user URL using the provided ID
+      // Send a GET request to userURl
       const response = await axios.get(`${userUrl}/${id}`);
       // Return the data from the response
       return response.data;
     } catch (error) {
-      // Log any errors that occur during the request
+      // error logging for debugging
       console.error("Error getting user", error);
     }
   };
@@ -19,11 +19,10 @@ const UserService = (() => {
   // Function to create a new user
   const createUser = async (newUser) => {
     try {
-      // Send a POST request to the user URL with the new user data
+      // poset request to create a new user
       const response = await axios.post(userUrl, newUser);
-      // Return the data from the response if needed
     } catch (error) {
-      // Log any errors that occur during the request
+      // error logging for debugging
       console.error("Error creating user", error);
     }
   };
@@ -31,17 +30,16 @@ const UserService = (() => {
   // Function to authenticate a user login
   const userLogin = async (user) => {
     try {
-      // Send a POST request to the login endpoint with the user credentials
+      // post request to login api endpoint to authenticate user
       const response = await axios.post(`${userUrl}/login`, user);
       // Return the data from the response
       return response.data;
     } catch (error) {
-      // Log any errors that occur during the request
+      // error logging for debugging
       console.error("Error logging in", error);
     }
   };
 
-  // Return an object with the exposed functions
   return {
     getUserById,
     createUser,

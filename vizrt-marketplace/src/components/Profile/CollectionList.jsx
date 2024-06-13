@@ -11,7 +11,7 @@ const CollectionList = ({ products }) => {
             <DownloadItem key={product.productID} product={product} />
           ))
         ) : (
-          <p className="text-gray-600 text-p font-customFont">
+          <p className="text-white text-p font-customFont">
             Your collection is empty.
           </p>
         )}

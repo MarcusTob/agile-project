@@ -29,7 +29,6 @@ const PackageService = (() => {
     }
   };
 
-  // Return an object with the exposed functions
   return {
     getAllPackages,
     getPackageById,

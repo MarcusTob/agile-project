@@ -40,7 +40,7 @@ const ProductPage = () => {
     setActiveTab(tab);
   };
 
-  // Render the component
+  // checs if there is no product, and returns <h1> tag if there is none
   if (!product) {
     return <h1>Product not found</h1>;
   }

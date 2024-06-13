@@ -12,7 +12,7 @@ const GraphicsListPage = () => {
     setProducts(response);
     setFilteredProducts(response);
   };
-
+  //fetches all products on page load
   useEffect(() => {
     getAllProducts();
   }, []);
