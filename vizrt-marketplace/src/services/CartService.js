@@ -1,44 +1,57 @@
 let subscribers = [];
 
 const CartService = {
-  // Method to retrieve the cart from local storage
   getCart: () => {
     const cart = localStorage.getItem("cart");
-    // If cart exists in local storage, parse and return it; otherwise, return an empty array
     return cart ? JSON.parse(cart) : [];
   },
   
-  // Method to add an item to the cart
   addToCart: (item) => {
-    const cart = CartService.getCart(); // Retrieve current cart
-    cart.push(item); // Add item to cart
-    localStorage.setItem("cart", JSON.stringify(cart)); // Update cart in local storage
+    const cart = CartService.getCart();
+    cart.push(item);
+    localStorage.setItem("cart", JSON.stringify(cart));
     CartService.notifySubscribers();
   },
   
-  // Method to remove an item from the cart by index
   removeFromCart: (index) => {
-    const cart = CartService.getCart(); // Retrieve current cart
-    cart.splice(index, 1); // Remove item from cart at specified index
-    localStorage.setItem("cart", JSON.stringify(cart)); // Update cart in local storage
+    const cart = CartService.getCart();
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
     CartService.notifySubscribers();
   },
   
-  // Method to update the entire cart with a new array of items
   updateCart: (updatedCart) => {
-    localStorage.setItem("cart", JSON.stringify(updatedCart)); // Update cart in local storage
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
     CartService.notifySubscribers();
   },
+  
+  placeOrder: () => {
+    const cart = CartService.getCart();
+    if (cart.length > 0) {
+      const existingOrders = CartService.getOrders();
+      const updatedOrders = [...existingOrders, ...cart];
+      localStorage.setItem("orders", JSON.stringify(updatedOrders));
+      CartService.updateCart([]);
+      CartService.notifySubscribers();
+    }
+  },
+  
+  getOrders: () => {
+    const orders = localStorage.getItem("orders");
+    return orders ? JSON.parse(orders) : [];
+  },
+  
   subscribe: (callback) => {
     subscribers.push(callback);
     return () => {
       subscribers = subscribers.filter(subscriber => subscriber !== callback);
     };
   },
+  
   notifySubscribers: () => {
     const cart = CartService.getCart();
     subscribers.forEach((subscriber) => subscriber(cart));
   }
 };
 
-export default CartService; // Export the CartService object
+export default CartService;

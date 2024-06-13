@@ -1,29 +1,26 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
-// Define the base URL for product images
 const imageUrl = "http://localhost:5219/images";
 
-// Define the ProductItem component
-const ProductItem = ({ product }) => {
-  const [downloading, setDownloading] = useState(false); // State for controlling the download animation
-  const [downloadComplete, setDownloadComplete] = useState(false); // State for controlling the completion popup
+const DownloadItem = ({ product }) => {
+  const [downloading, setDownloading] = useState(false);
+  const [downloadComplete, setDownloadComplete] = useState(false);
   const navigate = useNavigate();
-  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedColor, setSelectedColor] = useState("");
 
-  // Function to handle navigation to the product page
+  // Function to handle navigation the page
   const handleViewItem = () => {
     navigate(`/product/${product.productID}`);
     console.log(product.colors);
   };
 
-  // Function to handle the fake download animation and popup
+  // Function to handle the download animation and popup
   const handleDownload = () => {
-    setDownloading(true); // Start the animation
+    setDownloading(true);
     setTimeout(() => {
-      setDownloading(false); // Reset the animation after 3 seconds
-      setDownloadComplete(true); // Show the completion popup
+      setDownloading(false);
+      setDownloadComplete(true);
     }, 3000);
   };
 
@@ -37,20 +34,20 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <div className="relative flex bg-brandOrange rounded-lg shadow-lg overflow-hidden my-8 w-full max-w-4xl mx-auto min-h-[300px]">
+    <div className="relative flex flex-col bg-brandOrange rounded-lg shadow-lg overflow-hidden my-8 w-full max-w-sm mx-auto min-h-[400px]">
       {/* Image Section */}
-      <div className="w-1/2 relative">
+      <div className="relative w-full h-48">
         <img
-          className="object-scale-down w-full h-full"
+          className="object-cover w-full h-full"
           src={`${imageUrl}/${product.image}`}
           alt={`Picture of ${product.name}`}
         />
       </div>
       {/* Text Section */}
-      <div className="w-1/2 p-8 flex flex-col justify-start">
+      <div className="p-8 flex flex-col justify-start flex-grow">
         {/* Product name */}
         <h3
-          className="text-h3 font-bold font-customFont mb-2 cursor-pointer text-blue-500 underline"
+          className="text-h3 font-bold font-customFont mb-2 cursor-pointer text-black underline"
           onClick={handleViewItem}
         >
           {product.name}
@@ -68,45 +65,56 @@ const ProductItem = ({ product }) => {
           {product.category}
         </p>
         {/* Colors */}
-        <div className="mb-4">
-          <h3 className="text-white mb-2 text-p font-customFont">Choose Color:</h3>
-          <div className="flex flex-wrap">
-            {product.colors[0].split(',').map((color, i) => (
-              <div
-                key={i}
-                title={color}
-                className="w-color-circle-point"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '30px',
-                  height: '30px',
-                  padding: '3px',
-                  borderRadius: '50%',
-                  marginRight: '10px',
-                  marginBottom: '5px',
-                  boxSizing: 'border-box',
-                  transform: 'scale(1)',
-                  boxShadow: selectedColor === color ? '0px 0px 0px 3px green' : 'none',
-                  transition: 'transform 100ms ease 0s, box-shadow 100ms ease 0s',
-                  background: color,
-                  cursor: 'pointer',
-                  position: 'relative',
-                  outline: 'none',
-                }}
-                onClick={() => handleColorChange({ hex: color })}
-              />
-            ))}
+        {product.category !== "Package" && (
+          <div className="mb-4">
+            <h3 className="text-white mb-2 text-p font-customFont">
+              Choose Color:
+            </h3>
+            <div className="flex flex-wrap">
+              {product.colors &&
+                product.colors.length > 0 &&
+                product.colors[0].split(",").map((color, i) => (
+                  <div
+                    key={i}
+                    title={color}
+                    className="w-color-circle-point"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "30px",
+                      height: "30px",
+                      padding: "3px",
+                      borderRadius: "50%",
+                      marginRight: "10px",
+                      marginBottom: "5px",
+                      boxSizing: "border-box",
+                      transform: "scale(1)",
+                      boxShadow:
+                        selectedColor === color
+                          ? "0px 0px 0px 3px green"
+                          : "none",
+                      transition:
+                        "transform 100ms ease 0s, box-shadow 100ms ease 0s",
+                      background: color,
+                      cursor: "pointer",
+                      position: "relative",
+                      outline: "none",
+                    }}
+                    onClick={() => handleColorChange({ hex: color })}
+                  />
+                ))}
+            </div>
           </div>
-        </div>
-        <div className="flex-grow"></div>
+        )}
         {/* Download button */}
         <button
           onClick={handleDownload}
-          className={`bg-green-500 text-p3 font-customFont text-white py-2 rounded mt-auto ${downloading ? 'animate-pulse' : ''}`}
+          className={`bg-green-500 text-p3 font-customFont text-white py-2 rounded mt-auto ${
+            downloading ? "animate-pulse" : ""
+          }`}
         >
-          {downloading ? 'Downloading...' : 'Download'}
+          {downloading ? "Downloading..." : "Download"}
         </button>
       </div>
       {/* Download Completion Popup */}
@@ -128,4 +136,4 @@ const ProductItem = ({ product }) => {
 };
 
 // Export the component
-export default ProductItem;
+export default DownloadItem;

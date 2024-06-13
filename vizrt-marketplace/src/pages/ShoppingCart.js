@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../index.css";
 import "tailwindcss/tailwind.css";
 import CartService from "../services/CartService";
@@ -10,28 +10,17 @@ const ShoppingCart = () => {
   const [cartItems, setCartItems] = useState(CartService.getCart());
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const unsubscribe = CartService.subscribe(setCartItems);
+    return () => unsubscribe();
+  }, []);
+
   const removeFromCart = (index) => {
-    const updatedCart = [...cartItems];
-    updatedCart.splice(index, 1);
-    setCartItems(updatedCart);
-    CartService.updateCart(updatedCart); // Update local storage
+    CartService.removeFromCart(index);
   };
 
   const handleOrder = () => {
-    // Get existing collection from local storage or initialize empty array
-    const existingCollection = JSON.parse(localStorage.getItem('myCollection')) || [];
-
-    // Add cart items to collection
-    const updatedCollection = [...existingCollection, ...cartItems];
-
-    // Store updated collection in local storage
-    localStorage.setItem('myCollection', JSON.stringify(updatedCollection));
-
-    // Clear the cart
-    setCartItems([]);
-    CartService.updateCart([]);
-
-    // Navigate to order complete page
+    CartService.placeOrder();
     navigate('/ordercomplete');
   };
 
