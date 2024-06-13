@@ -1,9 +1,7 @@
 import React from "react";
 import PackageItem from "./PackageItem";
 
-const imageUrl = "http://localhost:5219/images";
 
-// Define PackageList component
 const PackageList = ({ graphicPackages }) => {
   return (
     <div className="flex justify-center items-start pt-4 min-h-screen w-full">

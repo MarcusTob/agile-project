@@ -5,7 +5,7 @@ const imageUrl = "http://localhost:5219/images";
 
 // PackageItem component
 const PackageItem = ({ graphicPackage }) => {
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate(); //used to navigate to different pages
 
   // Function to navigate to the package details page
   const handleViewItem = () => {
@@ -37,7 +37,7 @@ const PackageItem = ({ graphicPackage }) => {
         </p>
         <div className="flex-grow"></div>
         <button
-          onClick={handleViewItem} // Attach handleViewItem function to onClick event of button
+          onClick={handleViewItem} // call handleviewitem on button click to navigate
           className="bg-black text-p3 font-customFont text-white py-2 px-4 rounded mt-auto"
         >
           View Item

@@ -19,6 +19,7 @@ const ProductDetailsAndImage = ({ imageUrl, product }) => {
     }
   }, [product.colors, product.rating]);
 
+  //uses cartservice to add item to cart, which is saved in the localstorage
   const handleAddToCart = () => {
     const productWithColor = { ...product, selectedColor };
     CartService.addToCart(productWithColor);

@@ -17,7 +17,6 @@ const DownloadItem = ({ product }) => {
   };
 
   // Function to handle the download animation and popup
-  // Function to handle the download animation and popup
   const handleDownload = () => {
     setDownloading(true);
     setTimeout(() => {

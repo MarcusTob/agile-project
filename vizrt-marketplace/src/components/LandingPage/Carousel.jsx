@@ -8,13 +8,13 @@ import { useNavigate } from "react-router-dom";
 
 const imageUrl = "http://localhost:5219/images";
 
-const Carousel = ({ graphicPackage }) => {
+const Carousel = () => {
   // State to store the fetched packages
   const [packages, setPackages] = useState([]);
   // State to track the current slide index
   const [current, setCurrent] = useState(0);
 
-  // Fetch packages by their IDs
+  // Fetch packages to be shown by their IDs
   useEffect(() => {
     const packageIDs = [4, 5, 6];
     const packagePromises = packageIDs.map((id) =>
@@ -92,7 +92,7 @@ const Carousel = ({ graphicPackage }) => {
         </button>
       </div>
       <div className="absolute bottom-0 py-4 flex justify-center gap-3">
-        {packages.map((graphicPackage, i) => {
+        {packages.map((i) => {
           return (
             <div
               onClick={() => {

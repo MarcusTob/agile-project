@@ -38,17 +38,11 @@ const TabsAndContent = ({ activeTab, handleTabClick, product }) => {
         {/* Display product description if the About tab is active */}
         {activeTab === "About" && <p>{product.description}</p>}
         {/* Display generic specifications */}
-        {activeTab === "Specifications" && (
-          <p>
-            Our product is made from high-quality materials that provide
-            superior support and comfort.
-          </p>
-        )}
+        {activeTab === "Specifications" && <p>{product.specifications}</p>}
         {/* Display generic reviews */}
         {activeTab === "Reviews" && (
           <p>
-            Our product has received excellent reviews from athletes and fitness
-            enthusiasts around the world.
+            Show reviews from users here. Functionality is not in place, so this is a placeholder.
           </p>
         )}
       </div>
