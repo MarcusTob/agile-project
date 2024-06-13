@@ -3,7 +3,6 @@ import ProductService from "../../services/ProductService";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
-// Listing component accepts product and imageUrl as props
 const Listing = ({ product, imageUrl }) => {
   //navigation to the product the user wants to edit
   const navigate = useNavigate();
@@ -23,7 +22,7 @@ const Listing = ({ product, imageUrl }) => {
   }
 
 return (
-  // Main container with styling
+  // Main container
   <div className="relative w-full h-auto bg-white mt-10 p-4 rounded-lg shadow-md">
     {/* Edit icon with a link to the edit page or delete the product */}
     <FiTrash2 
@@ -34,7 +33,6 @@ return (
       className="text-black text-2xl cursor-pointer right-10 top-4 absolute"
       onClick={handleViewItem}
       />
-    {/* Flex container for product image and details */}
     <div className="flex flex-col sm:flex-row">
       {/* Product image */}
       <img

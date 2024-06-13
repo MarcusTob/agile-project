@@ -41,4 +41,4 @@ const CartService = {
   }
 };
 
-export default CartService; // Export the CartService object
+export default CartService;

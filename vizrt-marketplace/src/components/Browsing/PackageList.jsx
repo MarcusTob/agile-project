@@ -1,7 +1,7 @@
-import React from "react"; // Import React
-import PackageItem from "./PackageItem"; // Import PackageItem component
+import React from "react";
+import PackageItem from "./PackageItem";
 
-const imageUrl = "http://localhost:5219/images"; // Define the base URL for package images
+const imageUrl = "http://localhost:5219/images";
 
 // Define PackageList component
 const PackageList = ({ graphicPackages }) => {

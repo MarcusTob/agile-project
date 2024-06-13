@@ -1,4 +1,3 @@
-import "./App.css";
 import GraphicsListPage from "./pages/GraphicsListPage";
 import LandingPage from "./pages/LandingPage";
 import NavBar from "./components/NavBar";

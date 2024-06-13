@@ -1,6 +1,5 @@
 import React from "react";
 
-// Component to display tabs and corresponding content
 const TabsAndContent = ({ activeTab, handleTabClick, product }) => {
   return (
     <div className="flex flex-col items-center">

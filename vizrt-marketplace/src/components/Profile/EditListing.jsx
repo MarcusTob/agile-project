@@ -6,8 +6,8 @@ import ProductService from '../../services/ProductService';
 import { useEffect } from 'react';
 
 const EditListing = ({ onUpdateProduct }) => {
-    // Get the product ID from the URL
-    const { id } = useParams();
+
+  const { id } = useParams();
     
     const [image, setImage] = useState(null);  // State for storing the image file
     const [updatedProduct, setUpdatedProduct] = useState({
@@ -23,9 +23,9 @@ const EditListing = ({ onUpdateProduct }) => {
       tags: '',
       image: '',
       colors: ''
-    });  // State for storing the new product details
+    });  //State for storing the new product details
   
-    // Fetch the product when the component mounts
+    // Fetch the product
     useEffect(() => {
       const fetchProduct = async () => {
         try {
@@ -59,7 +59,7 @@ const EditListing = ({ onUpdateProduct }) => {
     setUpdatedProduct({ ...updatedProduct, image: file.name });
   }
 
-  // Handler for form submission
+  // Handler for submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     e.preventDefault();

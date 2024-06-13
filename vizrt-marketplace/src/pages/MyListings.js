@@ -4,7 +4,6 @@ import Header from "../components/Profile/Header";
 import Listing from "../components/Profile/Listing";
 import MyNavbar from "../components/Profile/MyNavbar";
 
-// URL to match your backend configuration
 const imageUrl = "http://localhost:5219/images";
 
 const MyListings = () => {
@@ -14,7 +13,7 @@ const MyListings = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch products when the component mounts
+  // Fetches products
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -27,9 +26,9 @@ const MyListings = () => {
         setProducts(editableProducts);
         setFilteredProducts(editableProducts);
       } catch (err) {
-        setError(err.message); // Set error message if fetching fails
+        setError(err.message); //error message if fetching fails
       } finally {
-        setLoading(false); // Set loading to false regardless of success or failure
+        setLoading(false);
       }
     };
     fetchProducts();

@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const MyNavbar = () => {
-  // useNavigate hook for programmatic navigation
   const navigate = useNavigate();
 
   // Handle logout logic

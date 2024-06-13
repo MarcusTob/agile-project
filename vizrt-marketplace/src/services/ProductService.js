@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const ProductService = (() => {
-  // Define the base URL for the products API
   const productUrl = "http://localhost:5219/Marketplace/products";
 
   // Function to fetch all products
@@ -79,4 +78,4 @@ const ProductService = (() => {
   };
 })();
 
-export default ProductService; // Export the ProductService object
+export default ProductService;

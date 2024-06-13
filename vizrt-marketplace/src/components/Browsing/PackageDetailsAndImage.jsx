@@ -6,7 +6,7 @@ import CartService from "../../services/CartService";
 const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
   const [showMessage, setShowMessage] = useState(false); // State for controlling the visibility of the message when the item is added to cart
 
-  // Function to handle adding an item to the cart
+  // Function to handle users adding an item to the cart
   const handleAddToCart = () => {
     // Call CartService to add the graphicPackage to the cart
     CartService.addToCart(graphicPackage);
@@ -20,7 +20,7 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
 
   return (
     <div className="flex justify-center items-start w-full relative">
-      {/* Image Section */}
+      {/* Image Section*/}
       <div className="w-1/2 px-8">
         <img
           className="w-full h-auto object-cover"
@@ -45,7 +45,7 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
           Category: {graphicPackage.category}
         </p>
      
-        {/* Star ratings and reviews */}
+        {/* Ratings and reviews */}
         <div className="flex items-center justify-start mb-4">
           <div className="flex space-x-1">
             {[1, 2, 3, 4, 5].map((star) => (
@@ -68,7 +68,7 @@ const PackageDetailsAndImage = ({ imageUrl, graphicPackage }) => {
             ({graphicPackage.nrOfReviews} Reviews)
           </p>
         </div>
-        {/* Button to add to cart */}
+        {/* Button to add to the cart */}
         <button
           className="bg-brandBlue text-white px-8 py-3 rounded-lg mt-9 flex items-center"
           onClick={handleAddToCart}

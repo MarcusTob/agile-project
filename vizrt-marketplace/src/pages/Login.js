@@ -51,7 +51,7 @@ const Login = () => {
           {/* Username input */}
           <input
             className="w-full bg-transparent border-b-2 border-collection-1-brandtextwhite text-collection-1-brandtextwhite text-p font-customFont pl-3 placeholder-white"
-            style={{ color: 'white' }} // Ensure text color is white
+            style={{ color: 'white' }}
             placeholder="Username"
             type="text"
             value={username}
@@ -61,7 +61,7 @@ const Login = () => {
           <div className="relative">
             <input
               className="w-full bg-transparent border-b-2 border-collection-1-brandtextwhite text-collection-1-brandtextwhite text-p font-customFont pl-3 placeholder-white"
-              style={{ color: 'white' }} // Ensure text color is white
+              style={{ color: 'white' }}
               placeholder="Password"
               type={showPassword ? "text" : "password"}
               value={password}

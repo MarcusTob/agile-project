@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react"; // Import React and necessary hooks
-import { useParams } from "react-router-dom"; // Import useParams hook from react-router-dom
-import PackageService from "../services/PackageService"; // Import PackageService for fetching package data
-import PackageDetailsAndImage from "../components/Browsing/PackageDetailsAndImage"; // Import PackageDetailsAndImage component
-
-const imageUrl = "http://localhost:5219/images"; // Define the base URL for package images
+import React, { useState, useEffect } from "react"; 
+import { useParams } from "react-router-dom"; 
+import PackageService from "../services/PackageService"; 
+import PackageDetailsAndImage from "../components/Browsing/PackageDetailsAndImage";
+const imageUrl = "http://localhost:5219/images";
 
 const PackagePage = () => {
   const { id } = useParams(); // Destructure the id parameter from the URL using useParams
@@ -34,10 +33,10 @@ const PackagePage = () => {
 
   // Conditional rendering based on the existence of package data
   if (!graphicPackage) {
-    return <h1 className="font-customFont text-h3">Package not found</h1>; // Render a message if package data is not available
+    return <h1 className="font-customFont text-h3">Package not found</h1>; // Renders a message if package data is not available
   }
 
-  // Define content based on the active tab
+  // Defines content based on the active tab
   let content;
   switch (activeTab) {
     case "About":
@@ -109,4 +108,4 @@ const PackagePage = () => {
   );
 };
 
-export default PackagePage; // Export the PackagePage component
+export default PackagePage;

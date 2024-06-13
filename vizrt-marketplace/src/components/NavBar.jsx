@@ -10,15 +10,9 @@ import CartService from '../services/CartService';
 
 
 const Navbar = () => {
-  const [searchTerm, setSearchTerm] = useState("");
   const [cartItems, setCartItems ] = useState(CartService.getCart());
   // Context for user authentication
   const { user, setUser } = useContext(UserContext);
-
-  // Handler for search input change
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
 
   // Effect to set user from local storage on mount
   useEffect(() => {
@@ -41,15 +35,12 @@ const Navbar = () => {
         <img src="/images/logo-vizrt.png" alt="Vizrt Logo" className="w-32 h-auto object-cover" />
       </a>
 
-      {/* Search Bar and Links */}
       <div className="flex flex-col items-left w-1/2">
-        {/* Search bar container */}
+        {/* Search bar*/}
         <div className="border-2 border-solid border-gray-600 flex items-center w-full gap-2 p-2 rounded-md bg-white">
         <IoIosSearch size="1.5em"/>
           <input
             type="text"
-            value={searchTerm}
-            onChange={handleSearchChange}
             placeholder="Search"
             className="flex-1 text-gray-600 bg-transparent outline-none"
           />

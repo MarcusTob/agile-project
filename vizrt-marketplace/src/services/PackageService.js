@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const PackageService = (() => {
-  // Define the base URL for the packages API
   const packageUrl = "http://localhost:5219/Marketplace/Packages";
 
   // Function to fetch all packages
@@ -37,4 +36,4 @@ const PackageService = (() => {
   };
 })();
 
-export default PackageService; // Export the PackageService object
+export default PackageService;

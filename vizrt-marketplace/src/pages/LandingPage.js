@@ -6,9 +6,6 @@ import TrustedBy from "../components/LandingPage/TrustedBy";
 import "../index.css";
 import "tailwindcss/tailwind.css";
 
-{
-  /* Pictures for carousel */
-}
 const LandingPage = () => {
   {
     /* All components on Landing page */

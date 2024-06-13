@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
-// Define the base URL for product images
 const imageUrl = "http://localhost:5219/images";
 
-// Define the ProductItem component
 const ProductItem = ({ product }) => {
   const [downloading, setDownloading] = useState(false); // State for controlling the download animation
-  const [downloadComplete, setDownloadComplete] = useState(false); // State for controlling the completion popup
+  const [downloadComplete, setDownloadComplete] = useState(false); // State for controlling the download completion popup
   const navigate = useNavigate();
   const [selectedColor, setSelectedColor] = useState('');
 
@@ -18,16 +15,16 @@ const ProductItem = ({ product }) => {
     console.log(product.colors);
   };
 
-  // Function to handle the fake download animation and popup
+  // Function to handle the download animation and popup
   const handleDownload = () => {
     setDownloading(true); // Start the animation
     setTimeout(() => {
       setDownloading(false); // Reset the animation after 3 seconds
-      setDownloadComplete(true); // Show the completion popup
+      setDownloadComplete(true); // Show the completion
     }, 3000);
   };
 
-  // Function to close the download completion popup
+  // Function to close the download completion
   const handleClosePopup = () => {
     setDownloadComplete(false);
   };
@@ -127,5 +124,4 @@ const ProductItem = ({ product }) => {
   );
 };
 
-// Export the component
 export default ProductItem;

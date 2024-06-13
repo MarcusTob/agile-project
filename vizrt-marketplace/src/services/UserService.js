@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const UserService = (() => {
-  // Define the base URL for the user-related endpoints
   const userUrl = "http://localhost:5219/Marketplace/user";
 
   // Function to fetch a user by their ID
@@ -50,4 +49,4 @@ const UserService = (() => {
   };
 })();
 
-export default UserService; // Export the UserService object
+export default UserService;

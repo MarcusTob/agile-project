@@ -9,19 +9,19 @@ const FilterOptions = ({ products, setFilteredProducts }) => {
 
   // useEffect to apply filters and sorting whenever filter, sortByPrice, or products change
   useEffect(() => {
-    // Apply category filter
+    // category filter
     let filteredProducts = products.filter((product) =>
       product.category.includes(filter)
     );
 
-    // Apply price sorting
+    //price sorting
     if (sortByPrice === "lowToHigh") {
       filteredProducts.sort((a, b) => a.price - b.price);
     } else if (sortByPrice === "highToLow") {
       filteredProducts.sort((a, b) => b.price - a.price);
     }
 
-    // Update the filtered products state in parent component
+    // Updates the filtered products state in parent component
     setFilteredProducts(filteredProducts);
   }, [filter, sortByPrice, products, setFilteredProducts]);
 
@@ -71,7 +71,7 @@ const FilterOptions = ({ products, setFilteredProducts }) => {
           onChange={(e) => setSortByPrice(e.target.value)}
           className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
         >
-          {/* Sorting options for product prices */}
+          {/* Sorting options for prices */}
           <option value="">None</option>
           <option value="lowToHigh">Low to High</option>
           <option value="highToLow">High to Low</option>

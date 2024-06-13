@@ -1,9 +1,9 @@
-import React from "react"; // Import React
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook from react-router-dom
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const imageUrl = "http://localhost:5219/images"; // Define the base URL for package images
+const imageUrl = "http://localhost:5219/images";
 
-// Define PackageItem component
+// PackageItem component
 const PackageItem = ({ graphicPackage }) => {
   const navigate = useNavigate(); // Initialize the useNavigate hook
 
@@ -20,7 +20,7 @@ const PackageItem = ({ graphicPackage }) => {
       <div className="w-1/2 relative">
         <img
           className="object-cover w-full h-full"
-          style={{ width: '100%', height: '300px' }} // Set a fixed width and height
+          style={{ width: '100%', height: '300px' }}
           src={`${imageUrl}/${graphicPackage.image}`}
           alt={`Picture of ${graphicPackage.name}`}
         />{" "}

@@ -16,9 +16,9 @@ export const RegisterUser = () => {
     // Call the UserService to create a new user
     const user = await UserService.createUser({ username, password, email });
     if (user) {
-      // Handle successful registration (e.g., redirect to login or home)
+      // Handle successful registration-redirect to login or home
     } else {
-      // Handle registration failure (e.g., show an error message)
+      // Handle registration failure-show an error message
     }
   };
 

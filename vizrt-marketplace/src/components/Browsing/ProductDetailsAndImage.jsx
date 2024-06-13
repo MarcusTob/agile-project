@@ -8,7 +8,7 @@ const ProductDetailsAndImage = ({ imageUrl, product }) => {
   const [selectedColor, setSelectedColor] = useState('');
   const [rating, setRating] = useState(0);
 
-  // Set the initial selected color and rating from the product data
+  // Sets the initial selected color and rating from the product data
   useEffect(() => {
     if (product.colors && product.colors.length > 0) {
       const initialColor = product.colors[0].split(',')[0];

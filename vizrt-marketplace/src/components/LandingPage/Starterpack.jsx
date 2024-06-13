@@ -10,11 +10,11 @@ const Starterpack = () => {
   // State to store the list of graphic packages
   const [graphicPackages, setPackages] = useState([]);
 
-  // Fetch graphic packages when the component mounts
+  // Fetch graphic packages
   useEffect(() => {
     // Array of package IDs to fetch
     const packageIDs = [1, 2, 3];
-    // Fetch package details for each package ID asynchronously
+    // Fetch package details for each package ID
     Promise.all(packageIDs.map((id) => PackageService.getPackageById(id)))
       .then((graphicPackage) => setPackages(graphicPackage))
       .catch((error) => console.error("Error fetching packages:", error));

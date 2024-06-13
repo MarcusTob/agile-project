@@ -14,7 +14,7 @@ const Carousel = ({ graphicPackage }) => {
   // State to track the current slide index
   const [current, setCurrent] = useState(0);
 
-  // Fetch packages by their IDs when the component mounts
+  // Fetch packages by their IDs
   useEffect(() => {
     const packageIDs = [4, 5, 6];
     const packagePromises = packageIDs.map((id) =>

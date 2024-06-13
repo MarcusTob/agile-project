@@ -1,10 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-// Define the base URL for product images
 const imageUrl = "http://localhost:5219/images";
 
-// Define the ProductItem component
 const ProductItem = ({ product }) => {
   const navigate = useNavigate();
 
@@ -59,5 +57,4 @@ const ProductItem = ({ product }) => {
   );
 };
 
-// Export the component
 export default ProductItem;
