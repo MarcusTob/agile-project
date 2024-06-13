@@ -41,7 +41,7 @@ const CreateListing = ({ onCreateProduct }) => {
       colors: colorsArray,
     };
 
-    // Attempt to upload the image if it exists
+    // Attempts to upload the image if it exists
     try {
       if (image != null) {
         await ImageUploadService.uploadImage(image);
@@ -55,7 +55,7 @@ const CreateListing = ({ onCreateProduct }) => {
       console.error('Error uploading image:', error);
     }
 
-    // Attempt to create the new product
+    // Attempts to create the new product
     try {
       onCreateProduct(updatedProduct);
       // Reset the form state
