@@ -1,6 +1,6 @@
 This is Agile Group 5's submission for Agile Project (PRO202) exam.
 
-How to start the application:
+How to start the application: </br>
 Open up two terminals
 In the first terminal, change directory to vizrt-marketplace
 write: npm install
