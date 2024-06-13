@@ -43,12 +43,6 @@ const Header = ({ products, setFilteredProducts }) => {
       case "price-desc":
         filteredProducts.sort((a, b) => b.price - a.price);
         break;
-      case "recent":
-        filteredProducts.sort((a, b) => new Date(b.date) - new Date(a.date));
-        break;
-      case "old":
-        filteredProducts.sort((a, b) => new Date(a.date) - new Date(b.date));
-        break;
       default:
         break;
     }
@@ -79,18 +73,6 @@ const Header = ({ products, setFilteredProducts }) => {
                 className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200 text-p3 font-customFont"
               >
                 Price: High to Low
-              </button>
-              <button
-                onClick={() => applyFilter("recent")}
-                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200 text-p3 font-customFont"
-              >
-                Recent Purchases
-              </button>
-              <button
-                onClick={() => applyFilter("old")}
-                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-200 text-p3 font-customFont"
-              >
-                Old Purchases
               </button>
             </div>
           )}

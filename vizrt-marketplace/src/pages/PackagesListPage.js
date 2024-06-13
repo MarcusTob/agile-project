@@ -18,7 +18,7 @@ const PackageListPage = () => {
     }
   };
 
-  // useEffect to fetch packages when the component mounts
+  // useEffect to fetch packages
   useEffect(() => {
     getAllPackages();
   }, []);

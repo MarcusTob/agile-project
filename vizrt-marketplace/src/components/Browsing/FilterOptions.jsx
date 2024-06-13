@@ -46,8 +46,6 @@ const FilterOptions = ({ products, setFilteredProducts }) => {
         >
           {/* Filter options for product categories */}
           <option value="">All</option>
-          <option value="3D">3D Graphics</option>
-          <option value="Animation">Animation</option>
           <option value="News">News</option>
           <option value="Weather">Weather</option>
           <option value="Sports">Sports</option>

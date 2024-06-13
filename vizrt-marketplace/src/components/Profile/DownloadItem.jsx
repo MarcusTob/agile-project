@@ -10,6 +10,7 @@ const DownloadItem = ({ product }) => {
   const [selectedColor, setSelectedColor] = useState("");
 
   // Function to handle navigation the page
+  //navigation to Package details page doesnt work, discovered to late to fix in time for deadline
   const handleViewItem = () => {
     navigate(`/product/${product.productID}`);
     console.log(product.colors);

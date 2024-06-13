@@ -3,6 +3,7 @@ import { FiTrash2 } from 'react-icons/fi';
 import ImageUploadService from '../../services/ImageUploadService.ts';
 
 const CreateListing = ({ onCreateProduct }) => {
+  const [showMessage, setShowMessage] = useState(false);
   const [image, setImage] = useState(null);  // State for storing the image file
   const [newProduct, setNewProduct] = useState({
     name: '',
@@ -45,6 +46,10 @@ const CreateListing = ({ onCreateProduct }) => {
       if (image != null) {
         await ImageUploadService.uploadImage(image);
       }
+      setShowMessage(true);
+      setTimeout(() => {
+        setShowMessage(false);
+      }, 2000);
     }
     catch (error) {
       console.error('Error uploading image:', error);
@@ -196,6 +201,11 @@ const CreateListing = ({ onCreateProduct }) => {
             </div>
           </div>
         </form>
+        {showMessage && (
+          <div className="absolute bg-white rounded-lg p-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md">
+            <p className="text-gray text-h3 font-customFont">Listing Created!</p>
+          </div>
+        )}
       </div>
     </div>
   );

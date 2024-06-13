@@ -4,8 +4,10 @@ import ImageUploadService from '../../services/ImageUploadService.ts';
 import { useParams } from 'react-router-dom';
 import ProductService from '../../services/ProductService';
 import { useEffect } from 'react';
+const imageUrl = "http://localhost:5219/images";
 
 const EditListing = ({ onUpdateProduct }) => {
+  const [showMessage, setShowMessage] = useState(false);
 
   const { id } = useParams();
     
@@ -62,7 +64,6 @@ const EditListing = ({ onUpdateProduct }) => {
   // Handler for submit
   const handleSubmit = async (e) => {
     e.preventDefault();
-    e.preventDefault();
 
     // Convert tags and colors from comma-separated strings to arrays, to match what the database expects
     const tagsArray = updatedProduct.tags.split(',').map(tag => tag.trim());
@@ -79,6 +80,10 @@ const EditListing = ({ onUpdateProduct }) => {
       if (image != null) {
         await ImageUploadService.uploadImage(image);
       }
+      setShowMessage(true);
+      setTimeout(() => {
+        setShowMessage(false);
+      }, 2000);
     }
     catch (error) {
       console.error('Error updating image:', error);
@@ -103,11 +108,11 @@ const EditListing = ({ onUpdateProduct }) => {
             {/* Image Display and Upload */}
             <div className="flex flex-col items-center space-y-4 mr-10">
               <div className="relative w-40 h-40 bg-gray-300 rounded-md overflow-hidden">
-                {image ? (
-                  <img src={URL.createObjectURL(image)} alt="Preview" className="w-full h-full object-cover" />
+              {image ? (
+               <img src={URL.createObjectURL(image)} alt="Preview" className="w-full h-full object-cover" />
                 ) : (
-                  <span className="text-gray text-p3 font-customFont flex items-center justify-center w-full h-full">Image</span>
-                )}
+               <img src={`${imageUrl}/${updatedProduct.image}`} alt="Preview" className="w-full h-full object-cover" />
+              )}
                 {/* Remove image button */}
                 {image && (
                   <button className="absolute text-brandRed top-0 right-0 m-1" onClick={() => setImage(null)}>
@@ -215,6 +220,11 @@ const EditListing = ({ onUpdateProduct }) => {
             </div>
           </div>
         </form>
+        {showMessage && (
+          <div className="absolute bg-white rounded-lg p-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md">
+            <p className="text-gray text-h3 font-customFont">Listing Edited!</p>
+          </div>
+        )}
       </div>
     </div>
   );
